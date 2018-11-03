@@ -1,0 +1,31 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+  Web Designer: Alfredo Carreon Urbano
+  Twitter:
+  From: Guadalajara, Jalisco, Mexico
+
+  Front-end Implementation: Cristopher Sinhue Estrada Panduro
+  Twitter:
+  From: Guadalajara, Jalisco, Mexico
+
+  Application Development: José Emmanuel Gil Carbajal
+  Twitter:
+  From: Guadalajara, Jalisco, Mexico
+
+  Front-end Operations: José Miguel Aguayo Gomez
+  Twitter:
+  From: Guadalajara, Jalisco, Mexico
+
+# THANKS
+
+    Professor: Nancy Michelle Torres Villanueva
+    Twitter:
+    From: Guadalajara, Jalisco, Mexico
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5
+    Modernizr, Normalize.css
