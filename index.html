@@ -12,14 +12,14 @@
 </head>
 
 <body>
-  <div class="header">
-    <a href="index.html" class="logo">Nuestro Logo</a>
+  <nav class="header">
+    <a href="index.html" class="logo"><img src="img/logo.jpeg" alt="" class="logo-img"></a>
     <div class="header-center">
       <h1>Foraneos UDG</h1>
     </div>
     <div class="header-right">
       <!-- Trigger/Open The Modal -->
-      <button id="myBtn">Login</button>
+      <button id="myBtn" class="button">Login</button>
 
       <!-- The Modal -->
       <div id="myModal" class="modal">
@@ -41,18 +41,64 @@
 
       </div>
     </div>
-  </div>
-
-
-  <div class="sidenav">
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#clients">Clients</a>
-    <a href="#contact">Contact</a>
-  </div>
+  </nav>
 
   <section>
     <div class="main">
+      <!-- Slideshow container -->
+      <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="img/carrousel4.jpeg" class="slider-image">
+          <div class="text">Caption Text</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="img/carrousel2.jpg" class="slider-image">
+          <div class="text">Caption Two</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="img/carrousel3.jpg" class="slider-image">
+          <div class="text">Caption Three</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+      </div>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+
+      <div class="check-box">
+
+        <h1>Categorias</h1>
+        <label class="container">Lugar
+          <input type="checkbox" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Valoracion
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Cercano
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Casa
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
       <h2 class="subtitulo">Lugares</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
         aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -61,11 +107,29 @@
   </section>
 
   <footer class="footer">
-    <h2>Contactanos</h2>
-    <a href="#">Politicas y Restricciones</a>
-    <a href="https://www.facebook.com/panduroo" class="fa fa-facebook"></a>
-    <a href="#" class="fa fa-twitter"></a>
-    <a href="#" class="fa fa-github"></a>
+    <div class="foot-left">
+      <ul class="footer-list">
+        <li> <a href="#">Reportar un Problema</a> </li>
+        <li> <a href="#">Politicas de Uso</a> </li>
+        <li> <a href="#">Nuestro Team</a> </li>
+        <li> <a href="#">Contacto</a> </li>
+      </ul>
+    </div>
+    <div class="foot-center">
+      <a href="https://www.facebook.com/panduroo" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-twitter"></a>
+      <a href="#" class="fa fa-github"></a><br>
+      <a href="#" class="fa fa-instagram"></a>
+      <a href="#" class="fa fa-google-plus"></a>
+      <a href="#" class="fa fa-envelope"></a>
+    </div>
+    <div class="foot-right">
+      <h2>Hecho por Alumnos para Alumnos</h2>
+      <p>Esta Pagina fue creada para ayudar a los pequeños foraneos sin
+        hogar, para que durante su estancia escolar puedan conseguir el
+        lugar adecuado para ellos</p>
+    </div>
+
   </footer>
 
   <script>
@@ -93,6 +157,28 @@
       if (event.target == modal) {
         modal.style.display = "none";
       }
+    }
+
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
     }
   </script>
 
