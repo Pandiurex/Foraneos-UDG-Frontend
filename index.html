@@ -1,69 +1,74 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
-
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!-- En un futuro colocar microdatos y acompletar los OpenGraph -->
+  <meta name="description:" content="Estas en búsqueda de un lugar donde hospedarse mientras realizan sus estudios en UdeG, Foráneos es para ti">
+  <meta property="og:site_name" content="Foráneos UdeG" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://api.foraneos-udg.tk/api" />
+  <!-- <meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg" /> -->
   <link type="text/plain" rel="author" href="http://domain/humans.txt" /> <!-- Poner Dominio -->
   <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="/img/Logo/Logo1.png">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
-  <title>Foraneos Udg</title>
+  <title> Foráneos UdeG </title>
 </head>
 
 <body>
-  <nav class="header">
-    <a href="index.html" class="logo"><img src="img/logo.jpeg" alt="" class="logo-img"></a>
+<header class="header">
+<a href="index.html" class="logo"><img src="img/Logo/Logo.png" alt="Logo de Foráneos UdeG" class="logo-img"></a>
+<nav>
     <div class="header-center">
-      <h1>Foraneos UDG</h1>
+      <h1>Foráneos UDG</h1>
     </div>
+
     <div class="header-right">
-      <!-- Trigger/Open The Modal -->
-      <button id="myBtn" class="button">Login</button>
-
+    <!-- Trigger/Open The Modal -->
+      <button id="myBtn" class="button"> Iniciar sesión </button>
       <!-- The Modal -->
-      <div id="myModal" class="modal">
 
-        <!-- Modal content -->
+      <div id="myModal" class="modal">
+      <!-- Modal content -->
+
         <div class="modal-content">
+
           <div class="modal-header">
             <span class="close">&times;</span>
-            <h2>Modal Header</h2>
+            <h2> Modal Header </h2>
           </div>
+
           <div class="modal-body">
-            <p>Some text in the Modal Body</p>
-            <p>Some other text...</p>
+            <p> Some text in the Modal Body </p>
+            <p> Some other text... </p>
           </div>
+
           <div class="modal-footer">
-            <h3>Modal Footer</h3>
+            <h3> Modal Footer draggable=""</h3>
           </div>
         </div>
-
       </div>
     </div>
   </nav>
+</header>
 
-  <section>
+<section>
     <div class="main">
       <!-- Slideshow container -->
-      <div class="slideshow-container">
-
+      <div class="slideshow-container"><br>
         <div class="mySlides fade">
-          <div class="numbertext">1 / 3</div>
-          <img src="img/carrousel4.jpeg" class="slider-image">
-          <div class="text">Caption Text</div>
+          <img src="img/Portada/Portada1.png" alt= "Portada de Foráneos UdeG" class="slider-image">
         </div>
 
         <div class="mySlides fade">
-          <div class="numbertext">2 / 3</div>
-          <img src="img/carrousel2.jpg" class="slider-image">
-          <div class="text">Caption Two</div>
+          <img src="img/Portada/Portada2.jpg" alt= "Una estudiante caminando" class="slider-image">
         </div>
 
         <div class="mySlides fade">
-          <div class="numbertext">3 / 3</div>
-          <img src="img/carrousel3.jpg" class="slider-image">
-          <div class="text">Caption Three</div>
+          <img src="img/Portada/Portada3.jpg" alt= "Una estudiante leyendo un mapa" class="slider-image">
         </div>
 
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -78,59 +83,73 @@
         <span class="dot" onclick="currentSlide(3)"></span>
       </div>
 
-      <div class="check-box">
+      <aside>
+        <h2> Categorías </h2>
+        <ul>
+          <li> <a href="#"> Lugar </a> </li>
+          <li> <a href="#"> Valoración </a> </li>
+          <li> <a href="#"> Cercano </a> </li>
+          <li> <a href="#"> Casa </a> </li>
+        </ul>
+      </aside>
 
-        <h1>Categorias</h1>
-        <label class="container">Lugar
-          <input type="checkbox" checked="checked">
-          <span class="checkmark"></span>
-        </label>
-        <label class="container">Valoracion
-          <input type="checkbox">
-          <span class="checkmark"></span>
-        </label>
-        <label class="container">Cercano
-          <input type="checkbox">
-          <span class="checkmark"></span>
-        </label>
-        <label class="container">Casa
-          <input type="checkbox">
-          <span class="checkmark"></span>
-        </label>
-      </div>
-
-      <h2 class="subtitulo">Lugares</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
+      <fieldset>
+        <div>
+          <h2 class="subtitulo"> Lugares </h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </fieldset>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="foot-left">
-      <ul class="footer-list">
-        <li> <a href="#">Reportar un Problema</a> </li>
-        <li> <a href="#">Politicas de Uso</a> </li>
-        <li> <a href="#">Nuestro Team</a> </li>
-        <li> <a href="#">Contacto</a> </li>
-      </ul>
-    </div>
-    <div class="foot-center">
-      <a href="https://www.facebook.com/panduroo" class="fa fa-facebook"></a>
-      <a href="#" class="fa fa-twitter"></a>
-      <a href="#" class="fa fa-github"></a><br>
-      <a href="#" class="fa fa-instagram"></a>
-      <a href="#" class="fa fa-google-plus"></a>
-      <a href="#" class="fa fa-envelope"></a>
-    </div>
-    <div class="foot-right">
-      <h2>Hecho por Alumnos para Alumnos</h2>
-      <p>Esta Pagina fue creada para ayudar a los pequeños foraneos sin
-        hogar, para que durante su estancia escolar puedan conseguir el
-        lugar adecuado para ellos</p>
-    </div>
+  <footer>
+    <div class="container-footer-all">
+      <div class="container-body">
+        <div class="colum1">
+          <h1>Hecho por Alumnos para Alumnos</h1>
+          <p>Esta Página fue creada para ayudar a los pequeños foráneos sin hogar,
+            para que durante su estancia escolar puedan conseguir el lugar
+            adecuado para ellos.</p>
+          </div>
+          <div class="colum2">
+            <h1>Redes Sociales</h1>
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-github"></a><br>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-google-plus"></a>
+            <a href="#" class="fa fa-envelope"></a>
+          </div>
+          <div class="colum3 footer-list">
+            <h1>Información Foráneos UdeG</h1>
+            <div class="row2">
+              <a href="#">  <label> ¿Qué es Foráneos UdeG? </label> </a>
+            </div>
+            <div class="row2">
+              <a href="#">  <label> Reportar un Problema </label> </a>
+            </div>
+            <div class="row2">
+              <a href="#">  <label> Nuestro Team </label> </a>
+            </div>
+            <div class="row2">
+              <a href="#">  <label> Contacto </label> </a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  </footer>
+      <div class="container-footer">
+        <div class="footer">
+          <div class="copyright">
+            © 2018 Todos los Derechos Reservados | <a href="#">Foráneos UdeG</a>
+          </div>
+          <div class="information">
+            <a href="#">Información Foráneos UdeG</a> | <a href="#">Privación y Política</a> | <a href="#">Términos y Condiciones</a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
   <script>
     // Get the modal
@@ -181,7 +200,5 @@
       setTimeout(showSlides, 2000); // Change image every 2 seconds
     }
   </script>
-
 </body>
-
 </html>
