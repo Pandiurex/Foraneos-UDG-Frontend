@@ -1,0 +1,36 @@
+.profile {
+  float: left;
+  padding-right: 24px;
+}
+.menu{
+  float: left;
+  margin: 0 10px;
+  padding: 0 20px;
+  background-color: #fff;
+border: 1px solid #d1d5da;
+list-style: none;
+margin-bottom: 15px;
+}
+.formulario{
+  float: left;
+  padding-right: 100px;
+  width: 50%;
+
+}
+.quiuboles{
+  border-bottom: 1px solid #e1e4e8;
+    display: block;
+    flex-flow: row wrap;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+}
+.quiubo-h2{
+  flex: 1 1 auto;
+font-size: 24px;
+font-weight: 400;
+}
+
+.profile-content{
+  background-color: white;
+  float: right;
+}
