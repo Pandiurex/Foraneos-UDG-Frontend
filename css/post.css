@@ -1,0 +1,50 @@
+/* FIELDSET */
+
+.fieldset {
+  background-color: white;
+  border-color: transparent;
+  border-radius: 10px;
+  margin: 50px 115px 10px 50px;
+}
+
+.fieldset2 {
+  background-color: white;
+  border-color: transparent;
+  border-radius: 10px;
+  margin: 1%;
+}
+
+.abajo {
+  margin: 4%;
+}
+
+/* POST */
+
+.card {
+  text-align: center;
+}
+
+.card h2 {
+  color: #EC801C;
+  text-align: center;
+}
+
+.parafos {
+  margin-left: 20%;
+  text-align: justify;
+  width: 60%;
+}
+
+.parafos h2 {
+  color: #F09249;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 200px) {
+  .parafos {
+    width: 90%;
+    margin-left: 5%;
+  }
+}
