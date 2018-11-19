@@ -2,13 +2,11 @@
 <html lang="es" dir="ltr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, user-scalable=no,
-  initial-scale=1, maximum-scale=1, minimum-scale=1">
-  <!-- En un futuro colocar microdatos y acompletar los OpenGraph -->
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link type="text/plain" rel="author" href="http://domain/humans.txt" /> <!-- Poner Dominio -->
   <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="shortcut icon" href="img/logo/logo4.ico">
+  <link rel="shortcut icon" href="/img/logo/logo4.ico">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
   <title> Foráneos UdeG </title>
@@ -58,49 +56,20 @@
         <a href="information.html">Leer más</a>
       </div>
     </section>
-    <section id="bienvenidos">
-      <div class="contenedor">
-        <h2>¿Eres estudiante?</h2>
-        <p>Este es el mejor sitio por encontrar el mejor alojamiento a tus necesidades.</p>
-      </div>
-    </section>
-    <section id="blog">
-      <h3>Este es el lugar adecuado para alojarte.</h3>
-      <div class="contenedor">
-        <article>
-          <img src="img/info/door.jpg" alt="Una puerta">
-          <h4>Tu nuevo hogar</h4>
-        </article>
-        <article>
-          <img src="img/info/account.jpg" alt="Cuentas bancarias">
-          <h4>A tus necesidades</h4>
-        </article>
-        <article>
-          <img src="img/info/learning.jpg" alt="Estudiante aprendiendo">
-          <h4>Tu estadía universitaria</h4>
-        </article>
-      </div>
-    </section>
-    <section id="info">
-      <h3>Encuentra alojamiento por:</h3>
-      <div class="contenedor">
-        <div class="info-for">
-          <img src="img/info/services.jpg" alt="Servicios">
-          <h4>Servicios</h4>
+    <section class="main">
+      <fieldset class="fieldset2">
+        <div>
+          <form class="card"> <!-- class=""  action="index.html" method="post"> -->
+            <div class="abajo">
+              <h2> Recuperar contraseña </h2>
+              <input id="recoveremail" class="input2" name = "email" placeholder= "Correo electrónico"><br>
+              <input id="btnrecover" class="button-form button-tam" name="recover" type="submit" value="Recuperar">
+              <p> Ingresa la dirección de correo electrónico asociada a tu cuenta y te
+                enviaremos un enlace para restablecer tu Contraseña</p>
+            </div>
+          </form>
         </div>
-        <div class="info-for">
-          <img src="img/info/prices.jpg" alt="Precios">
-          <h4>Precios</h4>
-        </div>
-        <div class="info-for">
-          <img src="img/info/locations.jpg" alt="Ubicaciones">
-          <h4>Ubicación</h4>
-        </div>
-        <div class="info-for">
-          <img src="img/info/rates.jpg" alt="Calificar">
-          <h4>Valoración</h4>
-        </div>
-      </div>
+      </fieldset>
     </section>
   </main>
 
