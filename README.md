@@ -180,7 +180,7 @@ te dejo el aqui el link del Github oficial de [NVM](https://github.com/creationi
 
 * Este es el URL donde el proyecto se encuentra:
 
-  [Foraneos-UDG](https://api.foraneos-udg.tk/api).
+  [Foraneos-UDG](https://foraneos-udg.tk/).
 
 ### 7.-Colaboradores.
 
