@@ -26,6 +26,12 @@
   width: 310px;
 }
 
+.input2-p {
+  color: #FA8F2D;
+  margin-bottom: 1%;
+  font-weight: bold;
+}
+
 @media (max-width:500px) {
   .input2 {
     width: 210px;
