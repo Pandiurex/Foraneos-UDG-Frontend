@@ -1,4 +1,4 @@
-# Foráneos-UDG-Api
+# Foráneos-UDG-Frontend
 
 <div align="center">
   <a href="https://www.npmjs.com/package/eslint-config-airbnb">
@@ -12,9 +12,9 @@
   </a>
 </div>
 
-### 1.-¿Qué es Foraneos-UDG?
+### 1.-¿Qué es Foraneos UdeG?
 
-Foraneos-UDG es una web-app que ofrece alojamientos cerca de centros universitarios para aquellos estudiantes que requieran hospedaje para continuar con sus estudios. En esta repo actualmente solo se encuentra la API, posteriormente incorporaremos el Frontend del proyecto.
+Foraneos UdeG es una web-app que ofrece alojamientos cerca de centros universitarios para aquellos estudiantes que requieran hospedaje para continuar con sus estudios. En esta repo actualmente solo se encuentra la API, posteriormente incorporaremos el Frontend del proyecto.
 
 ### 2.-Objetivo.
 
