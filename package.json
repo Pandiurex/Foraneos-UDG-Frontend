@@ -30,6 +30,7 @@
     "htmlhint": "^0.10.1"
   },
   "devDependencies": {
+    "browser-sync": "^2.26.3",
     "eslint": "^5.8.0",
     "gulp": "^3.9.1"
   }

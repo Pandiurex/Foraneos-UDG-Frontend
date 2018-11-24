@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta property="og:site_name" content="Foráneos UdeG">
+  <meta property="og:title" content="Foráneos UdeG">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Estas en búsqueda de un lugar donde
+  hospedarse mientras realizan sus estudios en UdeG, Foráneos es para ti">
+  <meta property="og:url" content="https://foraneos-udg.tk/">
+  <!-- si no genera la portada colocar url donde se encuentren las imagenes -->
+  <meta property="og:image" content="/img/port/port1.png">
+
+  <link type="text/plain" rel="author" href="http://domain/humans.txt"> <!-- Poner Dominio -->
+  <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="img/logo/logo4.ico">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/slider.css">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Lugares</title>
+</head>
+
+<body>
+  <header>
+    <div class="contenedor">
+      <h1> Foráneos UdeG</h1>
+      <input type="checkbox" id="menu-bar">
+      <label class="icon-menu" for="menu-bar"></label>
+      <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="homes.html">Alojamiento</a>
+        <a href="#login">Iniciar sesión</a>
+        <a href="registry.html">Regístrate</a>
+      </nav>
+    </div>
+    <div class="modal" id="login">
+      <div class="modal-dialog">
+        <section class="modal-content">
+          <header class="modal-header">
+            <h2 class="modal-title">Iniciar sesión</h2>
+            <a href="#" class="modal-close">&times;</a>
+          </header>
+          <div class="modal-body">
+            <form class="card">
+              <!-- class=""  action="index.html" method="post"> -->
+              <input id="email" class="input" name="email" placeholder="Correo electrónico"><br>
+              <input id="password" class="input" name="password" type="password" placeholder="Contraseña"><br>
+              <input id="btnsubmit" class="button" name="submit" type="submit" value="Enviar">
+              <p class="modal-p">O iniciar sesión con </p>
+              <input id="btnface" class="button" name="submit" type="submit" value="Facebook">
+            </form>
+          </div>
+          <footer class="modal-footer modal-text">
+            <p> ¿No tienes cuenta en Foráneos UdeG? <a href="registry.html"> Registrarse </a></p>
+            <a href="recovery.html"> ¿Olvidaste tu contraseña? </a>
+          </footer>
+        </section>
+      </div>
+    </div>
+  </header>
+
+
+  <div id="sliderPrincipal" class="slider">
+    <div class="arrow arrow-left"><i class="fa fa-angle-left"></i></div>
+    <div id="slider">
+      <div class="slide slide1">
+        <div class="slide-content"></div>
+      </div>
+      <div class="slide slide2">
+        <div class="slide-content"></div>
+      </div>
+      <div class="slide slide3">
+        <div class="slide-content"></div>
+      </div>
+    </div>
+    <div class="arrow arrow-right"><i class="fa fa-angle-right"></i></div>
+  </div>
+
+  <main>
+    <section class="main">
+      <aside>
+        <h2> Filtros </h2>
+        <form class="filtros">
+          <input type="checkbox" name="filtro-disponibles" value="available"> Disponibles<br>
+          <input type="checkbox" name="filtro-calificacion" value="rating"> Calificacion<br>
+          <input type="checkbox" name="filtro-precio" value="price"> Precio<br><br>
+        </form>
+      </aside>
+    </section>
+    <section id="blog">
+      <h3>Elige el Lugar que mas te Agrade</h3>
+      <div class="contenedor">
+        <article>
+          <img src="img/slider/slider1.jpg" alt="Cuarto Rojo">
+          <h4>Casa 1</h4>
+        </article>
+        <article>
+          <img src="img/slider/slider3.jpg" alt="Cuarto Azul">
+          <h4>Casa 2</h4>
+        </article>
+        <article>
+          <img src="img/slider/slider1.jpg" alt="Recamara Estudiante">
+          <h4>Casa 3</h4>
+        </article>
+
+        <article>
+          <img src="img/slider/slider3.jpg" alt="Cuarto Rojo">
+          <h4>Casa 4</h4>
+        </article>
+        <article>
+          <img src="img/slider/slider1.jpg" alt="Cuarto Azul">
+          <h4>Casa 5</h4>
+        </article>
+        <article>
+          <img src="img/slider/slider3.jpg" alt="Recamara Estudiante">
+          <h4>Casa 6</h4>
+        </article>
+
+        <article>
+          <img src="img/slider/slider1.jpg" alt="Cuarto Rojo">
+          <h4>Casa 7</h4>
+        </article>
+        <article>
+          <img src="img/slider/slider3.jpg" alt="Cuarto Azul">
+          <h4>Casa 8</h4>
+        </article>
+        <article>
+          <img src="img/slider/slider1.jpg" alt="Recamara Estudiante">
+          <h4>Casa 9</h4>
+        </article>
+        <div class="page">
+          <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">&raquo;</a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+
+  <footer>
+    <div class="container-footer-all">
+      <div class="container-body">
+        <div class="colum1">
+          <h1>Hecho por Alumnos para Alumnos</h1>
+          <p>Esta Página fue creada para ayudar a los estudiantes foráneos sin hogar,
+            para que durante su estancia escolar puedan conseguir el lugar
+            adecuado para ellos.</p>
+        </div>
+        <div class="colum2">
+          <h1>Redes Sociales</h1>
+          <a href="https://www.facebook.com/" target="_blank" class="fa fa-facebook"></a>
+          <a href="https://twitter.com/" target="_blank" class="fa fa-twitter"></a>
+          <a href="https://github.com/" target="_blank" class="fa fa-github"></a><br>
+          <a href="https://www.instagram.com/?hl=en" target="_blank" class="fa fa-instagram"></a>
+          <a href="https://plus.google.com/discover" target="_blank" class="fa fa-google-plus"></a>
+          <a href="https://accounts.google.com/signin/v2/identifier?hl=es&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin" target="_blank" class="fa fa-envelope"></a>
+        </div>
+        <div class="colum3 footer-list">
+          <h1>Información</h1>
+          <div class="row2">
+            <a href="information.html"> <label> ¿Qué es Foráneos UdeG? </label> </a>
+          </div>
+          <div class="row2">
+            <a href="information.html#problema"> <label> Reportar un Problema </label> </a>
+          </div>
+          <div class="row2">
+            <a href="information.html#team"> <label> Nuestro Team </label> </a>
+          </div>
+          <div class="row2">
+            <a href="information.html#contacto"> <label> Contacto </label> </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-footer">
+      <div class="footer">
+        <div class="copyright">
+          © 2018 Todos los Derechos Reservados | <a href="information.html">Foráneos UdeG</a>
+        </div>
+        <div class="information">
+          <a href="information.html">Información Foráneos UdeG</a> |
+          <a href="information.html#pripo">Privación y Política</a> |
+          <a href="information.html#termco">Términos y Condiciones</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="js/slider.js"></script>
+</body>
+
+</html>
