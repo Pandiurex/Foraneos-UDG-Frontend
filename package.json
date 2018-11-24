@@ -1,0 +1,37 @@
+{
+  "name": "foraneos-udg-frontend",
+  "version": "1.0.0",
+  "description": "Foraneos UDG Frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pandiurex/Foraneos-UDG-Frontend.git"
+  },
+  "keywords": [
+    "frontend",
+    "foraneos",
+    "UDG"
+  ],
+  "author": "Cristopher Sinhue Estrada Panduro <crissin21_01@hotmail.com>",
+  "contributors": [
+    "Alfredo Carreón Urbano <alfredo_11_cu@hotmail.com>",
+    "José Emmanuel Gil Carbajal <emmanuel_12_gc@hotmail.com>",
+    "José Miguel Aguayo Gomez <jmiguel.aguayo@alumnos.udg.mx>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pandiurex/Foraneos-UDG-Frontend/issues"
+  },
+  "homepage": "https://github.com/Pandiurex/Foraneos-UDG-Frontend#readme",
+  "dependencies": {
+    "htmlhint": "^0.10.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "eslint": "^5.8.0",
+    "gulp": "^3.9.1"
+  }
+}
