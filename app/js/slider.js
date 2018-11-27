@@ -46,8 +46,6 @@ class Slider{
     this.sliderImages[this.current + 1].style.display = 'block';
     this.current++;
   }
-
-
 }
-let sliderPrincipal = new Slider('sliderPrincipal');
+let sliderPrincipal = new Slider('sliderprincipal');
   sliderPrincipal.startSlide();
