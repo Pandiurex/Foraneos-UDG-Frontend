@@ -220,7 +220,7 @@ footer {
 }
 
 .fa {
-  background-color: transparent;
+  background-color: red;
   border-radius: 4px;
   border: solid 1px #C9C9C9;
   font-size: 30px;
@@ -276,7 +276,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1024px){
     .container-body{
         flex-wrap: wrap;
     }
@@ -293,4 +293,11 @@ footer {
     .colum3{
         margin-top: 40px;
     }
+}
+
+@media (max-width: 1024px) {
+  aside {
+    float: none;
+      margin: auto;
+  }
 }

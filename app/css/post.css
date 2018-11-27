@@ -30,9 +30,7 @@
 }
 
 .parafos {
-  margin-left: 20%;
   text-align: justify;
-  width: 60%;
 }
 
 .parafos h2 {
@@ -42,9 +40,22 @@
   margin-bottom: 10px;
 }
 
-@media (min-width: 200px) {
+.parafos h3 {
+  color: #11709F;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 590px) {
   .parafos {
-    width: 90%;
-    margin-left: 5%;
+    width: 65%;
+    margin-left: 15%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .parafos h3 {
+    text-align: center;
   }
 }
