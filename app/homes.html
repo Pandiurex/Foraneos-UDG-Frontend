@@ -72,7 +72,7 @@
         <div class="slide-content"></div>
       </div>
       <div class="slide slide2">
-        <div class="slide-content"></div>
+        <div class="slide-content resize-img"></div>
       </div>
       <div class="slide slide3">
         <div class="slide-content"></div>
@@ -83,17 +83,27 @@
 
   <main>
     <section class="main">
-      <aside>
+      <!-- <aside class="filtro-box">
         <h2> Filtros </h2>
         <form class="filtros">
           <input type="checkbox" name="filtro-disponibles" value="available"> Disponibles<br>
           <input type="checkbox" name="filtro-calificacion" value="rating"> Calificacion<br>
           <input type="checkbox" name="filtro-precio" value="price"> Precio<br><br>
         </form>
-      </aside>
+      </aside> -->
+      <div class="combo-box">
+        <label>Ordenar por:</label>
+        <select class="ordenar  square" name="ordenar">
+          <option value="disponible">Disponibilidad</option>
+          <option value="precio">Precio</option>
+          <option value="calificacion">Calificacion</option>
+        </select>
+      </div>
     </section>
     <section id="blog">
-      <h3>Elige el Lugar que mas te Agrade</h3>
+      <div class="contenedor">
+        <h3>Elige el Lugar que mas te Agrade</h3>
+      </div>
       <div class="contenedor">
         <article>
           <img src="img/slider/slider1.jpg" alt="Cuarto Rojo">
@@ -129,7 +139,7 @@
           <img src="img/slider/slider3.jpg" alt="Cuarto Azul">
           <h4>Casa 8</h4>
         </article>
-        <article>
+        <article class="hide">
           <img src="img/slider/slider1.jpg" alt="Recamara Estudiante">
           <h4>Casa 9</h4>
         </article>
