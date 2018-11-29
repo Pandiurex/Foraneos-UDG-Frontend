@@ -32,10 +32,16 @@
   font-weight: bold;
 }
 
-@media (max-width:500px) {
-  .input2 {
-    width: 210px;
-  }
+.input3 {
+  background: #FFF;
+  border-radius: .25rem;
+  border: 1px solid #C7C7C7;
+  color: black;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 10px 10px 10px 10px;
+  padding: .5rem 1rem;
+  width: 310px;
 }
 
 @media (min-width:1025px) {
@@ -44,5 +50,17 @@
     margin-left: 25%;
     width: 50%;
     justify-content: center;
+  }
+}
+
+@media (max-width:500px) {
+  .input2 {
+    width: 210px;
+  }
+}
+
+@media (max-width:500px) {
+  .input3 {
+    width: 210px;
   }
 }
