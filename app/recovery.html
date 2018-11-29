@@ -34,11 +34,11 @@
           </header>
           <div class="modal-body">
             <form class="card"> <!-- class=""  action="index.html" method="post"> -->
-              <input id="email" class="input" name = "email" placeholder= "Correo electrónico"><br>
-              <input id="password" class="input" name = "password" type="password" placeholder="Contraseña"><br>
-              <input id="btnsubmit" class="button" name="submit" type="submit" value="Enviar">
+              <input id="email" type="email" name="email" placeholder="Correo electrónico" class="input" required><br>
+              <input id="password" type="password" name="password" placeholder="Contraseña" class="input" required><br>
+              <input id="btnsubmit" type="submit" name="submit" value="Enviar" class="button">
               <p class="modal-p"> O iniciar sesión con </p>
-              <input id="btnface" class="button" name="submit" type="submit" value="Facebook">
+              <input id="btnface" type="submit" name="submit" value="Facebook" class="button">
             </form>
           </div>
           <footer class="modal-footer modal-text">
@@ -65,8 +65,8 @@
           <form class="card"> <!-- class=""  action="index.html" method="post"> -->
             <div class="abajo">
               <h2> Recuperar contraseña </h2>
-              <input id="recoveremail" class="input2" name = "email" placeholder= "Correo electrónico"><br>
-              <input id="btnrecover" class="button-form button-tam" name="recover" type="submit" value="Recuperar">
+              <input id="recoveremail" type="email" name="email" placeholder="Correo electrónico" class="input2" required><br>
+              <input id="btnrecover" type="submit" name="recover" value="Recuperar" class="button-form button-tam">
               <p> Ingresa la dirección de correo electrónico asociada a tu cuenta y te
                 enviaremos un enlace para restablecer tu Contraseña </p>
             </div>

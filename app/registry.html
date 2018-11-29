@@ -34,11 +34,11 @@
           </header>
           <div class="modal-body">
             <form class="card"> <!-- class=""  action="index.html" method="post"> -->
-              <input id="email" class="input" name = "email" placeholder= "Correo electrónico"><br>
-              <input id="password" class="input" name = "password" type="password" placeholder="Contraseña"><br>
-              <input id="btnsubmit" class="button" name="submit" type="submit" value="Enviar">
+              <input id="email" type="email" name="email" placeholder="Correo electrónico" class="input" required><br>
+              <input id="password" type="password" name="password" placeholder="Contraseña" class="input" required><br>
+              <input id="btnsubmit" type="submit" name="submit" value="Enviar" class="button">
               <p class="modal-p"> O iniciar sesión con </p>
-              <input id="btnface" class="button" name="submit" type="submit" value="Facebook">
+              <input id="btnface" type="submit" name="submit" value="Facebook" class="button">
             </form>
           </div>
           <footer class="modal-footer modal-text">
@@ -61,21 +61,17 @@
     </section>
     <section class="main">
       <fieldset class="fieldset2">
-        <div>
-          <form class="card"> <!-- class=""  action="index.html" method="post"> -->
-            <div>
-              <h2> Registrarse </h2>
-              <input id="name" class="input2" type="text" name="name" placeholder="Nombre"><br>
-              <input id="lastname" class="input2" type="text" name="lastname" placeholder="Apellido"><br>
-              <input id="regemail" class="input2" name = "email" placeholder= "Correo electrónico"><br>
-              <input id="regpassword" class="input2"  name = "password" type="password" placeholder="Contraseña"><br>
-              <input id="confirmemail" type="confirmemail" class="input2" name="confirmemail" placeholder="Repetir contraseña"><br>
-              <input id="btnregister" class="button-form button-tam" name="Register" type="submit" value="Registrarse">
-              <p class="input2-p"> O registrarse con </p>
-              <input id="btnfaceregister" class="button-form button-tam" name="submit" type="submit" value="Facebook">
-            </div>
-          </form>
-        </div>
+        <form class="card"> <!-- class=""  action="index.html" method="post"> -->
+          <h2> Registrarse </h2>
+          <input id="name" type="text" name="name" placeholder="Nombre(s)" class="input2" required><br>
+          <input id="lastname" type="text" name="lastname" placeholder="Apellido(s)" class="input2" required><br>
+          <input id="regemail" type="email" name="email" placeholder= "Correo electrónico" class="input2" required><br>
+          <input id="regpassword" type="password" name="password" placeholder="Contraseña" class="input2" required><br>
+          <input id="confirpass" type="password" name="confirpass" placeholder="Confirmar contraseña" class="input2" required><br>
+          <input id="btnregister" type="submit" name="Register" value="Registrarse" class="button-form button-tam">
+          <p class="input2-p"> O registrarse con </p>
+          <input id="btnfaceregister" type="submit" name="submit" value="Facebook" class="button-form button-tam">
+        </form>
       </fieldset>
     </section>
   </main>
