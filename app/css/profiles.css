@@ -28,6 +28,8 @@
   margin-top: 5%;
 }
 
+/* FORM PROFILE */
+
 #formp .contenedor {
   display: flex;
   justify-content: center;
@@ -36,6 +38,44 @@
 
 #formp article {
   margin: 15px;
+}
+
+/* HISTORY PROFILE */
+
+#historial {
+  text-align: center;
+}
+
+#historial h2 {
+  color: #EC801C;
+}
+
+#table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+  margin-left: 20%;
+}
+
+#table td, #table th {
+  border: 1px solid #DDD;
+  padding: 8px;
+}
+
+#table tr:nth-child(even) {
+  background-color: #F2F2F2;
+}
+
+#table tr:hover {
+  background-color: #DDD;
+}
+
+#table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #0BA48C;
+  color: white;
 }
 
 @media (min-width: 480px) {

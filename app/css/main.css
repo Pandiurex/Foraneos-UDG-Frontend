@@ -5,6 +5,7 @@
 @import url(blog-info.css);
 @import url(modal.css);
 @import url(profiles.css);
+@import url(slider.css);
 @import url(forms.css);
 @import url(buttons.css);
 @import url(post.css);
@@ -221,7 +222,7 @@ footer {
 }
 
 .fa {
-  background-color: red;
+  background-color: transition;
   border-radius: 4px;
   border: solid 1px #C9C9C9;
   font-size: 30px;
