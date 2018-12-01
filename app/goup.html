@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta property="og:site_name" content="Foráneos UdeG">
+    <meta property="og:title" content="Foráneos UdeG">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Estas en búsqueda de un lugar donde
+    hospedarse mientras realizan sus estudios en UdeG, Foráneos es para ti">
+    <meta property="og:url" content="https://foraneos-udg.tk/">
+    <!-- si no genera la portada colocar url donde se encuentren las imagenes -->
+    <meta property="og:image" content="/img/port/port1.png">
+
+    <link type="text/plain" rel="author" href="http://domain/humans.txt"> <!-- Poner Dominio -->
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="img/logo/logo4.ico">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <title>Subir Publicacion</title>
+  </head>
+  <body>
+    <header>
+      <div class="contenedor">
+        <h1> Foráneos UdeG </h1>
+        <input type="checkbox" id="menu-bar">
+        <label class="icon-menu" for="menu-bar"></label>
+        <nav class="menu">
+          <a href="index.html"> Inicio </a>
+          <a href="homes.html"> Alojamiento </a>
+          <a href="#login"> Iniciar sesión </a>
+          <a href="registry.html"> Regístrate </a>
+          <a href="update.html"> Editar Hab </a>
+          <a href="goup.html"> Nueva Hab </a>
+        </nav>
+      </div>
+      <div class="modal" id="login">
+        <div class="modal-dialog">
+          <section class="modal-content">
+            <header class="modal-header">
+              <h2 class="modal-title"> Iniciar sesión </h2>
+              <a href="#" class="modal-close">&times;</a>
+            </header>
+            <div class="modal-body">
+              <form class="card"> <!-- class=""  action="index.html" method="post"> -->
+                <input id="email" type="email" name="email" placeholder="Correo electrónico" class="input" required><br>
+                <input id="password" type="password" name="password" placeholder="Contraseña" class="input" required><br>
+                <input id="btnsubmit" type="submit" name="submit" value="Enviar" class="button">
+                <p class="modal-p"> O iniciar sesión con </p>
+                <input id="btnface" type="submit" name="submit" value="Facebook" class="button">
+              </form>
+            </div>
+            <footer class="modal-footer modal-text">
+              <p> ¿No tienes cuenta en Foráneos UdeG? <a href="registry.html"> Registrarse </a></p>
+              <a href="recovery.html"> ¿Olvidaste tu contraseña? </a>
+            </footer>
+          </section>
+        </div>
+      </div>
+    </header>
+      <div id="NuevaHabitacion" role="dialog" method="post">
+              <div id="content">
+
+                <div id="ErrorDivEditPropi">
+                  <h1>Err</h1>
+                </div>
+                  <div id="header" class="title">
+                      <h1>Nueva habitación</h1>
+                  </div>
+                  <div id="body">
+
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="box-default">
+
+                                  <div class="box-body border-modal">
+
+                                      <div class="row">
+                                          <div class="col-md-4 text-center">
+                                              <div class="form-group">
+                                                  <label>Tipo de propiedad*</label>
+                                                  <div class="input-group">
+                                                      <span class="input-group-addon">
+                                                          <i class="fa fa-home"></i>
+                                                      </span>
+                                                      <select id="RepPropTipo" name="upPropTipo" class="form-control mandatory">
+                                                          <option value="Casa">Casa</option>
+                                                          <option value="Casa hab individual">Casa con habitación individual</option>
+                                                          <option value="Casa hab compartida">Casa con habitación compartida</option>
+                                                          <option value="Dpto hab individual">Dpto con habitación individual</option>
+                                                          <option value="Dpto hab. compartida">Dpto con habitación compartida</option>
+                                                          <option value="Departamento">Departamento</option>
+                                                      </select>
+                                                  </div>
+                                              </div>
+
+                                          </div>
+                                          <div class="col-md-4 text-center">
+                                              <div class="form-group">
+                                                  <label>Costo de la renta (por mes)*</label>
+                                                  <div class="input-group">
+                                                      <span class="input-group-addon">
+                                                          <i class="fa fa-home"></i>
+                                                      </span>
+                                                      <input type="number" class="form-control mandatory" id="RepPropCosto" name="upPropCosto" placeholder="costo" />
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="col-md-4 text-center">
+                                              <div class="form-group">
+                                                  <label>Admitimos*</label>
+                                                  <div class="input-group">
+                                                      <span class="input-group-addon">
+                                                          <i class="fa fa-home"></i>
+                                                      </span>
+                                                      <select id="RepPropGenero" name="RepPropGenero" class="form-control mandatory" required="">
+                                                          <option selected="" value="selected">Selecciona</option>
+                                                          <option value="Mujeres">Mujeres</option>
+                                                          <option value="Hombres">Hombres</option>
+                                                          <option value="Ambos">Ambos</option>
+
+                                                      </select>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <br /><br /><hr />
+                                      <div class="col-md-12">
+                                          <div class="form-group">
+                                              <br />
+                                              <div class="col-md-3">
+                                                  <label class="checkbox-inline">
+                                                      <input class="RepPropCaract" type="checkbox" value="Limpieza" />Limpieza
+                                                  </label>
+                                              </div>
+                                              <div class="col-md-3">
+                                                  <label class="checkbox-inline">
+                                                      <input class="RepPropCaract" type="checkbox" value="Amueblado" />Amueblado
+                                                  </label>
+                                              </div>
+                                              <div class="col-md-3">
+                                                  <label class="checkbox-inline">
+                                                      <input class="RepPropCaract" type="checkbox" value="Internet" />Internet
+                                                  </label>
+                                              </div>
+                                              <div class="col-md-3">
+                                                  <label class="checkbox-inline">
+                                                      <input class="RepPropCaract" type="checkbox" value="Cocina" />Cocina
+                                                  </label>
+                                              </div>
+                                              <div class="col-md-3">
+                                                  <label class="checkbox-inline">
+                                                      <input class="RepPropCaract" type="checkbox" value="Baño_propio" />Baño_propio
+                                                  </label>
+                                              </div>
+                                              <div class="col-md-3">
+                                                  <label class="checkbox-inline">
+                                                      <input class="RepPropCaract" type="checkbox" value="Estacionamiento" />Estacionamiento
+                                                  </label>
+                                              </div>
+                                              <div class="col-md-3">
+                                                  <label class="checkbox-inline">
+                                                      <input class="RepPropCaract" type="checkbox" value="Tv_cable" />Tv_cable
+                                                  </label>
+                                              </div>
+                                              <div class="col-md-3">
+                                                  <label class="checkbox-inline">
+                                                      <input class="RepPropCaract" type="checkbox" value="Gas" />Gas
+                                                  </label>
+                                              </div>
+                                              <div class="col-md-3">
+                                                  <label class="checkbox-inline">
+                                                      <input class="RepPropCaract" type="checkbox" value="Alimentos" />Alimentos
+                                                  </label>
+                                              </div>
+                                              <div class="col-md-3">
+                                                  <label class="checkbox-inline">
+                                                      <input class="RepPropCaract" type="checkbox" value="Luz" />Luz
+                                                  </label>
+                                              </div>
+                                              <div class="col-md-3">
+                                                  <label class="checkbox-inline">
+                                                      <input class="RepPropCaract" type="checkbox" value="Teléfono" />Teléfono
+                                                  </label>
+                                              </div>
+                                              <div class="col-md-3">
+                                                  <label class="checkbox-inline">
+                                                      <input class="RepPropCaract" type="checkbox" value="Entrada_independiente" />Entrada_independiente
+                                                  </label>
+                                              </div>
+                                              <div class="col-md-3">
+                                                  <label class="checkbox-inline">
+                                                      <input class="RepPropCaract" type="checkbox" value="Lavado-Servicio" />Lavado-Servicio
+                                                  </label>
+                                              </div>
+                                          </div>
+                                      </div><br /><br /><hr /><br />
+                                       <div class="col-md-12">
+                                          <div class="form-group">
+                                              <p class="text-center" style="font-size: 15px;">
+                                                  <b>Fotos del inmueble que ofreces</b>
+                                              </p>
+                                              <br />
+                                               <div class="col-xs-6">
+                                                  <input type="file" class="form-control npfotos" id="Repfoto1" name="foto1" accept="image/*" />
+                                                  <input type="file" class="form-control npfotos" id="Repfoto2" name="foto2" accept="image/*" />
+                                                  <input type="file" class="form-control npfotos" id="Repfoto3" name="foto3" accept="image/*" />
+                                                  <input type="file" class="form-control npfotos " id="Repfoto4" name="foto4" accept="image/*" />
+                                                  <input type="file" class="form-control npfotos " id="Repfoto5" name="foto5" accept="image/*" />
+                                              </div>
+                                              <div class="col-xs-3">
+                                                  <button class="btn btn-round btn-info btnVerRepFoto" data-orden="1" id="btnVerRepFoto1">Ver foto 1</button><br>
+                                                  <button class="btn btn-round btn-info btnVerRepFoto" data-orden="2" id="btnVerRepFoto2">Ver foto 2</button><br>
+                                                  <button class="btn btn-round btn-info btnVerRepFoto" data-orden="3" id="btnVerRepFoto3">Ver foto 3</button><br>
+                                                  <button class="btn btn-round btn-info btnVerRepFoto" data-orden="4" id="btnVerRepFoto4">Ver foto 4</button><br>
+                                                  <button class="btn btn-round btn-info btnVerRepFoto" data-orden="5" id="btnVerRepFoto5">Ver foto 5</button><br>
+                                              </div>
+                                          </div>
+                                      </div><br /><br /><hr /><br />
+                          <div class="row">
+                              <br /><br /><br /><br />
+                              <p class="text-center" style="font-size: 15px;">
+                                  <b>Domicilio del inmueble</b>
+                              </p>
+                              <br />
+                              <div class="col-md-4 text-center">
+                                  <div class="form-group">
+                                      <label>Calle</label>
+                                      <div class="input-group">
+                                          <span class="input-group-addon">
+                                              <i class="fa fa-home"></i>
+                                          </span>
+                                          <input type="text" class="form-control mandatory" id="RepCalle" name="npCalle" readonly="readonly" />
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-2 text-center">
+                                  <div class="form-group">
+                                      <label>Número</label>
+                                      <div class="input-group">
+                                          <span class="input-group-addon">
+                                              <i class="fa fa-home"></i>
+                                          </span>
+                                          <input type="text" class="form-control mandatory" id="Repnumext" name="npnumext" readonly="readonly"/>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-2 text-center">
+                                  <div class="form-group">
+                                      <label>Interior</label>
+                                      <div class="input-group">
+                                          <span class="input-group-addon">
+                                              <i class="fa fa-home"></i>
+                                          </span>
+                                          <input type="text" class="form-control" id="RepNumInt" name="npNumInt" readonly="readonly"/>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-4 text-center">
+                                  <div class="form-group">
+                                      <label>Colonia</label>
+                                      <div class="input-group">
+                                          <span class="input-group-addon">
+                                              <i class="fa fa-home"></i>
+                                          </span>
+                                          <input type="text" class="form-control mandatory" id="RepCol" name="npCol" readonly="readonly" />
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-4 text-center">
+                                  <div class="form-group">
+                                      <label>Municipio o Delegación</label>
+                                      <div class="input-group">
+                                          <span class="input-group-addon">
+                                              <i class="fa fa-home"></i>
+                                          </span>
+                                          <input type="text" class="form-control mandatory" id="RepMunDel" name="npMunDel" readonly="readonly"/>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-4 text-center">
+                                  <div class="form-group">
+                                      <label>Estado</label>
+                                      <div class="input-group">
+                                          <span class="input-group-addon">
+                                              <i class="fa fa-home"></i>
+                                          </span>
+                                          <input type="text" class="form-control mandatory" id="RepEstado" name="npEstado" readonly="readonly" />
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-4 text-center">
+                                  <div class="form-group">
+                                      <label>Código Postal</label>
+                                      <div class="input-group">
+                                          <span class="input-group-addon">
+                                              <i class="fa fa-home"></i>
+                                          </span>
+                                          <input type="number" class="form-control mandatory" id="RepCp" name="npCp" maxlength="5" readonly="readonly" />
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+                                      <hr />
+                                      <div class="col-md-12 text-center">
+                                          <div class="form-group">
+
+                                              <br />
+                                              <p class="text-center" style="font-size: 15px;">
+                                                  <b>Comentarios adicionales</b>
+                                              </p>
+
+                                              <textarea class="mandatory" id="Repcoment" rows="4" cols="50" name="npcoment" form="upcoment"></textarea>
+                                              <input type="hidden" id="hidlat" val="">
+                                              <input type="hidden" id="hidlong" val="">
+                                              <input type="hidden" id="hidcamp" val="">
+                                              <input type="hidden" id="hidpropiedad" val="">
+                                          </div>
+                                      </div>
+
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div id="body-footer">
+                          <button type="submit" id="quitarModalNuevaHab" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
+                          <button type="submit" class="btn btn-success" id="btnGuardarNuevaHabitacion">Guardar</button>
+                      </div>
+                  </div>
+              </div>
+      </div>
+    <footer>
+      <div class="container-footer-all">
+        <div class="container-body">
+          <div class="colum1">
+            <h1>Hecho por Alumnos para Alumnos</h1>
+            <p>Esta Página fue creada para ayudar a los estudiantes foráneos sin hogar,
+              para que durante su estancia escolar puedan conseguir el lugar
+              adecuado para ellos.</p>
+          </div>
+          <div class="colum2">
+            <h1>Redes Sociales</h1>
+            <a href="https://www.facebook.com/" target="_blank" class="fa fa-facebook"></a>
+            <a href="https://twitter.com/" target="_blank" class="fa fa-twitter"></a>
+            <a href="https://github.com/" target="_blank" class="fa fa-github"></a><br>
+            <a href="https://www.instagram.com/?hl=en" target="_blank" class="fa fa-instagram"></a>
+            <a href="https://plus.google.com/discover" target="_blank" class="fa fa-google-plus"></a>
+            <a href="https://accounts.google.com/signin/v2/identifier?hl=es&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin" target="_blank" class="fa fa-envelope"></a>
+          </div>
+          <div class="colum3 footer-list">
+            <h1>Información</h1>
+            <div class="row2">
+              <a href="information.html"> <label> ¿Qué es Foráneos UdeG? </label> </a>
+            </div>
+            <div class="row2">
+              <a href="information.html#problema"> <label> Reportar un Problema </label> </a>
+            </div>
+            <div class="row2">
+              <a href="information.html#team"> <label> Nuestro Team </label> </a>
+            </div>
+            <div class="row2">
+              <a href="information.html#contacto"> <label> Contacto </label> </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-footer">
+        <div class="footer">
+          <div class="copyright">
+            © 2018 Todos los Derechos Reservados | <a href="information.html">Foráneos UdeG</a>
+          </div>
+          <div class="information">
+            <a href="information.html">Información Foráneos UdeG</a> |
+            <a href="information.html#pripo">Privación y Política</a> |
+            <a href="information.html#termco">Términos y Condiciones</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
