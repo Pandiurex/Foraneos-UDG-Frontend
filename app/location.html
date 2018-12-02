@@ -12,6 +12,7 @@
   <link rel="shortcut icon" href="img/logo/logo4.ico">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/location.css">
   <title> Foráneos UdeG </title>
 </head>
 
@@ -101,28 +102,38 @@
   </header>
 
   <main>
-    <div class="pagina">
-      <div class="slider-room">
-        <div id="slidelocation" class="slider-room">
-          <div class="arrow arrow-left-room"><i class="fa fa-angle-left"></i></div>
-          <div id="slider-room">
-            <div class="slide slide1">
-              <div class="slide-content-room"></div>
-            </div>
-            <div class="slide slide2">
-              <div class="slide-content-room"></div>
-            </div>
-            <div class="slide slide3">
-              <div class="slide-content-room"></div>
-            </div>
+    <section id="banner">
+      <img src="img/port/port4.jpg" alt="Imagen de estudiantes">
+      <div class="contenedor">
+        <h2> Foráneos UdeG </h2>
+        <p> Alojamiento Estudiantil </p>
+        <a href="information.html"> Leer más </a>
+      </div>
+    </section>
+    <section id="bienvenidos">
+      <div class="contenedor">
+        <h2> Título de la Publicación </h2>
+      </div>
+    </section>
+    <section id="sliderprincipal">
+      <div class="slider contenedor">
+        <div class="arrow arrow-left"><i class="fa fa-angle-left"></i></div>
+        <div class="arrow arrow-right"><i class="fa fa-angle-right"></i></div>
+        <div id="slider">
+          <div class="slide slide1">
+            <div class="slide-content"></div>
           </div>
-          <div class="arrow arrow-right-room"><i class="fa fa-angle-right"></i></div>
+          <div class="slide slide2">
+            <div class="slide-content resize-img"></div>
+          </div>
+          <div class="slide slide3">
+            <div class="slide-content"></div>
+          </div>
         </div>
       </div>
-      <div class="title">
-        <h1> Título de la Publicación </h1>
-      </div>
-      <div class="datos-location">
+    </section>
+    <section id="blog" class="">
+      <form class="card datos-location">
         <h2> Datos de la Casa </h2>
         <label> Dirección </label>
         <input type="text" name="" value="" placeholder="Direccion" class="input3">
@@ -130,46 +141,55 @@
         <input type="text" name="" value="" placeholder="Colonia" class="input3">
         <label> Teléfono </label>
         <input type="text" name="" value="" placeholder="Telefono" class="input3">
-      </div>
-      <div class="datos-location">
+      </form>
+      <form class="card datos-location">
         <h2> Datos del Dueño </h2>
         <label> Nombre </label>
         <input type="text" name="owner-name" value="" placeholder="Nombre Dueño" class="input3">
         <button type="button" name="button" class="button"> Contactame </button>
+      </form>
+    </section>
+    <section id="info">
+      <div class="card adjust">
+        <h3> Restricciones </h3>
+        <a target="_blank" class="fa fa-suitcase"></a>
+        <ul>
+          <li>Mascotas</li>
+          <li>Fiestas</li>
+          <li>Visitas</li>
+          <li>Ruido</li>
+        </ul>
       </div>
-      <div class="servicios-location">
-        <div class="adjust">
-          <h1> Restricciones </h1>
-          <a href="https://www.facebook.com/" target="_blank" class="fa fa-suitcase"></a>
-          <ul>
-            <li> Lista 1 </li>
-          </ul>
-        </div>
-        <div class="adjust">
-          <h1> Habitaciones </h1>
-          <a href="https://www.facebook.com/" target="_blank" class="fa fa-bed"></a>
-          <ul>
-            <li> Lista 1 </li>
-          </ul>
-        </div>
-        <div class="adjust">
-          <h1> Ubicación </h1>
-          <a href="https://www.facebook.com/" target="_blank" class="fa fa-map"></a>
-          <ul>
-            <li> Lista 1 </li>
-          </ul>
-        </div>
-        <div class="mapa">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d119434.99178057868!2d-103.39113826131714!3d20.696271725579177!3m2!1i1024!2i768!4f13.1!2m1!1sgoogle+maps!5e0!3m2!1ses-419!2smx!4v1543628675938"  width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
-          <h1> Mapa </h1>
-        </div>
+      <div class="card adjust">
+        <h3> Habitaciones </h3>
+        <a target="_blank" class="fa fa-bed"></a>
+        <ul>
+          <li> Agua  </li>
+          <li> Gas </li>
+          <li> Luz </li>
+          <li> Muebles </li>
+          <li> Internet(Wi-fi, cable) </li>
+          <li> Lavadora </li>
+        </ul>
       </div>
-      <div class="contacto-dueno">
-        <h1> Quejas </h1>
-        <!-- Mejorar este tipo de enlase onclick -->
+      <div class="card adjust">
+        <h3> Ubicación </h3>
+        <a target="_blank" class="fa fa-map"></a>
+        <ul>
+          <li> Cerca de CUCEI </li>
+          <li> Cerca de la plaza Forum </li>
+        </ul>
+      </div>
+    </section>
+    <section id="map">
+      <div class="mapa card">
+        <h3> Mapa </h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d119434.99178057868!2d-103.39113826131714!3d20.696271725579177!3m2!1i1024!2i768!4f13.1!2m1!1sgoogle+maps!5e0!3m2!1ses-419!2smx!4v1543628675938"  width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="card">
         <button type="button" name="button" onclick="location.href='#report'" class="button-form"> Quejas </button>
       </div>
-    </div>
+    </section>
   </main>
 
   <footer>
@@ -220,6 +240,6 @@
         </div>
       </div>
     </footer>
-    <script src="js/slider-room.js"></script>
+    <script src="js/slider.js"></script>
   </body>
   </html>
