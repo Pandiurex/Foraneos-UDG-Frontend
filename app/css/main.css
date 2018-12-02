@@ -224,7 +224,7 @@ footer {
 }
 
 .fa {
-  background-color: transition;
+  background-color: transparent;
   border-radius: 4px;
   border: solid 1px #C9C9C9;
   font-size: 30px;
