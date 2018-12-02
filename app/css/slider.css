@@ -138,7 +138,7 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-/* @media (min-width:1024px) {
+@media (min-width:1024px) {
   .hide {
     display: block;
   }
@@ -161,21 +161,20 @@
     margin-left: 0;
     padding-left: 10px;
   }
-
-  .arrow-left {
-    border-width: 30px 40px 30px 0;
-    left: 10px;
-    margin-left: 0;
-  }
-
-  .arrow-right {
-    margin-right: 50px;
-    right: 20px;
-  }
 }
 
 @media (max-width: 1024px) {
   .slide {
-    background-size: 100% 300px;
+    width: 100%
   }
-} */
+}
+
+@media (max-width: 1024px) {
+  .arrow-left {
+    margin-left: 0px;
+  }
+
+  .arrow-right {
+    margin-left: 60px;
+  }
+}
