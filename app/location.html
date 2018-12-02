@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, user-scalable=no,
+  initial-scale=1, maximum-scale=1, minimum-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta property="og:image" content="/img/port/port1.png">
   <link type="text/plain" rel="author" href="http://domain/humans.txt"> <!-- Poner Dominio -->
@@ -50,9 +51,56 @@
         </section>
       </div>
     </div>
+    <div class="modal" id="report">
+      <div class="modal-dialog">
+        <section class="modal-content">
+          <header class="modal-header">
+            <h2 class="modal-title"> Reportar </h2>
+            <a href="#" class="modal-close">&times;</a>
+          </header>
+          <div class="modal-body">
+            <form class="card">
+              <div class="text">
+                <p> Ayúdanos a entender cuál es el problema con esta publicación. </p>
+                <p> ¿Cómo lo describirias? </p>
+              </div>
+              <div class="radio">
+                <label class="contradio">
+                  <input type="radio" name="radio"> Fraude
+                  <span class="checkmark"></span>
+                </label>
+                <label class="contradio">
+                  <input type="radio" name="radio"> Engañoso
+                  <span class="checkmark"></span>
+                </label>
+                <label class="contradio">
+                  <input type="radio" name="radio"> Ofensivo
+                  <span class="checkmark"></span>
+                </label>
+                <label class="contradio">
+                  <input type="radio" name="radio"> Spam
+                  <span class="checkmark"></span>
+                </label>
+                <label class="contradio">
+                  <input type="radio" name="radio"> Violencia
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="card report">
+                <textarea placeholder="Otro tipo de problema"></textarea>
+                <input id="btnsubmitreport" type="submit" name="submit" value="Enviar" class="button">
+              </div>
+            </form>
+          </div>
+          <footer class="modal-footer modal-text">
+            <p> Estamos para servirte, el equipo de trabajo de Foráneos UdeG. </p>
+          </footer>
+        </section>
+      </div>
+    </div>
   </header>
 
-  <main class="back-color">
+  <main>
     <div class="pagina">
       <div class="slider-room">
         <div id="slidelocation" class="slider-room">
@@ -71,11 +119,9 @@
           <div class="arrow arrow-right-room"><i class="fa fa-angle-right"></i></div>
         </div>
       </div>
-
       <div class="title">
         <h1> Título de la Publicación </h1>
       </div>
-
       <div class="datos-location">
         <h2> Datos de la Casa </h2>
         <label> Dirección </label>
@@ -85,14 +131,12 @@
         <label> Teléfono </label>
         <input type="text" name="" value="" placeholder="Telefono" class="input3">
       </div>
-
       <div class="datos-location">
         <h2> Datos del Dueño </h2>
         <label> Nombre </label>
         <input type="text" name="owner-name" value="" placeholder="Nombre Dueño" class="input3">
         <button type="button" name="button" class="button"> Contactame </button>
       </div>
-
       <div class="servicios-location">
         <div class="adjust">
           <h1> Restricciones </h1>
@@ -122,7 +166,8 @@
       </div>
       <div class="contacto-dueno">
         <h1> Quejas </h1>
-        <button type="button" name="button" class="button-form"> Quejas </button>
+        <!-- Mejorar este tipo de enlase onclick -->
+        <button type="button" name="button" onclick="location.href='#report'" class="button-form"> Quejas </button>
       </div>
     </div>
   </main>
