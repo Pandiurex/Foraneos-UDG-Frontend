@@ -1,0 +1,109 @@
+/* LOCATION */
+
+.dat {
+  margin-top: 50px;
+  display: inline-table;
+  margin-left: 13%;
+  width: 30%;
+}
+
+.dat .input3{
+  width: 90%;
+}
+
+.dat label {
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+  color: #0D4158;
+}
+
+.adj {
+  background-color: #ff7809;
+  display: inline-block;
+  width: 25%;
+}
+
+.adj h3 {
+  font-size: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.adj li {
+  list-style: none;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* MAP */
+
+#masinf {
+  color: #FFF;
+  text-align: center;
+  padding: 20px;
+}
+
+#masinf .contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.masinf {
+  display: inline-block;
+  width: 50%;
+  height: 400px;
+  margin-bottom: 5%;
+}
+
+.masinf h3 {
+  color: #EC801C;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+/* @media (max-width: 1024px) {
+  .dat {
+    margin-left: 10%;
+    display: block;
+    width: 75%;
+  }
+
+  .dat .input2 {
+    width: 100%;
+  }
+}
+
+@media (max-width:855px) {
+  .adj {
+    display: block;
+    width: 100%;
+  }
+
+  .adj h3 {
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .adj li {
+    list-style: none;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .masinf {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 10%;
+  }
+
+  .masinf h3 {
+    color: #EC801C;
+    font-size: 35px;
+    margin-bottom: 10px;
+  }
+} */

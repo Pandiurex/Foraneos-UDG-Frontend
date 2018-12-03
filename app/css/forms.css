@@ -1,0 +1,127 @@
+/* FORMS LOGIN */
+
+.input {
+  background: #FFF;
+  border-radius: .25rem;
+  border: 1px solid #C7C7C7;
+  color: black;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 10px 10px 10px 10px;
+  padding: .5rem 1rem;
+  width: 210px;
+}
+
+/* FORMS */
+
+.input2 {
+  background: #FFF;
+  border-radius: .25rem;
+  border: 1px solid #C7C7C7;
+  color: black;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 10px 10px 10px 10px;
+  padding: .5rem 1rem;
+  width: 310px;
+}
+
+.input2-p {
+  color: #FA8F2D;
+  margin-bottom: 1%;
+  font-weight: bold;
+}
+
+.input3 {
+  background: #FFF;
+  border-radius: .25rem;
+  border: 1px solid #C7C7C7;
+  color: black;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 10px 10px 10px 10px;
+  padding: .5rem 1rem;
+  width: 310px;
+}
+
+/* RADIO BUTTON */
+
+.contradio {
+  clear: both;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding-left: 35px;
+  width: 150px;
+  height: 30px;
+  border: 0px solid #D1D3D4
+}
+
+.contradio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #EEE;
+  border-radius: 50%;
+}
+
+.contradio input:checked ~ .checkmark {
+    background-color: white;
+    border: 7px solid #2196F3;
+}
+
+/* TEXTTAREA */
+
+.report textarea {
+  background: #FBFBFB;
+  width: 75%;
+  height: 50px;
+  border: 2px solid #EEE;
+  border-radius: 3px;
+  resize: none;
+  padding: 10px;
+  font-size: 17px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.report textarea:focus {
+  background: #FFF;
+}
+
+.report textarea::-webkit-scrollbar {
+  width: 10px;
+}
+
+.report textarea::-webkit-scrollbar-thumb {
+  background:  rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width:1025px) {
+  .input {
+    margin-right: 40%;
+    margin-left: 25%;
+    width: 50%;
+    justify-content: center;
+  }
+}
+
+@media (max-width:500px) {
+  .input2 {
+    width: 210px;
+  }
+}
+
+@media (max-width:500px) {
+  .input3 {
+    width: 210px;
+  }
+}

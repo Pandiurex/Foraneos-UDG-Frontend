@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no,
+  initial-scale=1, maximum-scale=1, minimum-scale=1">
+  <link type="text/plain" rel="author" href="http://domain/humans.txt"> <!-- Poner Dominio -->
+  <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="img/logo/logo4.ico">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <title> Foráneos UdeG </title>
+</head>
+
+<body>
+  <header>
+    <div class="contenedor">
+      <h1> Foráneos UdeG </h1>
+      <input type="checkbox" id="menu-bar">
+      <label class="icon-menu" for="menu-bar"></label>
+      <nav class="menu">
+        <a href="profile.html"> Mi perfil </a>
+        <a href="createloc.html"> Publicar alojamiento </a>
+        <a href="#"> Ver alojamientos </a>
+        <a href="#historial"> Historial </a>
+        <a href="#"> Mensajes </a>
+        <a href="#"> Cerrar sesión </a>
+        <!-- <a href="update.html"> Editar Hab </a> -->
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="bannerpro">
+      <img src="img/port/port6.jpg" alt="Imagen de estudiantes">
+      <div class="contenedor">
+        <h2> Foráneos UdeG </h2>
+        <p> Alojamiento Estudiantil </p>
+      </div>
+    </section>
+    <section id="bienvenidos">
+      <div class="contenedor">
+        <h2> Publicar alojamiento </h2>
+      </div>
+    </section>
+    <section id="blog">
+      <form class="card">
+        <div class="">
+          <h3> Datos principales </h3>
+          <label> Tipo de propiedad </label>
+          <span>
+            <i class="fa fa-home"></i>
+          </span>
+          <select id="tipo" name="tipocasa" required>
+            <option value="Casa"> Casa </option>
+            <option value="Casa hab individual"> Casa con habitación individual </option>
+            <option value="Casa hab compartida"> Casa con habitación compartida </option>
+            <option value="Dpto hab individual"> Dpto con habitación individual </option>
+            <option value="Dpto hab. compartida"> Dpto con habitación compartida </option>
+            <option value="Departamento"> Departamento </option>
+          </select>
+        </div>
+        <div class="">
+          <h3> Más datos </h3>
+          <label> Costo de la renta (por mes) </label>
+          <span>
+            <i class="fa fa-home"></i>
+          </span>
+          <input id="costo" type="number" name="costo" placeholder="costo" required>
+        </div>
+        <div class="">
+          <h3> Más datos </h3>
+          <label> Admitimos </label>
+          <span class="input-group-addon">
+            <i class="fa fa-home"></i>
+          </span>
+          <select id="genero" name="genero" required>
+            <option selected="" value="selected">Selecciona</option>
+            <option value="Mujeres">Mujeres</option>
+            <option value="Hombres">Hombres</option>
+            <option value="Ambos">Ambos</option>
+          </select>
+        </div>
+      </form>
+      <form class="card">
+        <h3> Servicios </h3>
+        <label>
+          <input id="check1" type="checkbox" value="Limpieza"> Limpieza
+        </label>
+        <label>
+          <input id="check2" type="checkbox" value="Amueblado"> Amueblado
+        </label>
+        <label>
+          <input id="check3" type="checkbox" value="Internet"> Internet
+        </label>
+        <label>
+          <input id="check4" type="checkbox" value="Cocina"> Cocina
+        </label>
+        <label>
+          <input id="check5" type="checkbox" value="Baño_propio"> Baño_propio
+        </label>
+        <label >
+          <input id="check6" type="checkbox" value="Estacionamiento"> Estacionamiento
+        </label>
+        <label>
+          <input id="check7" type="checkbox" value="Tv_cable"> Tv cable
+        </label>
+        <label >
+          <input id="check8" type="checkbox" value="Gas"> Gas
+        </label>
+        <label>
+          <input id="check9" type="checkbox" value="Alimentos"> Alimentos
+        </label>
+        <label>
+          <input id="check10" type="checkbox" value="Luz" /> Luz
+        </label>
+        <label>
+          <input id="check11" type="checkbox" value="Teléfono"> Teléfono
+        </label>
+        <label>
+          <input id="check12" type="checkbox" value="Entrada independiente"> Entrada independiente
+        </label>
+        <label>
+          <input id="check13" type="checkbox" value="Lavado servicio"> Lavado servicio
+        </label>
+      </form>
+    </section>
+    <section id="info">
+      <h2> Fotos del inmueble que ofreces </h2>
+      <form class="card">
+        <div class="">
+          <input id="repfoto1" type="file" name="foto1" accept="image/*">
+          <input id="repfoto2" type="file" name="foto2" accept="image/*">
+          <input id="repfoto3" type="file" name="foto3" accept="image/*">
+          <input id="repfoto4" type="file" name="foto4" accept="image/*">
+          <input id="repfoto5" type="file" name="foto5" accept="image/*">
+        </div>
+        <div class="">
+          <button id="foto1" data-orden="1"> Ver foto 1 </button>
+          <button id="foto2" data-orden="2"> Ver foto 2 </button>
+          <button id="foto3" data-orden="3"> Ver foto 3 </button>
+          <button id="foto4" data-orden="4"> Ver foto 4 </button>
+          <button id="foto5" data-orden="5"> Ver foto 5 </button>
+        </div>
+      </form>
+    </section>
+    <section>
+      <form class="card">
+        <h2>Domicilio del inmueble</h2>
+        <label> Calle </label>
+        <span class="input-group-addon">
+          <i class="fa fa-home"></i>
+        </span>
+        <input id="calle" type="text" name="calle" placeholder="Calle" class="input2" required>
+
+        <label> Número </label>
+        <span class="input-group-addon">
+          <i class="fa fa-home"></i>
+        </span>
+        <input id="num" type="text" name="num" placeholder="Número" class="input2" required>
+
+        <label> Interior </label>
+        <span class="input-group-addon">
+        <i class="fa fa-home"></i>
+        </span>
+        <input id="numint" type="text" name="numint" placeholder="Número interior" class="input2" required>
+
+        <label> Colonia </label>
+        <span class="input-group-addon">
+        <i class="fa fa-home"></i>
+        </span>
+        <input id="col" type="text" name="col" placeholder="Colonia" class="input2" required>
+
+        <label> Municipio o Delegación </label>
+        <span class="input-group-addon">
+        <i class="fa fa-home"></i>
+        </span>
+        <input id="mun" type="text" name="mun" placeholder="Municipio o Delegación" class="input2" required>
+
+        <label> Estado </label>
+        <span class="input-group-addon">
+        <i class="fa fa-home"></i>
+        </span>
+        <input id="est" type="text" name="est" placeholder="Estado" class="input2" required>
+
+        <label> Código Postal </label>
+        <span class="input-group-addon">
+        <i class="fa fa-home"></i>
+        </span>
+        <input id="cod" type="text" name="cod" placeholder="Código postal" class="input2" required>
+      </form>
+      <form class="card">
+        <h2>Comentarios adicionales</h2>
+        <textarea></textarea>
+        <input type="hidden" id="hidlat" val="">
+        <input type="hidden" id="hidlong" val="">
+        <input type="hidden" id="hidcamp" val="">
+        <input type="hidden" id="hidpropiedad" val="">
+        <input id="btncan" type="submit" name="Register" value="Cancelar" class="button-form button-tam">
+        <input id="btngua" type="submit" name="Register" value="Guardar" class="button-form button-tam">
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container-footer-all">
+      <div class="container-body">
+        <div class="colum1">
+          <h1> Hecho por Alumnos para Alumnos </h1>
+          <p> Esta Página fue creada para ayudar a los estudiantes foráneos sin hogar,
+            para que durante su estancia escolar puedan conseguir el lugar
+            adecuado para ellos. </p>
+          </div>
+          <div class="colum2">
+            <h1> Redes Sociales </h1>
+            <a href="https://www.facebook.com/" target="_blank" class="fa fa-facebook"></a>
+            <a href="https://twitter.com/" target="_blank" class="fa fa-twitter"></a>
+            <a href="https://github.com/" target="_blank" class="fa fa-github"></a><br>
+            <a href="https://www.instagram.com/?hl=en" target="_blank" class="fa fa-instagram"></a>
+            <a href="https://plus.google.com/discover" target="_blank" class="fa fa-google-plus"></a>
+            <a href="https://accounts.google.com/signin/v2/identifier?hl=es&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin" target="_blank" class="fa fa-envelope"></a>
+          </div>
+          <div class="colum3 footer-list">
+            <h1> Información </h1>
+            <div class="row2">
+              <a href="information.html"><label> ¿Qué es Foráneos UdeG? </label></a>
+            </div>
+            <div class="row2">
+              <a href="information.html#problema"><label> Reportar un Problema </label></a>
+            </div>
+            <div class="row2">
+              <a href="information.html#team"><label> Nuestro Team </label></a>
+            </div>
+            <div class="row2">
+              <a href="information.html#contacto"><label> Contacto </label></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-footer">
+        <div class="footer">
+          <div class="copyright">
+            © 2018 Todos los Derechos Reservados | <a href="information.html"> Foráneos UdeG </a>
+          </div>
+          <div class="information">
+            <a href="information.html"> Información Foráneos UdeG </a> |
+            <a href="information.html#pripo"> Privación y Política </a> |
+            <a href="information.html#termco"> Términos y Condiciones </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  </html>
