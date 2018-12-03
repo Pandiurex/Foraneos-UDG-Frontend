@@ -10,11 +10,21 @@
   <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/badge/license-MIT-red.svg?longCache=true&style=for-the-badge">
   </a>
+  <a href="https://developer.mozilla.org/es/docs/HTML/HTML5">
+    <img src="https://img.shields.io/badge/HTML5-1.0.0-red.svg?longCache=true&style=for-the-badge">
+  </a>
+  <a href="https://developer.mozilla.org/es/docs/Web/CSS">
+    <img src="https://img.shields.io/badge/CSS3-1.0.0-blue.svg?longCache=true&style=for-the-badge">
+  </a>
+  <a href="https://javascript30.com/">
+    <img src="https://img.shields.io/badge/Javascript-1.0.0-green.svg?longCache=true&style=for-the-badge">
+  </a>
+  
 </div>
 
 ### 1.-¿Qué es Foraneos UdeG?
 
-Foraneos UdeG es una web-app que ofrece alojamientos cerca de centros universitarios para aquellos estudiantes que requieran hospedaje para continuar con sus estudios. En esta repo actualmente solo se encuentra la API, posteriormente incorporaremos el Frontend del proyecto.
+Foraneos UdeG es una web-app que ofrece alojamientos cerca de centros universitarios para aquellos estudiantes que requieran hospedaje para continuar con sus estudios. Este actualmente es el Frontend del Proyecto, incluyendo la conexion con la api, si se desea ver el resto del codigo te invitamos a que des click aqui [Foráneos UdeG Backend](https://github.com/Pandiurex/Foraneos-UDG-Api) donde podras ver el codigo.
 
 ### 2.-Objetivo.
 
@@ -155,10 +165,6 @@ te dejo el aqui el link del Github oficial de [NVM](https://github.com/creationi
 * O si eres usuario windows puedes descargarlo directamente desde la pagina oficial de [Node](https://nodejs.org/es/).
 
 * Despues tienes que instalar GIT para poder trabajar con este proyecto, para eso puedes acceder a la pagina de [Instalar GIT](https://git-scm.com/book/es/v2/Inicio---Sobre-el-Control-de-Versiones-Instalaci%C3%B3n-de-Git).
-
-* Finalmente tendremos que instalar MySql, ya que es el gestor de la Base de Datos que se utiliza en este Proyecto, aquí te dejo el enlace a la pagina oficial [MySQL](https://www.mysql.com/downloads/).
-
-* El script de la base de datos podrás encontrarlo en la **WIKI** de este proyecto.
 
 **2.-Clonar Proyecto.**
 
