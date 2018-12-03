@@ -133,8 +133,8 @@
     <section id="blog">
       <form class="card datos-location">
         <h2> Datos de la Casa </h2>
-        <label> Dirección </label>
-        <input type="text" name="dir" placeholder="Dirección" class="input3" readonly>
+        <label> Dirección </label> <!-- FIXME los labels deben tener un for -->
+        <input type="text" name="dir" placeholder="Dirección" class="input3" readonly> <!-- FIXME los inputs que no son editables deben tener un css distinto, al menos quitar los borders -->
         <label> Colonia </label>
         <input type="text" name="col" placeholder="Colonia" class="input3" readonly>
         <label> Teléfono </label>
@@ -186,7 +186,7 @@
       </div>
       <div class="card">
         <!-- onclick="location.href='#report'" Tambien se puede usar -->
-        <a href="#report"><button type="button" name="button" class="button-form"> Quejas </button></a>
+        <a href="#report"><button type="button" name="button" class="button-form"> Quejas </button></a> <!-- FIXME un anchor no deberia wrappear un boton ya que ambos son acciones -->
       </div>
     </section>
   </main>
