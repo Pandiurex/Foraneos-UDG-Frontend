@@ -164,7 +164,7 @@ te dejo el aqui el link del Github oficial de [NVM](https://github.com/creationi
 
 * Una vez que ya tengamos todo instalado procedemos a clonar el proyecto. Para eso debemos abrir la terminal del SO que estas utilizando (en el caso de windows abres el GIT-Bash) y escribiremos la siguiente línea de código:
 
-  ```git clone https://github.com/Pandiurex/Foraneos-UDG-Api```
+  ```git clone https://github.com/Pandiurex/Foraneos-UDG-Frontend```
 
 * Esta línea lo que hace es descargar el código del proyecto donde podrás acceder al código.
 
