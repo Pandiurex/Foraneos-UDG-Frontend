@@ -62,7 +62,7 @@
     </section>
     <section class="main">
       <div class="combo-box">
-        <label> Buscar por: </label>
+        <label> Buscar por: </label> <!-- FIXME los label deben tener un for que los relacione con su input o en este caso su select -->
         <select class="ordenar  square" name="ordenar">
           <option value="disponible"> Disponibilidad </option>
           <option value="precio"> Precio </option>
@@ -75,12 +75,12 @@
         <h3> Elige el Lugar que más te Agrade </h3>
       </div>
       <div class="contenedor lugar">
-        <div class="cards">
+        <div class="cards"> <!-- FIXME este contenido deberia ser un article -->
           <img src="img/slider/slider1.jpg" alt="Imagen de lugares">
           <p> Tipo: Casa </p>
           <p> Exclusivo para: Mujeres </p>
           <div class="card">
-            <input id="btndeta1" type="submit" name="detalles" value="Detalles" class="button-form button-tam">
+            <input id="btndeta1" type="submit" name="detalles" value="Detalles" class="button-form button-tam"> <!-- FIXME este debe ser un button en lugar de input -->
           </div>
         </div>
         <div class="cards">
