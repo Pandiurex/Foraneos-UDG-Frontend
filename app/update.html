@@ -51,17 +51,6 @@
     <section id="blog" class="contenedor">
       <form class="card dat">
         <div class="ti">
-          <h3> Tipo de propiedad </h3>
-          <select id="tipo" name="tipocasa" class="ordenar square input2" required>
-            <option value="Casa"> Casa </option>
-            <option value="Casa hab individual"> Casa con habitación individual </option>
-            <option value="Casa hab compartida"> Casa con habitación compartida </option>
-            <option value="Dpto hab individual"> Dpto con habitación individual </option>
-            <option value="Dpto hab. compartida"> Dpto con habitación compartida </option>
-            <option value="Departamento"> Departamento </option>
-          </select>
-        </div>
-        <div class="ti">
           <h3> Costo de la renta (por mes) </h3>
           <input id="costo" type="number" name="costo" placeholder="Costo" min="1" class="input2" required>
         </div>
@@ -142,6 +131,18 @@
     <section>
       <form class="card contenedor report">
         <h2>Comentarios adicionales</h2><br>
+        <textarea placeholder="Escribe algo..."></textarea><br>
+        <input type="hidden" id="hidlat" val="">
+        <input type="hidden" id="hidlong" val="">
+        <input type="hidden" id="hidcamp" val="">
+        <input type="hidden" id="hidpropiedad" val="">
+        <input id="btncan" type="submit" name="Register" value="Cancelar" class="button-form button-tam">
+        <input id="btngua" type="submit" name="Register" value="Guardar" class="button-form button-tam">
+      </form>
+      <form class="card contenedor report">
+        <h2>Comentarios adicionales</h2><br>
+        <textarea placeholder="Escribe algo..."></textarea><br>
+        <h2>Restricciones</h2><br>
         <textarea placeholder="Escribe algo..."></textarea><br>
         <input type="hidden" id="hidlat" val="">
         <input type="hidden" id="hidlong" val="">

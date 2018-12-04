@@ -51,17 +51,6 @@
     <section id="blog" class="contenedor">
       <form class="card dat">
         <div class="ti">
-          <h3> Tipo de propiedad </h3>
-          <select id="tipo" name="tipocasa" class="ordenar square input2" required>
-            <option value="Casa"> Casa </option>
-            <option value="Casa hab individual"> Casa con habitación individual </option>
-            <option value="Casa hab compartida"> Casa con habitación compartida </option>
-            <option value="Dpto hab individual"> Dpto con habitación individual </option>
-            <option value="Dpto hab. compartida"> Dpto con habitación compartida </option>
-            <option value="Departamento"> Departamento </option>
-          </select>
-        </div>
-        <div class="ti">
           <h3> Costo de la renta (por mes) </h3>
           <input id="costo" type="number" name="costo" placeholder="Costo" min="1" class="input2" required>
         </div>
@@ -143,15 +132,16 @@
       <form class="card contenedor">
         <h2>Domicilio del inmueble</h2><br>
         <input id="calle" type="text" name="calle" placeholder="Calle" class="input2" required>
-        <input id="num" type="text" name="num" placeholder="Número" class="input2" required>
+        <input id="num" type="text" name="num" placeholder="Número exterior" class="input2" required>
         <input id="numint" type="text" name="numint" placeholder="Número interior" class="input2" required>
         <input id="col" type="text" name="col" placeholder="Colonia" class="input2" required>
         <input id="mun" type="text" name="mun" placeholder="Municipio o Delegación" class="input2" required>
-        <input id="est" type="text" name="est" placeholder="Estado" class="input2" required>
         <input id="cod" type="text" name="cod" placeholder="Código postal" class="input2" required>
       </form>
       <form class="card contenedor report">
         <h2>Comentarios adicionales</h2><br>
+        <textarea placeholder="Escribe algo..."></textarea><br>
+        <h2>Restricciones</h2><br>
         <textarea placeholder="Escribe algo..."></textarea><br>
         <input type="hidden" id="hidlat" val="">
         <input type="hidden" id="hidlong" val="">
