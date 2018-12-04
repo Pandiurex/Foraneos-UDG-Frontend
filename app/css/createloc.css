@@ -4,7 +4,6 @@
   margin-top: 10px;
   display: inline-table;
   margin-left: 15%;
-  MAR
   width: 30%;
   margin-bottom: 10px;
 }
@@ -64,6 +63,32 @@
   color: #EC801C;
   font-size: 30px;
   margin-bottom: 10px;
+}
+
+/* HOME SERVICIOS */
+
+.hom {
+  margin-top: 20px;
+}
+
+.hom label {
+  font-size: 18px;
+  text-align: justify;
+  line-height: 25px;
+  display: block;
+  margin-left: 45%;
+}
+
+@media (max-width: 794px) {
+  .hom label {
+    margin-left:40%;
+  }
+}
+
+@media (max-width: 514px) {
+  .hom label {
+    margin-left: 20%;
+  }
 }
 
 @media (max-width: 1024px) {
