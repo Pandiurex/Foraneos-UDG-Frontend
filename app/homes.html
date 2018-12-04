@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, user-scalable=no,
+  initial-scale=1, maximum-scale=1, minimum-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link type="text/plain" rel="author" href="http://domain/humans.txt"> <!-- Poner Dominio -->
   <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
@@ -52,27 +53,17 @@
   </header>
 
   <main>
-    <section>
-      <div id="sliderprincipal" class="slider">
-        <div class="arrow arrow-left"><i class="fa fa-angle-left"></i></div>
-        <div id="slider">
-          <div class="slide slide1">
-            <div class="slide-content"></div>
-          </div>
-          <div class="slide slide2">
-            <div class="slide-content resize-img"></div>
-          </div>
-          <div class="slide slide3">
-            <div class="slide-content"></div>
-          </div>
-        </div>
-        <div class="arrow arrow-right"><i class="fa fa-angle-right"></i></div>
+    <section id="bannerpro">
+      <img src="img/port/port6.jpg" alt="Imagen de estudiantes">
+      <div class="contenedor">
+        <h2> Foráneos UdeG </h2>
+        <p> Alojamiento Estudiantil </p>
       </div>
     </section>
     <section class="main">
       <div class="combo-box">
         <label> Buscar por: </label>
-        <select class="ordenar  square" name="ordenar">
+        <select class="ordenar square" name="ordenar">
           <option value="disponible"> Disponibilidad </option>
           <option value="precio"> Precio </option>
           <option value="calificacion"> Calificación </option>
@@ -222,6 +213,5 @@
       </div>
     </div>
   </footer>
-  <script src="js/slider.js"></script>
 </body>
 </html>

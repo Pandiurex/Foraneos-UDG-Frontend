@@ -71,6 +71,24 @@
   font-weight: bold;
 }
 
+.text {
+  margin-top: 10px;
+  text-align: center;
+  color: #353939;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.radio {
+  margin-right: 40%;
+}
+
+.radio label {
+  text-align: justify;
+  color: #EC801C;
+  font-size: 17px;
+}
+
 @keyframes slideUp {
   from{
     opacity: 0;

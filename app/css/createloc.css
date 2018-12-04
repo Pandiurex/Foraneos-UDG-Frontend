@@ -1,107 +1,114 @@
-/* LOCATION */
+/* CREATE LOC */
 
-.datos-location {
-  margin-top: 50px;
+.dat {
+  margin-top: 10px;
   display: inline-table;
-  margin-left: 13%;
+  margin-left: 15%;
+  MAR
   width: 30%;
-}
-
-.datos-location .input3 {
-  width: 90%;
-}
-
-.datos-location label {
-  font-size: 18px;
-  text-align: center;
-  font-weight: bold;
-  color: #0D4158;
-}
-
-.adjust {
-  background-color: #ff7809;
-  display: inline-block;
-  width: 25%;
-}
-
-.adjust h3 {
-  font-size: 25px;
-  margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.adjust li {
-  list-style: none;
+.dat .input3{
+  width: 100%;
+}
+
+.dat label {
+  font-size: 18px;
+  text-align: justify;
+  line-height: 25px;
+  display: block;
+}
+
+.ti h3 {
+  color: #0a7bd7;
   font-size: 18px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-/* MAP */
+.adj {
+  display: inline-table;
+  width: 20%;
+  margin-top: 10px;
+}
 
-#map {
+.adj h3 {
+  font-size: 30px;
+  margin-top: 10px;
+
+}
+
+/* PHOTO INF */
+
+#masinf {
   color: #FFF;
   text-align: center;
   padding: 20px;
 }
 
-#map .contenedor {
+#masinf .contenedor {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.mapa {
+.masinf {
   display: inline-block;
   width: 50%;
   height: 400px;
   margin-bottom: 5%;
 }
 
-.mapa h3 {
+.masinf h3 {
   color: #EC801C;
   font-size: 30px;
   margin-bottom: 10px;
 }
 
 @media (max-width: 1024px) {
-  .datos-location {
+  .dat {
     margin-left: 10%;
     display: block;
     width: 75%;
   }
 
-  .datos-location .input3{
+  .dat .input2 {
     width: 100%;
+  }
+
+  .dat label {
+    text-align: justify;
+    margin-left: 40%;
+  }
+}
+
+@media (max-width: 622px) {
+  .dat label {
+    text-align: center;
+    margin-left: 0%;
   }
 }
 
 @media (max-width:855px) {
-  .adjust {
+  .adj {
     display: block;
     width: 100%;
   }
 
-  .adjust h3 {
+  .adj h3 {
     font-size: 25px;
     margin-top: 20px;
     margin-bottom: 10px;
   }
 
-  .adjust li {
-    list-style: none;
-    font-size: 18px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  .mapa {
+  .masinf {
     width: 100%;
     height: 300px;
     margin-bottom: 10%;
   }
 
-  .mapa h3 {
+  .masinf h3 {
     color: #EC801C;
     font-size: 35px;
     margin-bottom: 10px;

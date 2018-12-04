@@ -44,6 +44,67 @@
   width: 310px;
 }
 
+/* RADIO BUTTON */
+
+.contradio {
+  clear: both;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding-left: 35px;
+  width: 150px;
+  height: 30px;
+  border: 0px solid #D1D3D4
+}
+
+.contradio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #EEE;
+  border-radius: 50%;
+}
+
+.contradio input:checked ~ .checkmark {
+    background-color: white;
+    border: 7px solid #2196F3;
+}
+
+/* TEXTTAREA */
+
+.report textarea {
+  background: #FBFBFB;
+  width: 75%;
+  height: 50px;
+  border: 2px solid #EEE;
+  border-radius: 3px;
+  resize: none;
+  padding: 10px;
+  font-size: 17px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.report textarea:focus {
+  background: #FFF;
+}
+
+.report textarea::-webkit-scrollbar {
+  width: 10px;
+}
+
+.report textarea::-webkit-scrollbar-thumb {
+  background:  rgba(0, 0, 0, 0.5);
+}
+
 @media (min-width:1025px) {
   .input {
     margin-right: 40%;
