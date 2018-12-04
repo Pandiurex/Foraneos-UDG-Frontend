@@ -44,6 +44,10 @@
   width: 310px;
 }
 
+.no {
+  border-radius: 0;
+}
+
 /* RADIO BUTTON */
 
 .contradio {
@@ -52,9 +56,9 @@
   position: relative;
   cursor: pointer;
   padding-left: 35px;
-  width: 150px;
+  width: 300px;
   height: 30px;
-  border: 0px solid #D1D3D4
+  border: 0px solid #D1D3D4;
 }
 
 .contradio input {

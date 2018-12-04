@@ -55,6 +55,7 @@
   border-collapse: collapse;
   width: 60%;
   margin-left: 20%;
+  margin-top: 10px;
 }
 
 #table td, #table th {

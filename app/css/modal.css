@@ -80,13 +80,13 @@
 }
 
 .radio {
-  margin-right: 40%;
+  margin-right: 30%;
 }
 
 .radio label {
   text-align: justify;
   color: #EC801C;
-  font-size: 17px;
+  font-size: 15px;
 }
 
 @keyframes slideUp {
@@ -103,5 +103,17 @@
 @media (max-width:500px) {
   .modal-close {
     position: absolute;
+  }
+}
+
+@media (max-width:744px) {
+  .radio {
+    margin-right: 10%;
+  }
+}
+
+@media (max-width:579px) {
+  .radio {
+    margin-right: -2%;
   }
 }
