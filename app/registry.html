@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -33,7 +34,8 @@
             <a href="#" class="modal-close">&times;</a>
           </header>
           <div class="modal-body">
-            <form class="card"> <!-- class=""  action="index.html" method="post"> -->
+            <form class="card">
+              <!-- class=""  action="index.html" method="post"> -->
               <input id="email" type="email" name="email" placeholder="Correo electrónico" class="input" required><br>
               <input id="password" type="password" name="password" placeholder="Contraseña" class="input" required><br>
               <input id="btnsubmit" type="submit" name="submit" value="Enviar" class="button">
@@ -61,13 +63,14 @@
     </section>
     <section class="main">
       <fieldset class="fieldset2">
-        <form class="card"> <!-- class=""  action="index.html" method="post"> -->
+        <form class="card" onsubmit="return validatorRegister()">
+          <!-- class=""  action="index.html" method="post"> -->
           <h2> Registrarse </h2>
-          <input id="name" type="text" name="name" placeholder="Nombre(s)" class="input2" required><br>
-          <input id="lastname" type="text" name="lastname" placeholder="Apellido(s)" class="input2" required><br>
-          <input id="regemail" type="email" name="email" placeholder= "Correo electrónico" class="input2" required><br>
-          <input id="regpassword" type="password" name="password" placeholder="Contraseña" class="input2" required><br>
-          <input id="confirpass" type="password" name="confirpass" placeholder="Confirmar contraseña" class="input2" required><br>
+          <input id="name" type="text" name="name" placeholder="Nombre(s)" class="input2"><br>
+          <input id="lastname" type="text" name="lastname" placeholder="Apellido(s)" class="input2" ><br>
+          <input id="regemail" type="email" name="email" placeholder="Correo electrónico" class="input2" ><br>
+          <input id="regpassword" type="password" name="password" placeholder="Contraseña" class="input2" ><br>
+          <input id="confirpass" type="password" name="confirpass" placeholder="Confirmar contraseña" class="input2" ><br>
           <input id="btnregister" type="submit" name="Register" value="Registrarse" class="button-form button-tam">
           <p class="input2-p"> O registrarse con </p>
           <input id="btnfaceregister" type="submit" name="submit" value="Facebook" class="button-form button-tam">
@@ -84,45 +87,49 @@
           <p> Esta Página fue creada para ayudar a los estudiantes foráneos sin hogar,
             para que durante su estancia escolar puedan conseguir el lugar
             adecuado para ellos. </p>
+        </div>
+        <div class="colum2">
+          <h1> Redes Sociales </h1>
+          <a href="https://www.facebook.com/" target="_blank" class="fa fa-facebook"></a>
+          <a href="https://twitter.com/" target="_blank" class="fa fa-twitter"></a>
+          <a href="https://github.com/" target="_blank" class="fa fa-github"></a><br>
+          <a href="https://www.instagram.com/?hl=en" target="_blank" class="fa fa-instagram"></a>
+          <a href="https://plus.google.com/discover" target="_blank" class="fa fa-google-plus"></a>
+          <a href="https://accounts.google.com/signin/v2/identifier?hl=es&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin" target="_blank" class="fa fa-envelope"></a>
+        </div>
+        <div class="colum3 footer-list">
+          <h1> Información </h1>
+          <div class="row2">
+            <a href="information.html"><label> ¿Qué es Foráneos UdeG? </label></a>
           </div>
-          <div class="colum2">
-            <h1> Redes Sociales </h1>
-            <a href="https://www.facebook.com/" target="_blank" class="fa fa-facebook"></a>
-            <a href="https://twitter.com/" target="_blank" class="fa fa-twitter"></a>
-            <a href="https://github.com/" target="_blank" class="fa fa-github"></a><br>
-            <a href="https://www.instagram.com/?hl=en" target="_blank" class="fa fa-instagram"></a>
-            <a href="https://plus.google.com/discover" target="_blank" class="fa fa-google-plus"></a>
-            <a href="https://accounts.google.com/signin/v2/identifier?hl=es&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin" target="_blank" class="fa fa-envelope"></a>
+          <div class="row2">
+            <a href="information.html#problema"><label> Reportar un Problema </label></a>
           </div>
-          <div class="colum3 footer-list">
-            <h1> Información </h1>
-            <div class="row2">
-              <a href="information.html"><label> ¿Qué es Foráneos UdeG? </label></a>
-            </div>
-            <div class="row2">
-              <a href="information.html#problema"><label> Reportar un Problema </label></a>
-            </div>
-            <div class="row2">
-              <a href="information.html#team"><label> Nuestro Team </label></a>
-            </div>
-            <div class="row2">
-              <a href="information.html#contacto"><label> Contacto </label></a>
-            </div>
+          <div class="row2">
+            <a href="information.html#team"><label> Nuestro Team </label></a>
+          </div>
+          <div class="row2">
+            <a href="information.html#contacto"><label> Contacto </label></a>
           </div>
         </div>
       </div>
-      <div class="container-footer">
-        <div class="footer">
-          <div class="copyright">
-            © 2018 Todos los Derechos Reservados | <a href="information.html"> Foráneos UdeG </a>
-          </div>
-          <div class="information">
-            <a href="information.html"> Información Foráneos UdeG </a> |
-            <a href="information.html#pripo"> Privación y Política </a> |
-            <a href="information.html#termco"> Términos y Condiciones </a>
-          </div>
+    </div>
+    <div class="container-footer">
+      <div class="footer">
+        <div class="copyright">
+          © 2018 Todos los Derechos Reservados | <a href="information.html"> Foráneos UdeG </a>
+        </div>
+        <div class="information">
+          <a href="information.html"> Información Foráneos UdeG </a> |
+          <a href="information.html#pripo"> Privación y Política </a> |
+          <a href="information.html#termco"> Términos y Condiciones </a>
         </div>
       </div>
-    </footer>
-  </body>
-  </html>
+    </div>
+  </footer>
+
+  <script src="js/validator.js" charset="utf-8"></script>
+
+</body>
+
+</html>
