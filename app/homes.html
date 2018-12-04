@@ -62,13 +62,64 @@
     </section>
     <section class="main">
       <div class="combo-box">
-        <label> Buscar por: </label>
+        <label> Ordenar por: </label>
         <select class="ordenar square" name="ordenar">
           <option value="disponible"> Disponibilidad </option>
           <option value="precio"> Precio </option>
           <option value="calificacion"> Calificación </option>
         </select>
       </div>
+      <div class="combo-box">
+        <label> Orden: </label>
+        <select class="ordenar square" name="ordenar">
+          <option value="ascendente"> Ascendente </option>
+          <option value="descendente"> Descendente </option>
+        </select>
+      </div>
+      <form class="card dat">
+        <div class="ti">
+          <h3> Servicios </h3>
+          <label>
+            <input id="check1" type="checkbox" value="Limpieza"> Limpieza
+          </label>
+          <label>
+            <input id="check2" type="checkbox" value="Amueblado"> Amueblado
+          </label>
+          <label>
+            <input id="check3" type="checkbox" value="Internet"> Internet
+          </label>
+          <label>
+            <input id="check4" type="checkbox" value="Cocina"> Cocina
+          </label>
+          <label>
+            <input id="check5" type="checkbox" value="Baño_propio"> Baño propio
+          </label>
+          <label >
+            <input id="check6" type="checkbox" value="Estacionamiento"> Estacionamiento
+          </label>
+          <label>
+            <input id="check7" type="checkbox" value="Tv_cable"> Tv cable
+          </label>
+          <label >
+            <input id="check8" type="checkbox" value="Gas"> Gas
+          </label>
+          <label>
+            <input id="check9" type="checkbox" value="Alimentos"> Alimentos
+          </label>
+          <label>
+            <input id="check10" type="checkbox" value="Luz" /> Luz
+          </label>
+          <label>
+            <input id="check11" type="checkbox" value="Teléfono"> Teléfono
+          </label>
+          <label>
+            <input id="check12" type="checkbox" value="Entrada independiente"> Entrada independiente
+          </label>
+          <label>
+            <input id="check13" type="checkbox" value="Lavado servicio"> Lavado servicio
+          </label>
+        </div>
+      </form>
     </section>
     <section id="blog">
       <div class="contenedor lugar">
@@ -77,7 +128,7 @@
       <div class="contenedor lugar">
         <div class="cards">
           <img src="img/slider/slider1.jpg" alt="Imagen de lugares">
-          <p> Tipo: Casa </p>
+          <p> Precio/mes: $2000.00 </p>
           <p> Exclusivo para: Mujeres </p>
           <div class="card">
             <input id="btndeta1" type="submit" name="detalles" value="Detalles" class="button-form button-tam">
@@ -85,7 +136,7 @@
         </div>
         <div class="cards">
           <img src="img/slider/slider3.jpg" alt="Imagen de lugares">
-          <p> Tipo: Departamento </p>
+          <p> Precio/mes: $2500.00 </p>
           <p> Exclusivo para: Hombres </p>
           <div class="card">
             <input id="btndeta2" type="submit" name="detalles" value="Detalles" class="button-form button-tam">
@@ -93,7 +144,7 @@
         </div>
         <div class="cards">
           <img src="img/slider/slider1.jpg" alt="Imagen de lugares">
-          <p> Tipo: Casa </p>
+          <p> Precio/mes: $2000.00 </p>
           <p> Exclusivo para: Mujeres </p>
           <div class="card">
             <input id="btndeta3" type="submit" name="detalles" value="Detalles" class="button-form button-tam">
@@ -101,7 +152,7 @@
         </div>
         <div class="cards">
           <img src="img/slider/slider3.jpg" alt="Imagen de lugares">
-          <p> Tipo: Departamento </p>
+          <p> Precio/mes: $2500.00 </p>
           <p> Exclusivo para: Hombres </p>
           <div class="card">
             <input id="btndeta4" type="submit" name="detalles" value="Detalles" class="button-form button-tam">
@@ -109,7 +160,7 @@
         </div>
         <div class="cards">
           <img src="img/slider/slider1.jpg" alt="Imagen de lugares">
-          <p> Tipo: Casa </p>
+          <p> Precio/mes: $2000.00 </p>
           <p> Exclusivo para: Mujeres </p>
           <div class="card">
             <input id="btndeta5" type="submit" name="detalles" value="Detalles" class="button-form button-tam">
@@ -117,7 +168,7 @@
         </div>
         <div class="cards">
           <img src="img/slider/slider3.jpg" alt="Imagen de lugares">
-          <p> Tipo: Departamento </p>
+          <p> Precio/mes: $2500.00 </p>
           <p> Exclusivo para: Hombres </p>
           <div class="card">
             <input id="btndeta6" type="submit" name="detalles" value="Detalles" class="button-form button-tam">
@@ -125,7 +176,7 @@
         </div>
         <div class="cards">
           <img src="img/slider/slider1.jpg" alt="Imagen de lugares">
-          <p> Tipo: Casa </p>
+          <p> Precio/mes: $2000.00 </p>
           <p> Exclusivo para: Mujeres </p>
           <div class="card">
             <input id="btndeta7" type="submit" name="detalles" value="Detalles" class="button-form button-tam">
@@ -133,7 +184,7 @@
         </div>
         <div class="cards">
           <img src="img/slider/slider3.jpg" alt="Imagen de lugares">
-          <p> Tipo: Departamento </p>
+          <p> Precio/mes: $2500.00 </p>
           <p> Exclusivo para: Hombres </p>
           <div class="card">
             <input id="btndeta8" type="submit" name="detalles" value="Detalles" class="button-form button-tam">
@@ -141,7 +192,7 @@
         </div>
         <div class="cards">
           <img src="img/slider/slider1.jpg" alt="Imagen de lugares">
-          <p> Tipo: Casa </p>
+          <p> Precio/mes: $2000.00 </p>
           <p> Exclusivo para: Mujeres </p>
           <div class="card">
             <input id="btndeta9" type="submit" name="detalles" value="Detalles" class="button-form button-tam">
