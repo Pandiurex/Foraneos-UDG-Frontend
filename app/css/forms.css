@@ -82,6 +82,40 @@
     border: 7px solid #2196F3;
 }
 
+/* CHECK BUTTON */
+
+.contcheck {
+  clear: both;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding-left: 35px;
+  width: 250px;
+  height: 30px;
+  border: 0px solid #D1D3D4;
+  text-align: justify;
+}
+
+.contcheck input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmarktwo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #EEE;
+}
+
+.contcheck input:checked ~ .checkmarktwo {
+    background-color: white;
+    border: 8px solid #2196F3;
+}
+
 /* TEXTTAREA */
 
 .report textarea {
