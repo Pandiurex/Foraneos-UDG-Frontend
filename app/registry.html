@@ -38,9 +38,9 @@
               <!-- class=""  action="index.html" method="post"> -->
               <input id="email" class="input" name="email" placeholder="Correo electrónico" required data-regexp="email"><br>
               <input id="password" class="input" name="password" type="password" placeholder="Contraseña" required data-regexp="password"><br>
-              <input id="btnsubmit" type="submit" name="submit" value="Enviar" class="button">
+              <input id="btnsubmit" type="buton" name="btnsubmit" value="Enviar" class="button">
               <p class="modal-p"> O iniciar sesión con </p>
-              <input id="btnface" type="submit" name="submit" value="Facebook" class="button">
+              <input id="btnface" type="buton" name="btnface" value="Facebook" class="button">
             </form>
           </div>
           <footer class="modal-footer modal-text">
@@ -76,14 +76,15 @@
               <span class="checkmark"></span>
             </label>
           </div>
-          <input id="name" type="text" name="name" placeholder="Nombre(s)" class="input2" data-required="true" data-regexp="word"><br>
-          <input id="lastname" type="text" name="lastname" placeholder="Apellido(s)" class="input2" data-required="true" data-regexp="word"><br>
-          <input id="regemail" type="email" name="email" placeholder="Correo electrónico" class="input2" data-required="true" data-regexp="email"><br>
-          <input id="regpassword" type="password" name="password" placeholder="Contraseña" class="input2" data-required="true" data-regexp="password"><br>
-          <input id="confirmpass" type="password" name="confirmpass" placeholder="Confirmar contraseña" class="input2" data-required="true" data-regexp="password"><br>
-          <input id="btnregister" type="submit" name="Register" value="Registrarse" class="button-form button-tam">
+          <input id="name" type="text" name="name" placeholder="Nombre(s)" class="input2" required="true" data-regexp="word"><br>
+          <input id="firstsurname" type="text" name="firstSurname" placeholder="Apellido Paterno" class="input2" required="true" data-regexp="word"><br>
+          <input id="secondsurname" type="text" name="secondSurname" placeholder="Apellido Materno" class="input2" required="true" data-regexp="word"><br>
+          <input id="regemail" type="email" name="email" placeholder="Correo electrónico" class="input2" required="true" data-regexp="email"><br>
+          <input id="regpassword" type="password" name="password" placeholder="Contraseña" class="input2" required="true" data-regexp="password"><br>
+          <input id="confirmpass" type="password" name="confirmpass" placeholder="Confirmar contraseña" class="input2" required="true" data-regexp="password"><br>
+          <input id="btnregister" type="button" name="Register" value="Registrarse" class="button-form button-tam">
           <p class="input2-p"> O registrarse con </p>
-          <input id="btnfaceregister" type="submit" name="submit" value="Facebook" class="button-form button-tam">
+          <input id="btnfaceregister" type="button" name="faceRegister" value="Facebook" class="button-form button-tam">
         </form>
       </fieldset>
     </section>
