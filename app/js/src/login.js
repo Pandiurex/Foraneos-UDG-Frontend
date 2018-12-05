@@ -1,3 +1,4 @@
+import Cookie from '../cookie.js';
 import regexs from '../util/regexs.js';
 
 class Login {
@@ -41,9 +42,7 @@ class Login {
     });
 
     if (correct) {
-      // enviar los VALORES al modelo
-      console.log('Enviando al modelo');
-      return true;
+      Cookie.login(this.elements);
     } else {
       console.log('Corregir los datos marcados');
     }
