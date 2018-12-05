@@ -1,39 +1,34 @@
-var gulp = require('gulp');
-var useref = require('gulp-useref');
-var cssnano = require('gulp-cssnano');
-var uglify = require('gulp-uglify');
-var gulpIf = require('gulp-if');
-var imagemin = require('gulp-imagemin');
-var browserSync = require('browser-sync').create();
+const gulp = require('gulp');
+const uglify = require('gulp-uglify-es').default;
+const concat = require('gulp-concat');
+const cssMin = require('gulp-css');
+const imagemin = require('gulp-imagemin');
+const browserSync = require('browser-sync').create();
 
-gulp.task('images', function(){
-  return gulp.src('app/img/**/*.+(png|jpg|jpeg|svg)')
+gulp.task('images', () => gulp.src('app/img/**/*.+(png|jpg|jpeg|svg)')
   .pipe(imagemin())
-  .pipe(gulp.dest('dist/images'))
+  .pipe(gulp.dest('dist/images')));
+
+gulp.task('css', () => {
+  gulp.src('./app/css/*.css')
+    .pipe(concat('app.css'))
+    .pipe(cssMin())
+    .pipe(gulp.dest('./dist/css'));
 });
 
-gulp.task('useref', function(){
-  return gulp.src('app/*.html')
-    .pipe(useref())
-    .pipe(gulpIf('*.js', uglify()))
-    .pipe(gulpIf('*.css', cssnano()))
-    .pipe(gulp.dest('dist'))
+gulp.task('scripts', () => {
+  gulp.src('./app/js/*.js')
+    .pipe(concat('app.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('./dist/js'));
 });
 
-gulp.task('browserSync', function() {
+gulp.task('browserSync', () => {
   browserSync.init({
     server: {
-      baseDir: 'app'
+      baseDir: 'app',
     },
-  })
-})
-
-gulp.task('watch', ['browserSync'], function (){
-  gulp.watch('app/*.html', browserSync.reload);
-  gulp.watch('app/css/*.css', browserSync.reload);
-  gulp.watch('app/js/*.js', browserSync.reload);
+  });
 });
 
-gulp.task('build', [`useref`, `images`], function (){
-  console.log('Building files');
-})
+gulp.task('default', ['css', 'scripts', 'images']);
