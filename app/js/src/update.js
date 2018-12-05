@@ -1,6 +1,6 @@
-import regexs from './regexs.js';
+import regexs from '../util/regexs.js';
 
-class Profile {
+class Update {
   checkForm() {
     this.getElements();
     this.clearElements();
@@ -9,11 +9,12 @@ class Profile {
 
   getElements() {
     this.elements = [];
-    this.elements.username = document.getElementById('username');
-    this.elements.name = document.getElementById('name');
-    this.elements.lastname = document.getElementById('lastname');
-    this.elements.infemail = document.getElementById('infemail');
-    this.elements.regpassword = document.getElementById('regpassword');
+    this.elements.numRooms = document.getElementById('habitaciones');
+    this.elements.costElement = document.getElementById('costo');
+    this.elements.genderElement = document.getElementById('genero');
+    this.elements.postalElement = document.getElementById('cod');
+    this.elements.commentsElement = document.getElementById('comentarios');
+    this.elements.restrictionsElement = document.getElementById('restricciones');
   }
 
   clearElements() {
@@ -60,7 +61,7 @@ class Profile {
   }
 }
 
-document.getElementById('btnedit').addEventListener('click', () => {
-  const profile = new Profile();
-  profile.checkForm();
+document.getElementById('btngua').addEventListener('click', () => {
+  const update = new Update();
+  update.checkForm();
 });

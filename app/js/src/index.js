@@ -1,5 +1,5 @@
-import Cookie from './cookie.js';
-import Validator from "./Svalidator.js"
+import Cookie from '../cookie.js';
+import Validator from "../Svalidator.js";
 window.onload = iniciar;
 
 function iniciar() {

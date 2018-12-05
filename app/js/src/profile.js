@@ -1,6 +1,6 @@
-import regexs from './regexs.js';
+import regexs from '../util/regexs.js';
 
-class CreateLoc {
+class Profile {
   checkForm() {
     this.getElements();
     this.clearElements();
@@ -9,18 +9,11 @@ class CreateLoc {
 
   getElements() {
     this.elements = [];
-    this.elements.numRooms = document.getElementById('habitaciones');
-    this.elements.costElement = document.getElementById('costo');
-    this.elements.genderElement = document.getElementById('genero');
-    this.elements.streetElement = document.getElementById('calle');
-    this.elements.extNumElement = document.getElementById('numext');
-    this.elements.intNumElement = document.getElementById('numint');
-    this.elements.across1Element = document.getElementById('cruce1');
-    this.elements.across2Element = document.getElementById('cruce2');
-    this.elements.colElement = document.getElementById('col');
-    this.elements.postalElement = document.getElementById('cod');
-    this.elements.commentsElement = document.getElementById('comentarios');
-    this.elements.restrictionsElement = document.getElementById('restricciones');
+    this.elements.username = document.getElementById('username');
+    this.elements.name = document.getElementById('name');
+    this.elements.lastname = document.getElementById('lastname');
+    this.elements.infemail = document.getElementById('infemail');
+    this.elements.regpassword = document.getElementById('regpassword');
   }
 
   clearElements() {
@@ -63,11 +56,11 @@ class CreateLoc {
   }
 
   markElement(element) {
-    element.style.borderColor = "red";
+    element.style.borderColor = 'red';
   }
 }
 
-document.getElementById('btngua').addEventListener('click', () => {
-  const createLoc = new CreateLoc();
-  createLoc.checkForm();
+document.getElementById('btnedit').addEventListener('click', () => {
+  const profile = new Profile();
+  profile.checkForm();
 });

@@ -1,4 +1,4 @@
-import Location from './locationMdl.js';
+import Location from '../models/locationMdl.js';
 
 window.onload = start();
 

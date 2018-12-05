@@ -1,5 +1,5 @@
-import API from './main.js';
-import Cookie from './cookie.js';
+import API from '../api.js';
+import Cookie from '../cookie.js';
 
 const ROUTE = 'locations';
 

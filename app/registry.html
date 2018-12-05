@@ -63,15 +63,15 @@
     </section>
     <section class="main">
       <fieldset class="fieldset2">
-        <form class="card" onsubmit="return validatorRegister()">
+        <form id="register-form" class="card">
           <!-- class=""  action="index.html" method="post"> -->
           <h2> Registrarse </h2>
-          <input id="name" type="text" name="name" placeholder="Nombre(s)" class="input2" required data-regexp="word"><br>
-          <input id="lastname" type="text" name="lastname" placeholder="Apellido(s)" class="input2" required data-regexp="word"><br>
-          <input id="regemail" type="email" name="email" placeholder="Correo electrónico" class="input2" required data-regexp="email"><br>
-          <input id="regpassword" type="password" name="password" placeholder="Contraseña" class="input2" required data-regexp="password"><br>
-          <input id="confirpass" type="password" name="confirpass" placeholder="Confirmar contraseña" class="input2" required data-regexp="password"><br>
-          <input id="btnregister" type="button" name="Register" value="Registrarse" class="button-form button-tam">
+          <input id="name" type="text" name="name" placeholder="Nombre(s)" class="input2" data-required="true" data-regexp="word"><br>
+          <input id="lastname" type="text" name="lastname" placeholder="Apellido(s)" class="input2" data-required="true" data-regexp="word"><br>
+          <input id="regemail" type="email" name="email" placeholder="Correo electrónico" class="input2" data-required="true" data-regexp="email"><br>
+          <input id="regpassword" type="password" name="password" placeholder="Contraseña" class="input2" data-required="true" data-regexp="password"><br>
+          <input id="confirmpass" type="password" name="confirmpass" placeholder="Confirmar contraseña" class="input2" data-required="true" data-regexp="password"><br>
+          <input id="btnregister" type="submit" name="Register" value="Registrarse" class="button-form button-tam">
           <p class="input2-p"> O registrarse con </p>
           <input id="btnfaceregister" type="submit" name="submit" value="Facebook" class="button-form button-tam">
         </form>
@@ -129,8 +129,8 @@
   </footer>
 
   <script src="js/validator.js" charset="utf-8"></script>
-  <script src="js/login.js"></script>
-  <script src="js/registry.js"></script>
+  <script type="module" src="js/src/login.js"></script>
+  <script type="module" src="js/src/registry.js"></script>
 
 </body>
 

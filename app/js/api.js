@@ -1,24 +1,23 @@
-const fetch = require('node-fetch');
-const { URLSearchParams } = require('url');
-
 class API {
   constructor() {
     this.host = 'https://api.foraneos-udg.ml/api/';
   }
 
-  async getAll(route, token = undefined) {
+  static async getAll(route, token = undefined) {
     let json;
     let status;
 
     try {
-      const response = await fetch(`${this.host}/${route}`, {
+      const response = await fetch(`https://api.foraneos-udg.ml/api/${route}`, {
         method: 'GET',
         headers: {
           token,
         },
       });
+      console.log(response);
       status = await response.status;
       const jsonPromise = await response.json();
+      console.log(jsonPromise);
       json = await jsonPromise;
     } catch (error) {
       return error;
@@ -144,4 +143,4 @@ class API {
   }
 }
 
-module.exports = new API();
+export default API;

@@ -1,6 +1,6 @@
-import regexs from './regexs.js';
+import regexs from '../util/regexs.js';
 
-class Login {
+class Complaint {
   checkForm() {
     this.getElements();
     this.clearElements();
@@ -9,8 +9,7 @@ class Login {
 
   getElements() {
     this.elements = [];
-    this.elements.email = document.getElementById('email');
-    this.elements.password = document.getElementById('password');
+    this.elements.comentarios = document.getElementById('comentarios');
   }
 
   clearElements() {
@@ -43,7 +42,6 @@ class Login {
     if (correct) {
       // enviar los VALORES al modelo
       console.log('Enviando al modelo');
-      return true;
     } else {
       console.log('Corregir los datos marcados');
     }
@@ -58,9 +56,7 @@ class Login {
   }
 }
 
-document.getElementById('btnsubmit').addEventListener('click', () => {
-  const login = new Login();
-  login.checkForm();
-})
-
-export default Login;
+document.getElementById('btnsubmitreport').addEventListener('click', () => {
+  const complaint = new Complaint();
+  complaint.checkForm();
+});
