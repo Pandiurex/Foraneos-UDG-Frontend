@@ -10,7 +10,6 @@
   <link rel="shortcut icon" href="img/logo/logo4.ico">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/createloc.css">
   <title> Actualizar Alojamiento </title>
 </head>
 
@@ -51,8 +50,12 @@
     <section id="blog" class="contenedor">
       <form class="card dat">
         <div class="ti">
+          <h3> Cantidad de habitaciones </h3>
+          <input id="habitaciones" type="number" name="habitaciones" placeholder="Habitaciones" min="1" class="input2" required data-regexp="number">
+        </div>
+        <div class="ti">
           <h3> Costo de la renta (por mes) </h3>
-          <input id="costo" type="number" name="costo" placeholder="Costo" min="1" class="input2" required>
+          <input id="costo" type="number" name="costo" placeholder="Costo" min="1" class="input2" required data-regexp="number">
         </div>
         <div class="ti">
           <h3> Exclusivo </h3>
@@ -119,27 +122,78 @@
           <input id="repfoto4" type="file" name="foto4" accept="image/*" class="input2" required>
           <input id="repfoto5" type="file" name="foto5" accept="image/*" class="input2" required>
         </div>
-        <div class="adj"><br>
-          <input id="btnfot1" type="submit" name="Register" value="Ver foto 1" class="button-form button-tam">
-          <input id="btnfot2" type="submit" name="Register" value="Ver foto 2" class="button-form button-tam">
-          <input id="btnfot3" type="submit" name="Register" value="Ver foto 3" class="button-form button-tam">
-          <input id="btnfot4" type="submit" name="Register" value="Ver foto 4" class="button-form button-tam">
-          <input id="btnfot5" type="submit" name="Register" value="Ver foto 5" class="button-form button-tam">
+        <div class="card adj"><br>
+          <ul class="galeria">
+            <li><a href="#img1"> Ver foto 1 </a></li>
+            <li><a href="#img2"> Ver foto 2 </a></li>
+            <li><a href="#img3"> Ver foto 3 </a></li>
+            <li><a href="#img4"> Ver foto 4 </a></li>
+            <li><a href="#img5"> Ver foto 5 </a></li>
+          </ul>
         </div>
       </form>
+      <div class="modalimg" id="img1">
+        <h4> Foto 1 </h4>
+        <div class="imagen">
+          <a href="#img5">&#60;</a>
+          <a href="#img2"><img src="img/slider/slider1.jpg" alt="Foto 1"></a>
+          <a href="#img2"> > </a>
+        </div>
+        <a class="cerrar" href=""> X </a>
+      </div>
+      <div class="modalimg" id="img2">
+        <h4> Foto 2 </h4>
+        <div class="imagen">
+          <a href="#img1">&#60;</a>
+          <a href="#img3"><img src="img/slider/slider1.jpg" alt="Foto 2"></a>
+          <a href="#img3"> > </a>
+        </div>
+        <a class="cerrar" href=""> X </a>
+      </div>
+      <div class="modalimg" id="img3">
+        <h4> Foto 3 </h4>
+        <div class="imagen">
+          <a href="#img2">&#60;</a>
+          <a href="#img4"><img src="img/slider/slider1.jpg" alt="Foto 3"></a>
+          <a href="#img4"> > </a>
+        </div>
+        <a class="cerrar" href=""> X </a>
+      </div>
+      <div class="modalimg" id="img4">
+        <h4> Foto 4 </h4>
+        <div class="imagen">
+          <a href="#img3">&#60;</a>
+          <a href="#img5"><img src="img/slider/slider1.jpg" alt="Foto 4"></a>
+          <a href="#img5"> > </a>
+        </div>
+        <a class="cerrar" href=""> X </a>
+      </div>
+      <div class="modalimg" id="img5">
+        <h4> Foto 5 </h4>
+        <div class="imagen">
+          <a href="#img4">&#60;</a>
+          <a href="#img1"><img src="img/slider/slider1.jpg" alt="Foto 5"></a>
+          <a href="#img1"> > </a>
+        </div>
+        <a class="cerrar" href=""> X </a>
+      </div>
     </section>
+    <section>
+      <form class="card contenedor">
+      <input id="cod" type="text" name="cod" placeholder="Código postal" class="input2" data-regexp="postal">
+      </form>
     <section>
       <form class="card contenedor report">
         <h2>Comentarios adicionales</h2><br>
-        <textarea placeholder="Escribe algo..."></textarea><br>
+        <textarea id="comentarios" placeholder="Escribe algo..." data-regexp="paragraph"></textarea><br>
         <h2>Restricciones</h2><br>
-        <textarea placeholder="Escribe algo..."></textarea><br>
+        <textarea  id="restricciones" placeholder="Escribe algo..." data-regexp="paragraph"></textarea><br>
         <input type="hidden" id="hidlat" val="">
         <input type="hidden" id="hidlong" val="">
         <input type="hidden" id="hidcamp" val="">
         <input type="hidden" id="hidpropiedad" val="">
         <input id="btncan" type="submit" name="Register" value="Cancelar" class="button-form button-tam">
-        <input id="btngua" type="submit" name="Register" value="Guardar" class="button-form button-tam">
+        <input id="btngua" type="button" name="Register" value="Guardar" class="button-form button-tam">
       </form>
     </section>
   </main>
@@ -192,5 +246,6 @@
         </div>
       </div>
     </footer>
+    <script src="js/update.js"></script>
   </body>
   </html>

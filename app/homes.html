@@ -36,8 +36,8 @@
           </header>
           <div class="modal-body">
             <form class="card">
-              <input id="email" class="input" name="email" placeholder="Correo electrónico"><br>
-              <input id="password" class="input" name="password" type="password" placeholder="Contraseña"><br>
+              <input id="email" class="input" name="email" placeholder="Correo electrónico" required data-regexp="email"><br>
+              <input id="password" class="input" name="password" type="password" placeholder="Contraseña" required data-regexp="password"><br>
               <input id="btnsubmit" class="button" name="submit" type="submit" value="Enviar">
               <p class="modal-p"> O iniciar sesión con </p>
               <input id="btnface" class="button" name="submit" type="submit" value="Facebook">
@@ -264,5 +264,6 @@
       </div>
     </div>
   </footer>
+  <script src="js/login.js"></script>
 </body>
 </html>
