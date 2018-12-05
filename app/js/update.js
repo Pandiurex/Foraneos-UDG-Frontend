@@ -1,4 +1,4 @@
-class CreateLoc {
+class Update {
   constructor() {
       this.regexs = {
       username: /^[a-zA-Z_0-9]*$/,
@@ -27,12 +27,6 @@ class CreateLoc {
     this.elements['numRooms'] = document.getElementById('habitaciones');
     this.elements['costElement'] = document.getElementById('costo');
     this.elements['genderElement'] = document.getElementById('genero');
-    this.elements['streetElement'] = document.getElementById('calle');
-    this.elements['extNumElement'] = document.getElementById('numext');
-    this.elements['intNumElement'] = document.getElementById('numint');
-    this.elements['across1Element'] = document.getElementById('cruce1');
-    this.elements['across2Element'] = document.getElementById('cruce2');
-    this.elements['colElement'] = document.getElementById('col');
     this.elements['postalElement'] = document.getElementById('cod');
     this.elements['commentsElement'] = document.getElementById('comentarios');
     this.elements['restrictionsElement'] = document.getElementById('restricciones');
@@ -85,6 +79,6 @@ class CreateLoc {
 };
 
 document.getElementById("btngua").addEventListener("click",function(){
-  const createLoc = new CreateLoc();
-  createLoc.checkForm();
+  const update = new Update();
+  update.checkForm();
 });
