@@ -36,8 +36,8 @@
           <div class="modal-body">
             <form class="card">
               <!-- class=""  action="index.html" method="post"> -->
-              <input id="email" type="email" name="email" placeholder="Correo electrónico" class="input" required><br>
-              <input id="password" type="password" name="password" placeholder="Contraseña" class="input" required><br>
+              <input id="email" class="input" name="email" placeholder="Correo electrónico" required data-regexp="email"><br>
+              <input id="password" class="input" name="password" type="password" placeholder="Contraseña" required data-regexp="password"><br>
               <input id="btnsubmit" type="submit" name="submit" value="Enviar" class="button">
               <p class="modal-p"> O iniciar sesión con </p>
               <input id="btnface" type="submit" name="submit" value="Facebook" class="button">
@@ -66,12 +66,12 @@
         <form class="card" onsubmit="return validatorRegister()">
           <!-- class=""  action="index.html" method="post"> -->
           <h2> Registrarse </h2>
-          <input id="name" type="text" name="name" placeholder="Nombre(s)" class="input2"><br>
-          <input id="lastname" type="text" name="lastname" placeholder="Apellido(s)" class="input2" ><br>
-          <input id="regemail" type="email" name="email" placeholder="Correo electrónico" class="input2" ><br>
-          <input id="regpassword" type="password" name="password" placeholder="Contraseña" class="input2" ><br>
-          <input id="confirpass" type="password" name="confirpass" placeholder="Confirmar contraseña" class="input2" ><br>
-          <input id="btnregister" type="submit" name="Register" value="Registrarse" class="button-form button-tam">
+          <input id="name" type="text" name="name" placeholder="Nombre(s)" class="input2" required data-regexp="word"><br>
+          <input id="lastname" type="text" name="lastname" placeholder="Apellido(s)" class="input2" required data-regexp="word"><br>
+          <input id="regemail" type="email" name="email" placeholder="Correo electrónico" class="input2" required data-regexp="email"><br>
+          <input id="regpassword" type="password" name="password" placeholder="Contraseña" class="input2" required data-regexp="password"><br>
+          <input id="confirpass" type="password" name="confirpass" placeholder="Confirmar contraseña" class="input2" required data-regexp="password"><br>
+          <input id="btnregister" type="button" name="Register" value="Registrarse" class="button-form button-tam">
           <p class="input2-p"> O registrarse con </p>
           <input id="btnfaceregister" type="submit" name="submit" value="Facebook" class="button-form button-tam">
         </form>
@@ -129,6 +129,8 @@
   </footer>
 
   <script src="js/validator.js" charset="utf-8"></script>
+  <script src="js/login.js"></script>
+  <script src="js/registry.js"></script>
 
 </body>
 
