@@ -59,12 +59,12 @@
       <div class="contenedor">
         <article>
           <form id="userdate" class="card">
-            <input id="username" type="text" name="username" placeholder="Nombre de usuario" class="input3" readonly>
-            <input id="name" type="text" name="name" placeholder="Nombre(s)" class="input3" readonly>
-            <input id="lastname" type="text" name="lastname" placeholder="Apellido(s)" class="input3" readonly>
-            <input id="infemail" type="email" name="email" placeholder= "Correo electrónico" class="input3" readonly>
-            <input id="regpassword" type="password" name="password" placeholder="Contraseña" class="input3" readonly>
-            <input id="birthdate" type="date" name="birthdate" placeholder="date" class="input3" readonly>
+            <input id="username" type="text" name="username" placeholder="Nombre de usuario" class="input3" required data-regexp="word">
+            <input id="name" type="text" name="name" placeholder="Nombre(s)" class="input3" required data-regexp="word">
+            <input id="lastname" type="text" name="lastname" placeholder="Apellido(s)" class="input3" required data-regexp="word">
+            <input id="infemail" type="email" name="email" placeholder= "Correo electrónico" class="input3" required data-regexp="email">
+            <input id="regpassword" type="password" name="password" placeholder="Contraseña" class="input3" required data-regexp="password">
+            <input id="birthdate" type="date" name="birthdate" placeholder="date" class="input3">
           </form>
           <div class="card">
             <input id="btnedit" type="submit" name="edit" value="Editar" class="button-form button-tam">
@@ -150,5 +150,6 @@
       </div>
     </footer>
     <script src="js/profile.js"></script>
+    <script src="js/profile.valid.js"></script>
   </body>
   </html>
