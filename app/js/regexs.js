@@ -14,4 +14,4 @@ const regexs = {
   profileImage: /^profileImages\/file-[a-z0-9]+\.(jpg|jpeg|png)$/,
 };
 
-export { regexs };
+export default regexs;
