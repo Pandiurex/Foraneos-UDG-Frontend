@@ -59,8 +59,6 @@ class Registry {
     });
 
     if (document.getElementById('regpassword').value!==document.getElementById('confirpass').value) {
-      console.log(document.getElementById('regpassword').value);
-      console.log(document.getElementById('confirpass').value);
       document.getElementById('regpassword').style.borderColor = "red";
       document.getElementById('confirpass').style.borderColor = "red";
       correct = false;
