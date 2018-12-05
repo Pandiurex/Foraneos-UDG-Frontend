@@ -1,6 +1,6 @@
 class Registry {
   constructor() {
-      this.regexs = {
+    this.regexs = {
       username: /^[a-zA-Z_0-9]*$/,
       word: /^[a-zA-Z_áéíóúñÁÉÍÓÚÑ\s]*$/,
       paragraph: /^[a-zA-Z_áéíóúñÁÉÍÓÚÑ0-9\s\\.,;/\-:'"()!¡?¿*]*$/,
@@ -16,6 +16,7 @@ class Registry {
       profileImage: /^profileImages\/file-[a-z0-9]+\.(jpg|jpeg|png)$/,
     };
   }
+
   checkForm() {
     this.getElements();
     this.clearElements();
@@ -24,16 +25,16 @@ class Registry {
 
   getElements() {
     this.elements = [];
-    this.elements['name'] = document.getElementById('name');
-    this.elements['lastname'] = document.getElementById('lastname');
-    this.elements['email'] = document.getElementById('regemail');
-    this.elements['password'] = document.getElementById('regpassword');
-    this.elements['confirmpassword'] = document.getElementById('confirpass');
+    this.elements.name = document.getElementById('name');
+    this.elements.lastname = document.getElementById('lastname');
+    this.elements.email = document.getElementById('regemail');
+    this.elements.password = document.getElementById('regpassword');
+    this.elements.confirmpassword = document.getElementById('confirpass');
   }
 
   clearElements() {
     Object.values(this.elements).forEach((element) => {
-      element.style.borderColor = "#C7C7C7";
+      element.style.borderColor = '#C7C7C7';
     });
   }
 
@@ -41,7 +42,7 @@ class Registry {
     let correct = true;
     Object.values(this.elements).forEach((element) => {
       if (element.selectedIndex !== undefined) {
-        if(element.selectedIndex === 0 && element.required) {
+        if (element.selectedIndex === 0 && element.required) {
           this.markElement(element);
           correct = false;
         }
@@ -58,9 +59,10 @@ class Registry {
       }
     });
 
-    if (document.getElementById('regpassword').value!==document.getElementById('confirpass').value) {
-      document.getElementById('regpassword').style.borderColor = "red";
-      document.getElementById('confirpass').style.borderColor = "red";
+    if (document.getElementById('regpassword').value !==
+      document.getElementById('confirpass').value) {
+      document.getElementById('regpassword').style.borderColor = 'red';
+      document.getElementById('confirpass').style.borderColor = 'red';
       correct = false;
     }
 
@@ -70,7 +72,6 @@ class Registry {
     } else {
       console.log('Corregir los datos marcados');
     }
-
   }
 
   checkText(element) {
@@ -78,12 +79,11 @@ class Registry {
   }
 
   markElement(element) {
-    element.style.borderColor = "red";
+    element.style.borderColor = 'red';
   }
+}
 
-};
-
-document.getElementById("btnregister").addEventListener("click",function(){
+document.getElementById('btnregister').addEventListener('click', () => {
   const registry = new Registry();
   registry.checkForm();
 });

@@ -9,13 +9,13 @@ class Login {
 
   getElements() {
     this.elements = [];
-    this.elements['email'] = document.getElementById('email');
-    this.elements['password'] = document.getElementById('password');
+    this.elements.email = document.getElementById('email');
+    this.elements.password = document.getElementById('password');
   }
 
   clearElements() {
     Object.values(this.elements).forEach((element) => {
-      element.style.borderColor = "#C7C7C7";
+      element.style.borderColor = '#C7C7C7';
     });
   }
 
@@ -23,7 +23,7 @@ class Login {
     let correct = true;
     Object.values(this.elements).forEach((element) => {
       if (element.selectedIndex !== undefined) {
-        if(element.selectedIndex === 0 && element.required) {
+        if (element.selectedIndex === 0 && element.required) {
           this.markElement(element);
           correct = false;
         }
@@ -46,7 +46,6 @@ class Login {
     } else {
       console.log('Corregir los datos marcados');
     }
-
   }
 
   checkText(element) {
@@ -54,12 +53,11 @@ class Login {
   }
 
   markElement(element) {
-    element.style.borderColor = "red";
+    element.style.borderColor = 'red';
   }
+}
 
-};
-
-document.getElementById("btnsubmit").addEventListener("click",function(){
+document.getElementById('btnsubmit').addEventListener('click', () => {
   const login = new Login();
   login.checkForm();
 });

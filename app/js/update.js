@@ -1,6 +1,6 @@
 class Update {
   constructor() {
-      this.regexs = {
+    this.regexs = {
       username: /^[a-zA-Z_0-9]*$/,
       word: /^[a-zA-Z_áéíóúñÁÉÍÓÚÑ\s]*$/,
       paragraph: /^[a-zA-Z_áéíóúñÁÉÍÓÚÑ0-9\s\\.,;/\-:'"()!¡?¿*]*$/,
@@ -16,6 +16,7 @@ class Update {
       profileImage: /^profileImages\/file-[a-z0-9]+\.(jpg|jpeg|png)$/,
     };
   }
+
   checkForm() {
     this.getElements();
     this.clearElements();
@@ -24,17 +25,17 @@ class Update {
 
   getElements() {
     this.elements = [];
-    this.elements['numRooms'] = document.getElementById('habitaciones');
-    this.elements['costElement'] = document.getElementById('costo');
-    this.elements['genderElement'] = document.getElementById('genero');
-    this.elements['postalElement'] = document.getElementById('cod');
-    this.elements['commentsElement'] = document.getElementById('comentarios');
-    this.elements['restrictionsElement'] = document.getElementById('restricciones');
+    this.elements.numRooms = document.getElementById('habitaciones');
+    this.elements.costElement = document.getElementById('costo');
+    this.elements.genderElement = document.getElementById('genero');
+    this.elements.postalElement = document.getElementById('cod');
+    this.elements.commentsElement = document.getElementById('comentarios');
+    this.elements.restrictionsElement = document.getElementById('restricciones');
   }
 
   clearElements() {
     Object.values(this.elements).forEach((element) => {
-      element.style.borderColor = "#C7C7C7";
+      element.style.borderColor = '#C7C7C7';
     });
   }
 
@@ -42,7 +43,7 @@ class Update {
     let correct = true;
     Object.values(this.elements).forEach((element) => {
       if (element.selectedIndex !== undefined) {
-        if(element.selectedIndex === 0 && element.required) {
+        if (element.selectedIndex === 0 && element.required) {
           this.markElement(element);
           correct = false;
         }
@@ -65,7 +66,6 @@ class Update {
     } else {
       console.log('Corregir los datos marcados');
     }
-
   }
 
   checkText(element) {
@@ -73,12 +73,11 @@ class Update {
   }
 
   markElement(element) {
-    element.style.borderColor = "red";
+    element.style.borderColor = 'red';
   }
+}
 
-};
-
-document.getElementById("btngua").addEventListener("click",function(){
+document.getElementById('btngua').addEventListener('click', () => {
   const update = new Update();
   update.checkForm();
 });

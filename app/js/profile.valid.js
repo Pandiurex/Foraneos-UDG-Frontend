@@ -9,16 +9,16 @@ class Profile {
 
   getElements() {
     this.elements = [];
-    this.elements['username'] = document.getElementById('username');
-    this.elements['name'] = document.getElementById('name');
-    this.elements['lastname'] = document.getElementById('lastname');
-    this.elements['infemail'] = document.getElementById('infemail');
-    this.elements['regpassword'] = document.getElementById('regpassword');
+    this.elements.username = document.getElementById('username');
+    this.elements.name = document.getElementById('name');
+    this.elements.lastname = document.getElementById('lastname');
+    this.elements.infemail = document.getElementById('infemail');
+    this.elements.regpassword = document.getElementById('regpassword');
   }
 
   clearElements() {
     Object.values(this.elements).forEach((element) => {
-      element.style.borderColor = "#C7C7C7";
+      element.style.borderColor = '#C7C7C7';
     });
   }
 
@@ -26,7 +26,7 @@ class Profile {
     let correct = true;
     Object.values(this.elements).forEach((element) => {
       if (element.selectedIndex !== undefined) {
-        if(element.selectedIndex === 0 && element.required) {
+        if (element.selectedIndex === 0 && element.required) {
           this.markElement(element);
           correct = false;
         }
@@ -49,7 +49,6 @@ class Profile {
     } else {
       console.log('Corregir los datos marcados');
     }
-
   }
 
   checkText(element) {
@@ -57,12 +56,11 @@ class Profile {
   }
 
   markElement(element) {
-    element.style.borderColor = "red";
+    element.style.borderColor = 'red';
   }
+}
 
-};
-
-document.getElementById("btnedit").addEventListener("click", () => {
+document.getElementById('btnedit').addEventListener('click', () => {
   const profile = new Profile();
   profile.checkForm();
 });

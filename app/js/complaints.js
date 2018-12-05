@@ -1,6 +1,6 @@
 class Complaint {
   constructor() {
-      this.regexs = {
+    this.regexs = {
       username: /^[a-zA-Z_0-9]*$/,
       word: /^[a-zA-Z_áéíóúñÁÉÍÓÚÑ\s]*$/,
       paragraph: /^[a-zA-Z_áéíóúñÁÉÍÓÚÑ0-9\s\\.,;/\-:'"()!¡?¿*]*$/,
@@ -16,6 +16,7 @@ class Complaint {
       profileImage: /^profileImages\/file-[a-z0-9]+\.(jpg|jpeg|png)$/,
     };
   }
+
   checkForm() {
     this.getElements();
     this.clearElements();
@@ -24,12 +25,12 @@ class Complaint {
 
   getElements() {
     this.elements = [];
-    this.elements['comentarios'] = document.getElementById('comentarios');
+    this.elements.comentarios = document.getElementById('comentarios');
   }
 
   clearElements() {
     Object.values(this.elements).forEach((element) => {
-      element.style.borderColor = "#C7C7C7";
+      element.style.borderColor = '#C7C7C7';
     });
   }
 
@@ -37,7 +38,7 @@ class Complaint {
     let correct = true;
     Object.values(this.elements).forEach((element) => {
       if (element.selectedIndex !== undefined) {
-        if(element.selectedIndex === 0 && element.required) {
+        if (element.selectedIndex === 0 && element.required) {
           this.markElement(element);
           correct = false;
         }
@@ -60,7 +61,6 @@ class Complaint {
     } else {
       console.log('Corregir los datos marcados');
     }
-
   }
 
   checkText(element) {
@@ -68,12 +68,11 @@ class Complaint {
   }
 
   markElement(element) {
-    element.style.borderColor = "red";
+    element.style.borderColor = 'red';
   }
+}
 
-};
-
-document.getElementById("btnsubmitreport").addEventListener("click",function(){
+document.getElementById('btnsubmitreport').addEventListener('click', () => {
   const complaint = new Complaint();
   complaint.checkForm();
 });

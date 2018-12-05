@@ -1,51 +1,52 @@
-class Slider{
-  constructor(sliderId){
+class Slider {
+  constructor(sliderId) {
     this.sliderImages = document.querySelectorAll(`#${sliderId} .slide`);
     this.arrowLeft = document.querySelector(`#${sliderId} .arrow-left`);
     this.arrowRight = document.querySelector(`#${sliderId} .arrow-right`);
     this.current = 0;
-    self = this;
-    }
-  reset(){
-    for(let i = 0; i < this.sliderImages.length; i++){
+  }
+
+  reset() {
+    for (let i = 0; i < this.sliderImages.length; i += 1) {
       this.sliderImages[i].style.display = 'none';
     }
   }
 
-  startSlide(){
+  startSlide() {
     this.reset();
     this.sliderImages[0].style.display = 'block';
 
-    this.arrowLeft.addEventListener('click', function(){
-      if(self.current === 0){
-        self.current = self.sliderImages.length;
+    this.arrowLeft.addEventListener('click', () => {
+      if (this.current === 0) {
+        this.current = this.sliderImages.length;
       }
-      self.slideLeft();
+      this.slideLeft();
     });
 
-    this.arrowRight.addEventListener('click', function(){
-      if(self.current === self.sliderImages.length - 1){
-        self.current = -1
+    this.arrowRight.addEventListener('click', () => {
+      if (this.current === this.sliderImages.length - 1) {
+        this.current = -1;
       }
-      self.slideRight();
+      this.slideRight();
     }, false);
 
     setInterval(() => {
-      self.arrowRight.click();
+      this.arrowRight.click();
     }, 5000);
   }
 
-  slideLeft(){
+  slideLeft() {
     this.reset();
     this.sliderImages[this.current - 1].style.display = 'block';
-    this.current--;
+    this.current -= 1;
   }
 
   slideRight() {
     this.reset();
     this.sliderImages[this.current + 1].style.display = 'block';
-    this.current++;
+    this.current += 1;
   }
 }
-let sliderPrincipal = new Slider('sliderprincipal');
-  sliderPrincipal.startSlide();
+
+const sliderPrincipal = new Slider('sliderprincipal');
+sliderPrincipal.startSlide();
