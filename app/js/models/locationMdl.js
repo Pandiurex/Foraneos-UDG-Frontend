@@ -50,7 +50,7 @@ class Location {
     params = this.processParams(params);
     console.log(params);
 
-    const response = await API.getAll(`${ROUTE}${params}`, Cookie.getCookie());
+    const response = await API.get(`${ROUTE}${params}`, Cookie.getCookie('session'));
     console.log(response);
   }
 

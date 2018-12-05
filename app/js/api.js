@@ -1,14 +1,11 @@
+const host = 'https://api.foraneos-udg.ml/api/';
 class API {
-  constructor() {
-    this.host = 'https://api.foraneos-udg.ml/api/';
-  }
-
-  static async getAll(route, token = undefined) {
+  static async get(route, token = undefined) {
     let json;
     let status;
 
     try {
-      const response = await fetch(`https://api.foraneos-udg.ml/api/${route}`, {
+      const response = await fetch(`${host}${route}`, {
         method: 'GET',
         headers: {
           token,
@@ -25,7 +22,7 @@ class API {
 
     return {
       status,
-      response: json,
+      data: json,
     };
   }
 
@@ -46,12 +43,12 @@ class API {
 
     return {
       status,
-      response: json,
+      data: json,
     };
   }
 
-  async insert(route, body, token = undefined) {
-    const response = await fetch(`${this.host}/${route}`, {
+  async post(route, body, token = undefined) {
+    const response = await fetch(`${host}/${route}`, {
       method: 'POST',
       body: new URLSearchParams(body),
       headers: {
