@@ -45,6 +45,12 @@ class Registry {
       }
     });
 
+    if (document.getElementById('regpassword').value !== document.getElementById('confirmpass').value) {
+      this.markElement(document.getElementById('regpassword'));
+      this.markElement(document.getElementById('confirmpass'));
+      correct = false;
+    }
+
     if (correct) {
       // enviar los VALORES al modelo
       console.log('Enviando al modelo');
