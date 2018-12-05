@@ -40,8 +40,8 @@ class Registry {
   checkRequired() {
     let correct = true;
     Object.values(this.elements).forEach((element) => {
-      if (element.selectedIndex === 0) {
-        if(element.required) {
+      if (element.selectedIndex !== undefined) {
+        if(element.selectedIndex === 0 && element.required) {
           this.markElement(element);
           correct = false;
         }

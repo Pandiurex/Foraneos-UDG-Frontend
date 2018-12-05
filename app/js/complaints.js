@@ -1,4 +1,4 @@
-class Login {
+class Complaint {
   constructor() {
       this.regexs = {
       username: /^[a-zA-Z_0-9]*$/,
@@ -24,8 +24,7 @@ class Login {
 
   getElements() {
     this.elements = [];
-    this.elements['email'] = document.getElementById('email');
-    this.elements['password'] = document.getElementById('password');
+    this.elements['comentarios'] = document.getElementById('comentarios');
   }
 
   clearElements() {
@@ -74,7 +73,7 @@ class Login {
 
 };
 
-document.getElementById("btnsubmit").addEventListener("click",function(){
-  const login = new Login();
-  login.checkForm();
+document.getElementById("btnsubmitreport").addEventListener("click",function(){
+  const complaint = new Complaint();
+  complaint.checkForm();
 });
