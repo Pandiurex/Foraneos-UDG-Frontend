@@ -82,6 +82,27 @@
     border: 7px solid #2196F3;
 }
 
+/* RADIO BUTTON 2 */
+.contrad {
+  position: relative;
+  cursor: pointer;
+  padding-left: 35px;
+  width: 300px;
+  height: 30px;
+  border: 0px solid #D1D3D4;
+}
+
+.contrad input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.contrad input:checked ~ .checkmark {
+    background-color: white;
+    border: 7px solid #2196F3;
+}
+
 /* CHECK BUTTON */
 
 .contcheck {

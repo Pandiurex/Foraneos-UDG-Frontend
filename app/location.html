@@ -39,9 +39,9 @@
             <form class="card">
               <input id="email" class="input" name="email" placeholder="Correo electrónico" required data-regexp="email"><br>
               <input id="password" class="input" name="password" type="password" placeholder="Contraseña" required data-regexp="password"><br>
-              <input id="btnsubmit" type="submit" name="submit" value="Enviar" class="button">
+              <button id="btnsubmit" type="button" name="btncan" class="button"> Enviar </button>
               <p class="modal-p"> O iniciar sesión con </p>
-              <input id="btnface" type="submit" name="submit" value="Facebook" class="button">
+              <button id="btnface" type="button" name="btngua" class="button"> Facebook </button>
             </form>
           </div>
           <footer class="modal-footer modal-text">
@@ -82,13 +82,13 @@
                   <span class="checkmark"></span>
                 </label>
                 <label class="contradio">
-                  <input type="radio" name="radio" checked> Es otra cosa
+                  <input type="radio" name="radio"> Es otra cosa
                   <span class="checkmark"></span>
                 </label>
               </div>
               <div class="card report">
                 <textarea placeholder="Otro tipo de problema..."></textarea>
-                <input id="btnsubmitreport" type="button" name="submit" value="Enviar" class="button">
+                <button id="btnsubmitreport" type="button" name="btnsubmit" class="button"> Enviar </button>
               </div>
             </form>
           </div>
@@ -144,7 +144,7 @@
         <h2> Datos del Dueño </h2>
         <label for="nom"> Nombre </label>
         <input id="nom" type="text" name="owner-name" placeholder="Nombre Dueño" class="input3" readonly>
-        <input id="btncon" type="submit" name="submit" value="Contactame" class="button-form button-tam">
+        <button id="btncon" type="button" name="btnsubmit" class="button-form button-tam"> Contactame </button>
       </form>
     </section>
     <section id="info">
