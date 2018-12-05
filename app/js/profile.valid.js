@@ -9,11 +9,11 @@ class Profile {
 
   getElements() {
     this.elements = [];
-    this.elements['numRooms'] = document.getElementById('username');
-    this.elements['costElement'] = document.getElementById('name');
-    this.elements['genderElement'] = document.getElementById('lastname');
-    this.elements['streetElement'] = document.getElementById('infemail');
-    this.elements['extNumElement'] = document.getElementById('regpassword');
+    this.elements['username'] = document.getElementById('username');
+    this.elements['name'] = document.getElementById('name');
+    this.elements['lastname'] = document.getElementById('lastname');
+    this.elements['infemail'] = document.getElementById('infemail');
+    this.elements['regpassword'] = document.getElementById('regpassword');
   }
 
   clearElements() {
@@ -62,7 +62,7 @@ class Profile {
 
 };
 
-document.getElementById("btngua").addEventListener("click", () => {
+document.getElementById("btnedit").addEventListener("click", () => {
   const profile = new Profile();
   profile.checkForm();
 });
