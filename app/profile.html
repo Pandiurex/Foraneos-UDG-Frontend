@@ -21,10 +21,10 @@
       <label class="icon-menu" for="menu-bar"></label>
       <nav class="menu">
         <a href="profile.html"> Mi perfil </a>
-        <a href="#"> Publicar alojamiento </a>
+        <a href="createloc.html"> Publicar alojamiento </a>
         <a href="#"> Ver alojamientos </a>
         <a href="#historial"> Historial </a>
-        <a href="#"> Mensajes </a>
+        <a href="msg.html"> Mensajes </a>
         <a href="#"> Cerrar sesión </a>
       </nav>
     </div>
@@ -46,6 +46,9 @@
           <div id="datos-perfil" class="datos">
             <p>Nombre completo</p>
             <p>Correo electrónico</p>
+            <button id="btnupload" type="button" name="btnupload" class="button-form button-tam">Selecciona Foto</button><br>
+            <input type="file" id="real-file" hidden="hidden" />
+            <span id="custom-text">Selecciona un archivo</span>
           </div>
         </div>
       </div>
@@ -79,21 +82,35 @@
           <thead>
             <tr>
               <th> Nombre del usuario </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td> Nombre </td>
-            </tr>
-          </tbody>
-          <thead>
-            <tr>
               <th> Lugares habitados </th>
+              <th> Fecha (dd/mm/yyyy)</th>
+              <th> Estado </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td> No tienes historial </td>
+              <td> Usuario </td>
+              <td> Lugar </td>
+              <td> Fecha </td>
+              <td> Estado </td>
+            </tr>
+            <tr>
+              <td> Usuario </td>
+              <td> Lugar </td>
+              <td> Fecha </td>
+              <td> Estado </td>
+            </tr>
+            <tr>
+              <td> Usuario </td>
+              <td> Lugar </td>
+              <td> Fecha </td>
+              <td> Estado </td>
+            </tr>
+            <tr>
+              <td> Usuario </td>
+              <td> Lugar </td>
+              <td> Fecha </td>
+              <td> Estado </td>
             </tr>
           </tbody>
         </table>
@@ -150,5 +167,6 @@
       </div>
     </footer>
     <script type="module" src="js/src/profile.js"></script>
+    <script type="module" src="js/upload.js"></script>
   </body>
   </html>
