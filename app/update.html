@@ -50,8 +50,12 @@
     <section id="blog" class="contenedor">
       <form class="card dat">
         <div class="ti">
+          <h3> Cantidad de habitaciones </h3>
+          <input id="habitaciones" type="number" name="habitaciones" placeholder="Habitaciones" min="1" class="input2" required data-regexp="number">
+        </div>
+        <div class="ti">
           <h3> Costo de la renta (por mes) </h3>
-          <input id="costo" type="number" name="costo" placeholder="Costo" min="1" class="input2" required>
+          <input id="costo" type="number" name="costo" placeholder="Costo" min="1" class="input2" required data-regexp="number">
         </div>
         <div class="ti">
           <h3> Exclusivo </h3>
@@ -188,17 +192,21 @@
       </div>
     </section>
     <section>
+      <form class="card contenedor">
+      <input id="cod" type="text" name="cod" placeholder="Código postal" class="input2" data-regexp="postal">
+      </form>
+    <section>
       <form class="card contenedor report">
         <h2>Comentarios adicionales</h2><br>
-        <textarea placeholder="Escribe algo..."></textarea><br>
+        <textarea id="comentarios" placeholder="Escribe algo..." data-regexp="paragraph"></textarea><br>
         <h2>Restricciones</h2><br>
-        <textarea placeholder="Escribe algo..."></textarea><br>
+        <textarea  id="restricciones" placeholder="Escribe algo..." data-regexp="paragraph"></textarea><br>
         <input type="hidden" id="hidlat" val="">
         <input type="hidden" id="hidlong" val="">
         <input type="hidden" id="hidcamp" val="">
         <input type="hidden" id="hidpropiedad" val="">
         <input id="btncan" type="submit" name="Register" value="Cancelar" class="button-form button-tam">
-        <input id="btngua" type="submit" name="Register" value="Guardar" class="button-form button-tam">
+        <input id="btngua" type="button" name="Register" value="Guardar" class="button-form button-tam">
       </form>
     </section>
   </main>
@@ -251,5 +259,6 @@
         </div>
       </div>
     </footer>
+    <script src="js/update.js"></script>
   </body>
   </html>

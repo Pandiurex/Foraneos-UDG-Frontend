@@ -1,8 +1,6 @@
-import regexs from 'regexs';
-
-class CreateLoc {
+class Registry {
   constructor() {
-    this.regexs = {
+      this.regexs = {
       username: /^[a-zA-Z_0-9]*$/,
       word: /^[a-zA-Z_áéíóúñÁÉÍÓÚÑ\s]*$/,
       paragraph: /^[a-zA-Z_áéíóúñÁÉÍÓÚÑ0-9\s\\.,;/\-:'"()!¡?¿*]*$/,
@@ -26,18 +24,11 @@ class CreateLoc {
 
   getElements() {
     this.elements = [];
-    this.elements['numRooms'] = document.getElementById('habitaciones');
-    this.elements['costElement'] = document.getElementById('costo');
-    this.elements['genderElement'] = document.getElementById('genero');
-    this.elements['streetElement'] = document.getElementById('calle');
-    this.elements['extNumElement'] = document.getElementById('numext');
-    this.elements['intNumElement'] = document.getElementById('numint');
-    this.elements['across1Element'] = document.getElementById('cruce1');
-    this.elements['across2Element'] = document.getElementById('cruce2');
-    this.elements['colElement'] = document.getElementById('col');
-    this.elements['postalElement'] = document.getElementById('cod');
-    this.elements['commentsElement'] = document.getElementById('comentarios');
-    this.elements['restrictionsElement'] = document.getElementById('restricciones');
+    this.elements['name'] = document.getElementById('name');
+    this.elements['lastname'] = document.getElementById('lastname');
+    this.elements['email'] = document.getElementById('regemail');
+    this.elements['password'] = document.getElementById('regpassword');
+    this.elements['confirmpassword'] = document.getElementById('confirpass');
   }
 
   clearElements() {
@@ -49,8 +40,8 @@ class CreateLoc {
   checkRequired() {
     let correct = true;
     Object.values(this.elements).forEach((element) => {
-      if (element.selectedIndex !== undefined) {
-        if(element.selectedIndex === 0 && element.required) {
+      if (element.selectedIndex === 0) {
+        if(element.required) {
           this.markElement(element);
           correct = false;
         }
@@ -66,6 +57,12 @@ class CreateLoc {
         }
       }
     });
+
+    if (document.getElementById('regpassword').value!==document.getElementById('confirpass').value) {
+      document.getElementById('regpassword').style.borderColor = "red";
+      document.getElementById('confirpass').style.borderColor = "red";
+      correct = false;
+    }
 
     if (correct) {
       // enviar los VALORES al modelo
@@ -86,7 +83,7 @@ class CreateLoc {
 
 };
 
-document.getElementById("btngua").addEventListener("click", () => {
-  const createLoc = new CreateLoc();
-  createLoc.checkForm();
+document.getElementById("btnregister").addEventListener("click",function(){
+  const registry = new Registry();
+  registry.checkForm();
 });
