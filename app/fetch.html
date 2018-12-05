@@ -1,41 +1,15 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!doctype html>
+<html>
   <head>
-    <meta charset="utf-8">
-    <title>Prueba Fetch</title>
-  </head>
-
-  <body>
-    <div class="container my-5 text-center">
-      <button class="btn btn-danger w-100" onclick="traer()">Obtener</button>
-      <div class="mt-5" id="contenido">
-
-      </div>
-    </div>
-
+    <title>Ejemplo Onload</title>
     <script>
-    var contenido = document.querySelector('#contenido')
-    function traer() {
-      var miInit = {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'hash': '$2b$17$fkBe9uni1EPnDbdOW/jT0exra8picJ.EjxLUVIID2ZiP31IlRIphS'
-        },
-        cache: 'default' };
-
-      fetch('https://api.foraneos-udg.ml/api/users', miInit)
-      .then(res => res.json())
-      .then(data => {
-        console.log(data)
-        contenido.innerHTML = `
-        <p>MI IP: ${data.origin} </p>
-        `
-      })
-      .catch(function(err) {
-        console.error(err);
-    });
-    }
+      function load() {
+        alert("evento load detectado!");
+      }
+      window.onload = load;
     </script>
+  </head>
+  <body>
+    <p>El Evento load se dispara cuando el documento ha terminado de cargarse!</p>
   </body>
 </html>

@@ -43,6 +43,7 @@ class Login {
     if (correct) {
       // enviar los VALORES al modelo
       console.log('Enviando al modelo');
+      return true;
     } else {
       console.log('Corregir los datos marcados');
     }
@@ -60,4 +61,6 @@ class Login {
 document.getElementById('btnsubmit').addEventListener('click', () => {
   const login = new Login();
   login.checkForm();
-});
+})
+
+export default Login;
