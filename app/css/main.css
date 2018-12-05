@@ -46,6 +46,11 @@ header {
   margin: auto;
 }
 
+.contmenu {
+  width: 100%;
+  margin: auto;
+}
+
 header h1 {
   font-family: 'Courgette', cursive;
   float: left;
@@ -279,6 +284,12 @@ footer {
 @media (min-width: 1024px) {
   .contenedor {
     width: 1000px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contmenu {
+    width: 1020px;
   }
 }
 
