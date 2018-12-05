@@ -89,6 +89,16 @@
   font-size: 15px;
 }
 
+.radio2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.radio2 label {
+  text-align: justify;
+  font-size: 15px;
+}
+
 @keyframes slideUp {
   from{
     opacity: 0;
