@@ -35,7 +35,6 @@
 .adj h3 {
   font-size: 30px;
   margin-top: 10px;
-
 }
 
 /* PHOTO INF */
@@ -69,6 +68,7 @@
 
 .hom {
   margin-top: 20px;
+  display: inline-table;
 }
 
 .hom label {
@@ -76,18 +76,18 @@
   text-align: justify;
   line-height: 25px;
   display: block;
-  margin-left: 45%;
+  margin-left: 10%;
 }
 
 @media (max-width: 794px) {
   .hom label {
-    margin-left:40%;
+    margin-left:5%;
   }
 }
 
 @media (max-width: 514px) {
   .hom label {
-    margin-left: 20%;
+    margin-left: 10%;
   }
 }
 
@@ -110,7 +110,7 @@
 
 @media (max-width: 622px) {
   .dat label {
-    text-align: center;
+    text-align: justify;
     margin-left: 0%;
   }
 }
