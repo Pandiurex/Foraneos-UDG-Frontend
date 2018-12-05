@@ -1,6 +1,8 @@
+import regexs from 'regexs';
+
 class CreateLoc {
   constructor() {
-      this.regexs = {
+    this.regexs = {
       username: /^[a-zA-Z_0-9]*$/,
       word: /^[a-zA-Z_áéíóúñÁÉÍÓÚÑ\s]*$/,
       paragraph: /^[a-zA-Z_áéíóúñÁÉÍÓÚÑ0-9\s\\.,;/\-:'"()!¡?¿*]*$/,
@@ -47,8 +49,8 @@ class CreateLoc {
   checkRequired() {
     let correct = true;
     Object.values(this.elements).forEach((element) => {
-      if (element.selectedIndex === 0) {
-        if(element.required) {
+      if (element.selectedIndex !== undefined) {
+        if(element.selectedIndex === 0 && element.required) {
           this.markElement(element);
           correct = false;
         }
@@ -84,7 +86,7 @@ class CreateLoc {
 
 };
 
-document.getElementById("btngua").addEventListener("click",function(){
+document.getElementById("btngua").addEventListener("click", () => {
   const createLoc = new CreateLoc();
   createLoc.checkForm();
 });
