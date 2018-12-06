@@ -5,7 +5,7 @@ class LocationsRenderer {
     LocationsRenderer.locationsContainer = document.getElementById('locations-container');
   }
 
-  async getLocations() {
+  static async getLocations() {
     LocationsRenderer.locations = await Location.getAll({
       orderBy: 'cost',
       orderSense: 'ASC',
@@ -16,7 +16,7 @@ class LocationsRenderer {
     console.log(LocationsRenderer.locations);
   }
 
-  renderLocations() {
+  static renderLocations() {
     console.log(LocationsRenderer.locations);
     LocationsRenderer.locations.forEach((location) => {
       LocationsRenderer.renderOneLocation(location);
