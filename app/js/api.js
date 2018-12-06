@@ -2,43 +2,15 @@ const host = 'https://api.foraneos-udg.ml/api/';
 
 class API {
   static async get(route, token = undefined) {
-    let json;
-    let status;
+    const response = await fetch(`${host}${route}`, {
+      method: 'GET',
+      headers: {
+        token,
+      },
+    });
 
-    try {
-      const response = await fetch(`${host}${route}`, {
-        method: 'GET',
-        headers: {
-          token,
-        },
-      });
-      status = await response.status;
-      const jsonPromise = await response.json();
-      json = await jsonPromise;
-    } catch (error) {
-      return error;
-    }
-
-    return {
-      status,
-      data: json,
-    };
-  }
-
-  async get(route, id) {
-    let json;
-    let status;
-
-    try {
-      const response = await fetch(`${this.host}/${route}/${id}`, {
-        method: 'GET',
-      });
-      status = await response.status;
-      const jsonPromise = await response.json();
-      json = await jsonPromise;
-    } catch (error) {
-      return error;
-    }
+    const status = await response.status;
+    const json = await response.json();
 
     return {
       status,
@@ -66,10 +38,11 @@ class API {
   }
 
   async update(route, body, id, token = undefined) {
-    const response = await fetch(`${this.host}/${route}/${id}`, {
-      method: 'PUT',
-      body: new URLSearchParams(body),
+    const response = await fetch(`${host}/${route}/${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify(body),
       headers: {
+        'Content-Type': 'application/json',
         token,
       },
     });
@@ -83,7 +56,7 @@ class API {
   }
 
   async delete(route, id, token = undefined) {
-    const response = await fetch(`${this.host}/${route}/${id}`, {
+    const response = await fetch(`${host}/${route}/${id}`, {
       method: 'DELETE',
       headers: {
         token,
@@ -91,51 +64,49 @@ class API {
     });
   }
 
-  static async login({ email, password }, token = undefined) {
-    console.log(email);
-    console.log(password);
-    const response = await fetch(`${host}/auth/login`, {
-      method: 'POST',
-      body: new URLSearchParams({ email, password }),
+  async deleteWithBody(route, body, token = undefined) {
+    const response = await fetch(`${host}/${route}`, {
+      method: 'DELETE',
+      body: JSON.stringify(body),
       headers: {
+        'Content-Type': 'application/json',
         token,
       },
     });
+  }
+
+  static async login(body, token = undefined) {
+    const response = await fetch(`${host}/auth/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        token,
+      },
+      body: body,
+    });
+
     const status = await response.status;
     const json = await response.json();
 
+    console.log(json);
+
     return {
       status,
       data: json,
     };
   }
 
-  async logout(token) {
-    const response = await fetch(`${this.host}/auth/logout`, {
-      method: 'GET',
+  static async logout(token) {
+    const response = await fetch(`${host}/auth/logout`, {
+      method: 'DEL',
       headers: {
         token,
       },
     });
-    const status = await response.status;
-    const jsonPromise = await response.json();
-    const json = await jsonPromise;
-    return {
-      status,
-      data: json,
-    };
-  }
 
-  async activeSession(token) {
-    const response = await fetch(`${this.host}/auth/session`, {
-      method: 'GET',
-      headers: {
-        token,
-      },
-    });
     const status = await response.status;
-    const jsonPromise = await response.json();
-    const json = await jsonPromise;
+    const json = await response.json();
+
     return {
       status,
       data: json,
