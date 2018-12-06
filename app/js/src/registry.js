@@ -53,6 +53,9 @@ class Registry {
 
     if (correct) {
       // enviar los VALORES al modelo
+      document.getElementById('register-form').style.visibility = 'hidden';
+      document.getElementById('confirmation').style.visibility = 'visible';
+
       console.log('Enviando al modelo');
     } else {
       console.log('Corregir los datos marcados');

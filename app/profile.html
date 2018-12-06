@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, user-scalable=no,
@@ -68,7 +69,7 @@
             <input id="username" type="text" name="username" placeholder="Nombre de usuario" class="input3" required data-regexp="word">
             <input id="name" type="text" name="name" placeholder="Nombre(s)" class="input3" required data-regexp="word">
             <input id="lastname" type="text" name="lastname" placeholder="Apellido(s)" class="input3" required data-regexp="word">
-            <input id="infemail" type="email" name="email" placeholder= "Correo electrónico" class="input3" required data-regexp="email">
+            <input id="infemail" type="email" name="email" placeholder="Correo electrónico" class="input3" required data-regexp="email">
             <input id="regpassword" type="password" name="password" placeholder="Contraseña" class="input3" required data-regexp="password">
             <input id="birthdate" type="date" name="birthdate" placeholder="date" class="input3">
           </form>
@@ -79,8 +80,7 @@
       </div>
     </section>
     <div class="card">
-      <button href="#modal_mail" id="btnemail" type="button" name="btnemail" class="button-form button-tam"> Ver correos </button>
-    </div>
+      <a href="#modal_mail"> Correos Alternativos </a> </div>
     <div class="modal" id="modal_mail">
       <div class="modal-dialog">
         <section class="modal-content">
@@ -90,30 +90,56 @@
           </header>
           <div class="modal-body">
             <section id="list_mail">
-              <div class="contenedor">
-                <h2> Correos </h2>
-                <table id="table">
+              <div class="modal-contenedor">
+                <table class="email-table">
+                  <h2 id="correo"> Correos </h2>
                   <thead>
                     <tr>
                       <th> Correo </th>
-                      <th> Verificado </th>
-                      <th> Eliminar</th>
+                      <th> Estado </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td> Usuario </td>
-                      <td> Lugar </td>
-                      <td> Fecha </td>
-                      <td> Estado </td>
+                      <td> crissin21_01@hotmail.com</td>
+                      <td> Activado </td>
+                      <td><a href="" target="_blank" class="fa fa-trash"></a></td>
+                    </tr>
+                    <tr>
+                      <td> Correo </td>
+                      <td> Activado </td>
+                      <td><a href="" target="_blank" class="fa fa-trash"></a></td>
+                    </tr>
+                    <tr>
+                      <td> Correo </td>
+                      <td> Activado </td>
+                      <td><a href="" target="_blank" class="fa fa-trash"></a></td>
+                    </tr>
+                    <tr>
+                      <td> Correo </td>
+                      <td> Activado </td>
+                      <td><a href="" target="_blank" class="fa fa-trash"></a></td>
+                    </tr>
+                    <tr>
+                      <td> Correo </td>
+                      <td> Activado </td>
+                      <td><a href="" target="_blank" class="fa fa-trash"></a></td>
+                    </tr>
+                    <tr>
+                      <td> Correo </td>
+                      <td> Activado </td>
+                      <td><a href="" target="_blank" class="fa fa-trash"></a></td>
                     </tr>
                   </tbody>
                 </table>
+                <!-- <button type="button" name="button" class="button-form button-modal">Borrar</button> -->
               </div>
             </section>
             </form>
           </div>
-          <footer class="modal-footer modal-text"></footer>
+          <footer class="modal-footer modal-text">
+            <button type="button" name="button" class="button-form">Guardar</button>
+          </footer>
         </section>
       </div>
     </div>
@@ -168,49 +194,50 @@
           <p> Esta Página fue creada para ayudar a los estudiantes foráneos sin hogar,
             para que durante su estancia escolar puedan conseguir el lugar
             adecuado para ellos. </p>
+        </div>
+        <div class="colum2">
+          <h1> Redes Sociales </h1>
+          <a href="https://www.facebook.com/" target="_blank" class="fa fa-facebook"></a>
+          <a href="https://twitter.com/" target="_blank" class="fa fa-twitter"></a>
+          <a href="https://github.com/" target="_blank" class="fa fa-github"></a><br>
+          <a href="https://www.instagram.com/?hl=en" target="_blank" class="fa fa-instagram"></a>
+          <a href="https://plus.google.com/discover" target="_blank" class="fa fa-google-plus"></a>
+          <a href="https://accounts.google.com/signin/v2/identifier?hl=es&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin" target="_blank" class="fa fa-envelope"></a>
+        </div>
+        <div class="colum3 footer-list">
+          <h1> Información </h1>
+          <div class="row2">
+            <a href="information.html"><label> ¿Qué es Foráneos UdeG? </label></a>
           </div>
-          <div class="colum2">
-            <h1> Redes Sociales </h1>
-            <a href="https://www.facebook.com/" target="_blank" class="fa fa-facebook"></a>
-            <a href="https://twitter.com/" target="_blank" class="fa fa-twitter"></a>
-            <a href="https://github.com/" target="_blank" class="fa fa-github"></a><br>
-            <a href="https://www.instagram.com/?hl=en" target="_blank" class="fa fa-instagram"></a>
-            <a href="https://plus.google.com/discover" target="_blank" class="fa fa-google-plus"></a>
-            <a href="https://accounts.google.com/signin/v2/identifier?hl=es&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin" target="_blank" class="fa fa-envelope"></a>
+          <div class="row2">
+            <a href="information.html#problema"><label> Reportar un Problema </label></a>
           </div>
-          <div class="colum3 footer-list">
-            <h1> Información </h1>
-            <div class="row2">
-              <a href="information.html"><label> ¿Qué es Foráneos UdeG? </label></a>
-            </div>
-            <div class="row2">
-              <a href="information.html#problema"><label> Reportar un Problema </label></a>
-            </div>
-            <div class="row2">
-              <a href="information.html#team"><label> Nuestro Team </label></a>
-            </div>
-            <div class="row2">
-              <a href="information.html#contacto"><label> Contacto </label></a>
-            </div>
+          <div class="row2">
+            <a href="information.html#team"><label> Nuestro Team </label></a>
+          </div>
+          <div class="row2">
+            <a href="information.html#contacto"><label> Contacto </label></a>
           </div>
         </div>
       </div>
-      <div class="container-footer">
-        <div class="footer">
-          <div class="copyright">
-            © 2018 Todos los Derechos Reservados | <a href="information.html"> Foráneos UdeG </a>
-          </div>
-          <div class="information">
-            <a href="information.html"> Información Foráneos UdeG </a> |
-            <a href="information.html#pripo"> Privación y Política </a> |
-            <a href="information.html#termco"> Términos y Condiciones </a>
-          </div>
+    </div>
+    <div class="container-footer">
+      <div class="footer">
+        <div class="copyright">
+          © 2018 Todos los Derechos Reservados | <a href="information.html"> Foráneos UdeG </a>
+        </div>
+        <div class="information">
+          <a href="information.html"> Información Foráneos UdeG </a> |
+          <a href="information.html#pripo"> Privación y Política </a> |
+          <a href="information.html#termco"> Términos y Condiciones </a>
         </div>
       </div>
-    </footer>
-    <script type="module" src="js/src/profile.js"></script>
-    <script type="module" src="js/profile.js"></script>
-    <script type="module" src="js/src/logout.js"></script>
-    <script type="module" src="js/upload.js"></script>
-  </body>
-  </html>
+    </div>
+  </footer>
+  <script type="module" src="js/src/profile.js"></script>
+  <script type="module" src="js/profile.js"></script>
+  <script type="module" src="js/src/logout.js"></script>
+  <script type="module" src="js/upload.js"></script>
+</body>
+
+</html>

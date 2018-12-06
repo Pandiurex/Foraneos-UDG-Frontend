@@ -6,7 +6,7 @@ class Recovery {
     Cookie.clearCookies();
     this.getElements();
     this.clearElements();
-    //this.checkRequired();
+    // this.checkRequired();
     this.postRecovery();
   }
 
@@ -46,7 +46,7 @@ class Recovery {
 
     if (correct) {
       console.log(values);
-      //const done = await Cookie.login(values);
+      // const done = await Cookie.login(values);
       if (!done) {
         Object.values(this.elements).forEach((element) => {
           this.markElement(element);
@@ -85,21 +85,27 @@ class Recovery {
   postRecovery() {
     const values = this.getValues();
     console.log(values.email);
-    fetch(`https://api.foraneos-udg.ml/api/auth/reqPasswordRecovery?email=${values.email}`,{
+    fetch(`https://api.foraneos-udg.ml/api/auth/reqPasswordRecovery?email=${values.email}`, {
       method: 'GET',
     })
-    .then(response => response.json())
-    .then(data => {
-      //console.log('data=',data);
-      if(data.status==200){
-        console.log(data);
-      }
-    })
-    .catch((err) => {
-      console.error(err);
-    });
+      .then(response => response.json())
+      .then((data) => {
+      // console.log('data=',data);
+        if (data.status == 200) {
+          console.log(data);
+          document.getElementById('email-sent').innerHTML = 'Ha sido enviado un correo de cambio de contraseña, revisalo porfavor';
+          document.getElementById('confirm-email').style.visibility = 'hidden';
+          document.getElementById('email-sent').style.visibility = 'visible';
+        } else {
+          const messege = document.getElementById('email-sent');
+          messege.innerHTML = 'Error No se encuentra en nuestro sistema';
+          messege.style.visibility = 'visible';
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   }
-
 }
 
 document.getElementById('btnrecover').addEventListener('click', () => {
