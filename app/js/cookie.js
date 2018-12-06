@@ -7,8 +7,15 @@ class Cookie {
 
   static getCookie(name) {
     const cookies = `; ${document.cookie}`;
-    const aux = cookies.split(`; ${name}=`)[1];
-    return aux.split(';')[0];
+    const aux = cookies.split(`; ${name}=`);
+    if (aux.length > 1) {
+      return aux.pop().split(';').shift();
+    }
+    return undefined;
+  }
+
+  static deleteCookie(name) {
+    document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT`;
   }
 
   static saveCookies({ hash, user, type }) {
@@ -17,77 +24,36 @@ class Cookie {
     this.setCookie('type', type);
   }
 
-  static haveSession() {
-    const hash = this.getCookie('session');
-    if (myToken != null) {
-      window.location.replace("./index.html");
-    }
+  static clearCookies() {
+    this.deleteCookie('session');
+    this.deleteCookie('user');
+    this.deleteCookie('type');
   }
 
-  static async login(body) {
+  static async login({ email, password }) {
     const hash = this.getCookie('session');
-    const response = await API.post('auth/login', body, hash);
+    const response = await API.login(JSON.stringify({
+      email, password,
+    }), hash);
+
     if (response.status >= 200 && response.status < 300) {
       this.saveCookies(response.data);
-      window.location.replace("./profile.html");
+      window.location.pathname = './profile.html';
       return true;
     }
 
     return false;
   }
 
-  static logout() {
-    const hash = getCookie('session');
-
-    if (hash !== undefined) {
-
+  static async logout() {
+    const hash = this.getCookie('session');
+    console.log(hash);
+    if (hash) {
+      await API.logout(hash);
+      this.clearCookies();
+      window.location.pathname = './index.html';
     }
   }
-
-    static logOut(){
-      let exp = "Thu, 01 Jan 1970 00:00:00 UTC";
-      let myToken = Cookie.getCookie('userToken');
-      console.log(myToken);
-      document.cookie = `userToken=;path=/;expires=${exp};`;
-      document.cookie = `userName=;path=/;expires=${exp};`;
-      document.cookie = `userRole=;path=/;expires=${exp};`;
-      fetch('https://easy-motion.herokuapp.com/auth/logout',{
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${myToken}`
-        },
-      })
-      .then(response => {
-          if(response.status==200){
-            console.log('200');
-            window.location.href = "./home.html";
-          }
-        })
-        console.log('s');
-
-
-    }
-
-    
-
-  //   static noSession(){
-  //     let myToken = Cookie.getCookie('userToken');
-  //     if(myToken == null){
-  //       window.location.replace("./home.html");
-  //     }
-  //   }
-
-    static exito(userToken, userName, userRole){
-        let nowTime = new Date();
-        nowTime.setTime(nowTime.getTime() + 5*60*1000); // in milliseconds
-        document.cookie = `userToken=${userToken};path=/;expires=${nowTime.toGMTString()};`;
-        document.cookie = `userName=${userName};path=/;expires=${nowTime.toGMTString()};`;
-        document.cookie = `userRole=${userRole};path=/;expires=${nowTime.toGMTString()};`;
-        console.log('exito');
-        window.location.replace("./home.html");
-        //window.location.replace("file:///home/chrislap/Dropbox/Easy-Motion-Web/src/home.html");
-    }
 }
 
 export default Cookie;

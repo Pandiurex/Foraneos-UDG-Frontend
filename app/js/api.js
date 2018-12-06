@@ -2,43 +2,15 @@ const host = 'https://api.foraneos-udg.ml/api/';
 
 class API {
   static async get(route, token = undefined) {
-    let json;
-    let status;
+    const response = await fetch(`${host}${route}`, {
+      method: 'GET',
+      headers: {
+        token,
+      },
+    });
 
-    try {
-      const response = await fetch(`${host}${route}`, {
-        method: 'GET',
-        headers: {
-          token,
-        },
-      });
-      status = await response.status;
-      const jsonPromise = await response.json();
-      json = await jsonPromise;
-    } catch (error) {
-      return error;
-    }
-
-    return {
-      status,
-      data: json,
-    };
-  }
-
-  async get(route, id) {
-    let json;
-    let status;
-
-    try {
-      const response = await fetch(`${this.host}/${route}/${id}`, {
-        method: 'GET',
-      });
-      status = await response.status;
-      const jsonPromise = await response.json();
-      json = await jsonPromise;
-    } catch (error) {
-      return error;
-    }
+    const status = await response.status;
+    const json = await response.json();
 
     return {
       status,
@@ -47,9 +19,9 @@ class API {
   }
 
   static async post(route, body, token = undefined) {
-    const response = await fetch(`${host}/${route}`, {
+    const response = await fetch(`${host}${route}`, {
       method: 'POST',
-      body: JSON.stringify(body),
+      body,
       headers: {
         'Content-Type': 'application/json',
         token,
@@ -65,11 +37,12 @@ class API {
     };
   }
 
-  async update(route, body, id, token = undefined) {
-    const response = await fetch(`${this.host}/${route}/${id}`, {
-      method: 'PUT',
-      body: new URLSearchParams(body),
+  static async update(route, body, id, token = undefined) {
+    const response = await fetch(`${host}${route}/${id}`, {
+      method: 'PATCH',
+      body,
       headers: {
+        'Content-Type': 'application/json',
         token,
       },
     });
@@ -82,60 +55,75 @@ class API {
     };
   }
 
-  async delete(route, id, token = undefined) {
-    const response = await fetch(`${this.host}/${route}/${id}`, {
+  static async delete(route, id, token = undefined) {
+    const response = await fetch(`${host}${route}/${id}`, {
       method: 'DELETE',
       headers: {
         token,
       },
     });
-  }
 
-  static async login({ email, password }, token = undefined) {
-    console.log(email);
-    console.log(password);
-    const response = await fetch(`${host}/auth/login`, {
-      method: 'POST',
-      body: new URLSearchParams({ email, password }),
-      headers: {
-        token,
-      },
-    });
     const status = await response.status;
     const json = await response.json();
 
+
     return {
       status,
       data: json,
     };
   }
 
-  async logout(token) {
-    const response = await fetch(`${this.host}/auth/logout`, {
-      method: 'GET',
+  static async deleteWithBody(route, body, token = undefined) {
+    const response = await fetch(`${host}${route}`, {
+      method: 'DELETE',
+      body,
       headers: {
+        'Content-Type': 'application/json',
         token,
       },
     });
+
     const status = await response.status;
-    const jsonPromise = await response.json();
-    const json = await jsonPromise;
+    const json = await response.json();
+
+
     return {
       status,
       data: json,
     };
   }
 
-  async activeSession(token) {
-    const response = await fetch(`${this.host}/auth/session`, {
-      method: 'GET',
+  static async login(body, token = undefined) {
+    const response = await fetch(`${host}auth/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        token,
+      },
+      body,
+    });
+
+    const status = await response.status;
+    const json = await response.json();
+
+
+    return {
+      status,
+      data: json,
+    };
+  }
+
+  static async logout(token) {
+    const response = await fetch(`${host}auth/logout`, {
+      method: 'DELETE',
       headers: {
         token,
       },
     });
+
     const status = await response.status;
-    const jsonPromise = await response.json();
-    const json = await jsonPromise;
+    const json = await response.json();
+
     return {
       status,
       data: json,

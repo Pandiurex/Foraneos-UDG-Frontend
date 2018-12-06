@@ -84,6 +84,6 @@ class Login {
 document.getElementById('btnsubmit').addEventListener('click', () => {
   const login = new Login();
   login.checkForm();
-})
+});
 
 export default Login;
