@@ -75,6 +75,45 @@
         </article>
       </div>
     </section>
+    <div class="card">
+      <button href="#modal_mail" id="btnemail" type="button" name="btnemail" class="button-form button-tam"> Ver correos </button>
+    </div>
+    <div class="modal" id="modal_mail">
+      <div class="modal-dialog">
+        <section class="modal-content">
+          <header class="modal-header">
+            <h2 class="modal-title"> Lista de correos </h2>
+            <a href="#" class="modal-close">&times;</a>
+          </header>
+          <div class="modal-body">
+            <section id="list_mail">
+              <div class="contenedor">
+                <h2> Correos </h2>
+                <table id="table">
+                  <thead>
+                    <tr>
+                      <th> Correo </th>
+                      <th> Verificado </th>
+                      <th> Eliminar</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td> Usuario </td>
+                      <td> Lugar </td>
+                      <td> Fecha </td>
+                      <td> Estado </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            </form>
+          </div>
+          <footer class="modal-footer modal-text"></footer>
+        </section>
+      </div>
+    </div>
     <section id="historial">
       <div class="contenedor">
         <h2> Historial </h2>
@@ -167,6 +206,7 @@
       </div>
     </footer>
     <script type="module" src="js/src/profile.js"></script>
+    <script type="module" src="js/profile.js"></script>
     <script type="module" src="js/src/logout.js"></script>
     <script type="module" src="js/upload.js"></script>
   </body>

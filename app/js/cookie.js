@@ -54,6 +54,13 @@ class Cookie {
       window.location.pathname = './index.html';
     }
   }
+
+  static noSession() {
+    const myToken = this.getCookie('session');
+    if (myToken == null) {
+      window.location.replace("./index.html");
+    }
+  }
 }
 
 export default Cookie;
