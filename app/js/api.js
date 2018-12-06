@@ -19,9 +19,9 @@ class API {
   }
 
   static async post(route, body, token = undefined) {
-    const response = await fetch(`${host}/${route}`, {
+    const response = await fetch(`${host}${route}`, {
       method: 'POST',
-      body: JSON.stringify(body),
+      body,
       headers: {
         'Content-Type': 'application/json',
         token,
@@ -37,10 +37,10 @@ class API {
     };
   }
 
-  async update(route, body, id, token = undefined) {
-    const response = await fetch(`${host}/${route}/${id}`, {
+  static async update(route, body, id, token = undefined) {
+    const response = await fetch(`${host}${route}/${id}`, {
       method: 'PATCH',
-      body: JSON.stringify(body),
+      body,
       headers: {
         'Content-Type': 'application/json',
         token,
@@ -55,40 +55,57 @@ class API {
     };
   }
 
-  async delete(route, id, token = undefined) {
-    const response = await fetch(`${host}/${route}/${id}`, {
+  static async delete(route, id, token = undefined) {
+    const response = await fetch(`${host}${route}/${id}`, {
       method: 'DELETE',
       headers: {
         token,
       },
     });
+
+    const status = await response.status;
+    const json = await response.json();
+
+
+    return {
+      status,
+      data: json,
+    };
   }
 
-  async deleteWithBody(route, body, token = undefined) {
-    const response = await fetch(`${host}/${route}`, {
+  static async deleteWithBody(route, body, token = undefined) {
+    const response = await fetch(`${host}${route}`, {
       method: 'DELETE',
-      body: JSON.stringify(body),
+      body,
       headers: {
         'Content-Type': 'application/json',
         token,
       },
     });
+
+    const status = await response.status;
+    const json = await response.json();
+
+
+    return {
+      status,
+      data: json,
+    };
   }
 
   static async login(body, token = undefined) {
-    const response = await fetch(`${host}/auth/login`, {
+    const response = await fetch(`${host}auth/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         token,
       },
-      body: body,
+      body,
     });
 
     const status = await response.status;
     const json = await response.json();
 
-    console.log(json);
 
     return {
       status,
@@ -97,8 +114,8 @@ class API {
   }
 
   static async logout(token) {
-    const response = await fetch(`${host}/auth/logout`, {
-      method: 'DEL',
+    const response = await fetch(`${host}auth/logout`, {
+      method: 'DELETE',
       headers: {
         token,
       },
