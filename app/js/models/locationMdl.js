@@ -48,16 +48,19 @@ class Location {
 
     params = this.deleteEmptyKeys(params);
     params = this.processParams(params);
-    console.log(params);
 
     const response = await API.get(`${ROUTE}${params}`, Cookie.getCookie('session'));
-    console.log(response);
+
+    if (response.status >= 200 && response.status < 300) {
+      return response.data;
+    }
+    return [];
   }
 
-  static insert(user, locationData) {
+  static async insert(user, locationData) {
     const location = this.processResult(locationData)[0];
     location.ownerUserId = user.id;
-    API.insert(ROUTE, location, Cookie.getCookie());
+    const response = await API.insert(ROUTE, location, Cookie.getCookie());
   }
 
   static processResult(data) {

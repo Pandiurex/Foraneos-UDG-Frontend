@@ -9,7 +9,7 @@ class API {
       },
     });
 
-    const status = await response.status;
+    const { status } = response;
     const json = await response.json();
 
     return {
