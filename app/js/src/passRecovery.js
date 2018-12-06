@@ -1,19 +1,26 @@
 import Cookie from '../cookie.js';
 import regexs from '../util/regexs.js';
-window.location.search;
+const token = window.location.search;
 
 class passRecovery {
   checkForm() {
     Cookie.clearCookies();
     this.getElements();
     this.clearElements();
+    const values = this.getValues();
+    if(values.password1 == values.password2){
+      this.postrecoveryPassword();
+    }else {
+      alert("Las contraseñas no coinciden");
+    }
     //this.checkRequired();
-    this.postRecovery();
+
   }
 
   getElements() {
     this.elements = [];
-    this.elements.email = document.getElementById('recoveremail');
+    this.elements.password1 = document.getElementById('recover-password');
+    this.elements.password2 = document.getElementById('confirm-password');
   }
 
   clearElements() {
@@ -83,19 +90,19 @@ class passRecovery {
     return values;
   }
 
-  postRecovery() {
+  postrecoveryPassword() {
     const values = this.getValues();
-    console.log(values.email);
-    fetch(`https://api.foraneos-udg.ml/api/auth/passwordRecovery`,{
+    const hash = token.split("?h=");
+    const pass =values.password2;
+    fetch('https://api.foraneos-udg.ml/api/auth/passwordRecovery',{
       method: 'POST',
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'hash': `${userToken}`
-      }
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: `hash=${hash[1]}&password=${pass}`
     })
     .then(response => response.json())
     .then(data => {
-      //console.log('data=',data);
       if(data.status==200){
         console.log(data);
       }
@@ -107,8 +114,8 @@ class passRecovery {
 
 }
 
-document.getElementById('btnrecover').addEventListener('click', () => {
-  const recovery = new Recovery();
+document.getElementById('btnreplace').addEventListener('click', () => {
+  const recovery = new passRecovery();
   recovery.checkForm();
 });
 
