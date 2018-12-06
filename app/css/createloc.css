@@ -37,6 +37,9 @@
   margin-top: 10px;
 }
 
+.adj span {
+  display: inline-block;
+}
 /* PHOTO INF */
 
 #masinf {
