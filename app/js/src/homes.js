@@ -1,4 +1,4 @@
-import Location from '../models/locationMdl.js';
+import Location from '../models/location.js';
 
 class LocationsRenderer {
   constructor() {

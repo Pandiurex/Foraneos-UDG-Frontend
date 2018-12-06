@@ -1,104 +1,39 @@
-import regexs from '../util/regexs.js';
-import Location from '../models/locationMdl.js';
+import Location from '../models/location.js';
 import Cookie from '../cookie.js';
+import regexs from '../util/regexs.js';
+import { checkRequired } from '../util/validator.js'
+import { getKeyValues, clearUndefined } from '../util/list.js';
 
-class CreateLoc {
-  checkForm() {
-    this.getElements();
-    this.clearElements();
-    this.checkRequired();
-  }
+document.getElementById('btngua').addEventListener('click', () => {
+  checkForm();
+});
 
-  getElements() {
-    this.elements = [];
-    this.elements.numRooms = document.getElementById('habitaciones');
-    this.elements.costElement = document.getElementById('costo');
-    this.elements.genderElement = document.getElementById('genero');
-    this.elements.streetElement = document.getElementById('calle');
-    this.elements.extNumElement = document.getElementById('numext');
-    this.elements.intNumElement = document.getElementById('numint');
-    this.elements.across1Element = document.getElementById('cruce1');
-    this.elements.across2Element = document.getElementById('cruce2');
-    this.elements.colElement = document.getElementById('col');
-    this.elements.postalElement = document.getElementById('cod');
-    this.elements.commentsElement = document.getElementById('comentarios');
-    this.elements.restrictionsElement = document.getElementById('restricciones');
-  }
+function checkForm() {
+  const elements = getElements();
+  const correct = checkRequired(elements);
 
-  clearElements() {
-    Object.values(this.elements).forEach((element) => {
-      element.style.borderColor = '#C7C7C7';
-    });
-  }
-
-  checkRequired() {
-    let correct = true;
-    Object.values(this.elements).forEach((element) => {
-      if (element.selectedIndex !== undefined) {
-        if (element.selectedIndex === 0 && element.required) {
-          this.markElement(element);
-          correct = false;
-        }
-        return;
-      }
-      if (element.required && element.value.length === 0) {
-        this.markElement(element);
-        correct = false;
-      } else if (element.value.length !== 0) {
-        if (!this.checkText(element)) {
-          this.markElement(element);
-          correct = false;
-        }
-      }
-    });
-
-    if (correct) {
-      let values = this.getValues(this.elements);
-      values = this.deleteEmptyKeys(values);
-      Location.insert(Cookie.getCookie('user'), values);
-
-    } else {
-      console.log('Corregir los datos marcados');
-    }
-  }
-
-  checkText(element) {
-    return regexs[`${element.dataset.regexp}`].test(element.value);
-  }
-
-  markElement(element) {
-    element.style.borderColor = "red";
-  }
-
-  getValues(elements) {
-    const values = [];
-
-    Object.keys(elements).forEach((key) => {
-      if (elements.hasOwnProperty(key)) {
-        if (elements[key].selectedIndex !== undefined) {
-          values[key] = elements[key].selectedIndex;
-          return;
-        }
-        values[key] = elements[key].value;
-      }
-    });
-
-    return values;
-  }
-
-  deleteEmptyKeys(elements) {
-    const aux = [];
-    Object.keys(elements).forEach((key) => {
-      if (elements[key] !== undefined &&
-        elements[key] !== '') {
-        aux[key] = elements[key];
-      }
-    });
-    return aux;
+  if (correct) {
+    let values = getKeyValues(elements);
+    values = clearUndefined(values);
+    // Location.insert(Cookie.getCookie('user'), values);
+  } else {
+    console.log('Corregir los datos marcados');
   }
 }
 
-document.getElementById('btngua').addEventListener('click', () => {
-  const createLoc = new CreateLoc();
-  createLoc.checkForm();
-});
+function getElements() {
+  const elements = [];
+  elements.numRooms = document.getElementById('habitaciones');
+  elements.costElement = document.getElementById('costo');
+  elements.genderElement = document.getElementById('genero');
+  elements.streetElement = document.getElementById('calle');
+  elements.extNumElement = document.getElementById('numext');
+  elements.intNumElement = document.getElementById('numint');
+  elements.across1Element = document.getElementById('cruce1');
+  elements.across2Element = document.getElementById('cruce2');
+  elements.colElement = document.getElementById('col');
+  elements.postalElement = document.getElementById('cod');
+  elements.commentsElement = document.getElementById('comentarios');
+  elements.restrictionsElement = document.getElementById('restricciones');
+  return elements;
+}
