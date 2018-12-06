@@ -99,7 +99,7 @@ class passRecovery {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
-      body: `hash=${hash}&password=${pass}`
+      body: `hash=${hash[1]}&password=${pass}`
     })
     .then(response => response.json())
     .then(data => {
