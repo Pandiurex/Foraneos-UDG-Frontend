@@ -1,3 +1,4 @@
+import Cookie from '../cookie.js';
 import regexs from '../util/regexs.js';
 
 class Update {

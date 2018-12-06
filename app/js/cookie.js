@@ -8,7 +8,7 @@ class Cookie {
   static getCookie(name) {
     const cookies = `; ${document.cookie}`;
     const aux = cookies.split(`; ${name}=`)[1];
-    return aux.split(';');
+    return aux.split(';')[0];
   }
 
   static saveCookies({ hash, user, type }) {
@@ -20,7 +20,7 @@ class Cookie {
   static haveSession() {
     const hash = this.getCookie('session');
     if (myToken != null) {
-      window.location.replace("./home.html");
+      window.location.replace("./index.html");
     }
   }
 
@@ -30,9 +30,10 @@ class Cookie {
     if (response.status >= 200 && response.status < 300) {
       this.saveCookies(response.data);
       window.location.replace("./profile.html");
-    } else {
-      
+      return true;
     }
+
+    return false;
   }
 
   static logout() {

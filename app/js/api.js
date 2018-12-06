@@ -1,4 +1,5 @@
 const host = 'https://api.foraneos-udg.ml/api/';
+
 class API {
   static async get(route, token = undefined) {
     let json;
@@ -11,10 +12,8 @@ class API {
           token,
         },
       });
-      console.log(response);
       status = await response.status;
       const jsonPromise = await response.json();
-      console.log(jsonPromise);
       json = await jsonPromise;
     } catch (error) {
       return error;
@@ -47,21 +46,22 @@ class API {
     };
   }
 
-  async post(route, body, token = undefined) {
+  static async post(route, body, token = undefined) {
     const response = await fetch(`${host}/${route}`, {
       method: 'POST',
-      body: new URLSearchParams(body),
+      body: JSON.stringify(body),
       headers: {
+        'Content-Type': 'application/json',
         token,
       },
     });
+
     const status = await response.status;
-    const jsonPromise = await response.json();
-    const json = await jsonPromise;
+    const json = await response.json();
 
     return {
       status,
-      response: json,
+      data: json,
     };
   }
 
@@ -74,12 +74,11 @@ class API {
       },
     });
     const status = await response.status;
-    const jsonPromise = await response.json();
-    const json = await jsonPromise;
+    const json = await response.json();
 
     return {
       status,
-      response: json,
+      data: json,
     };
   }
 
@@ -92,18 +91,22 @@ class API {
     });
   }
 
-  async login(email, password) {
-    const response = await fetch(`${this.host}/auth/login`, {
+  static async login({ email, password }, token = undefined) {
+    console.log(email);
+    console.log(password);
+    const response = await fetch(`${host}/auth/login`, {
       method: 'POST',
       body: new URLSearchParams({ email, password }),
+      headers: {
+        token,
+      },
     });
     const status = await response.status;
-    const jsonPromise = await response.json();
-    const json = await jsonPromise;
+    const json = await response.json();
 
     return {
       status,
-      response: json,
+      data: json,
     };
   }
 
@@ -119,7 +122,7 @@ class API {
     const json = await jsonPromise;
     return {
       status,
-      response: json,
+      data: json,
     };
   }
 
@@ -135,7 +138,7 @@ class API {
     const json = await jsonPromise;
     return {
       status,
-      response: json,
+      data: json,
     };
   }
 }
