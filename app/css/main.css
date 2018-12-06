@@ -285,6 +285,10 @@ footer {
   color: white;
 }
 
+.confirmation {
+  visibility: hidden;
+}
+
 @media (min-width: 1024px) {
   .contenedor {
     width: 1000px;
