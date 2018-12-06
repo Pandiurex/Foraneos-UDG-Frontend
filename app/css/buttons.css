@@ -51,6 +51,10 @@
   width: 30%;
 }
 
+.button-modal {
+  width: 100px;
+}
+
 .button-form:hover {
   background-color: #598FB2;
   color: white;

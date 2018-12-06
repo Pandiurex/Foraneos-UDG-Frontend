@@ -42,12 +42,49 @@
 
 /* HISTORY PROFILE */
 
+.modal-contenedor {
+  width: 100%;
+}
+
 #historial {
   text-align: center;
 }
 
 #historial h2 {
   color: #EC801C;
+}
+
+.email-table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  height: 200px;
+  width: 90%;
+  margin-left: 7%;
+  margin-top: 10px;
+    display: block;
+  overflow: auto;
+}
+.email-table td, th {
+  border: 1px solid #DDD;
+  padding: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.email-table tr:nth-child(even) {
+  background-color: #F2F2F2;
+}
+
+.email-table tr:hover {
+  background-color: #DDD;
+}
+
+.email-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #0BA48C;
+  color: white;
 }
 
 #table {
@@ -58,6 +95,10 @@
   margin-top: 10px;
     display: block;
   overflow-x: auto;
+}
+
+#correo {
+  margin-left: 45%;
 }
 
 #table td, #table th {

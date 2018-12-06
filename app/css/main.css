@@ -285,7 +285,20 @@ footer {
   color: white;
 }
 
+.fa-trash {
+  background-color: #A01010;
+  color: white;
+}
+
 .confirmation {
+  visibility: hidden;
+}
+
+.change {
+  visibility: hidden;
+}
+
+.email-sent {
   visibility: hidden;
 }
 

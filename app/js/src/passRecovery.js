@@ -1,5 +1,6 @@
 import Cookie from '../cookie.js';
 import regexs from '../util/regexs.js';
+
 const token = window.location.search;
 
 class passRecovery {
@@ -8,13 +9,12 @@ class passRecovery {
     this.getElements();
     this.clearElements();
     const values = this.getValues();
-    if(values.password1 == values.password2){
+    if (values.password1 == values.password2) {
       this.postrecoveryPassword();
-    }else {
-      alert("Las contraseñas no coinciden");
+    } else {
+      alert('Las contraseñas no coinciden');
     }
-    //this.checkRequired();
-
+    // this.checkRequired();
   }
 
   getElements() {
@@ -54,7 +54,7 @@ class passRecovery {
 
     if (correct) {
       console.log(values);
-      //const done = await Cookie.login(values);
+      // const done = await Cookie.login(values);
       if (!done) {
         Object.values(this.elements).forEach((element) => {
           this.markElement(element);
@@ -92,26 +92,27 @@ class passRecovery {
 
   postrecoveryPassword() {
     const values = this.getValues();
-    const hash = token.split("?h=");
-    const pass =values.password2;
-    fetch('https://api.foraneos-udg.ml/api/auth/passwordRecovery',{
+    const hash = token.split('?h=');
+    const pass = values.password2;
+    fetch('https://api.foraneos-udg.ml/api/auth/passwordRecovery', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: `hash=${hash[1]}&password=${pass}`
+      body: `hash=${hash[1]}&password=${pass}`,
     })
-    .then(response => response.json())
-    .then(data => {
-      if(data.status==200){
-        console.log(data);
-      }
-    })
-    .catch((err) => {
-      console.error(err);
-    });
+      .then(response => response.json())
+      .then((data) => {
+        if (data.status == 200) {
+          console.log(data);
+          document.getElementById('confirm-pass').style.visibility = 'hidden';
+          document.getElementById('change').style.visibility = 'visible';
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   }
-
 }
 
 document.getElementById('btnreplace').addEventListener('click', () => {
