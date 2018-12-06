@@ -57,8 +57,8 @@ class Cookie {
 
   static noSession() {
     const myToken = this.getCookie('session');
-    if (myToken == null) {
-      window.location.replace("./index.html");
+    if (myToken === undefined) {
+      window.location.pathname = './index.html';
     }
   }
 }

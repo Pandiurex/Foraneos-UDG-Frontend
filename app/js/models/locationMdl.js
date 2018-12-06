@@ -57,10 +57,17 @@ class Location {
     return [];
   }
 
-  static async insert(user, locationData) {
-    const location = this.processResult(locationData)[0];
-    location.ownerUserId = user.id;
-    const response = await API.insert(ROUTE, location, Cookie.getCookie());
+  static async insert(userId, locationData) {
+    console.log(locationData);
+    const location = new Location(locationData);
+    location.ownerUserId = userId;
+    // const response = await API.insert(ROUTE, location, Cookie.getCookie());
+
+
+    // if (response.status >= 200 && response.status < 300) {
+    //   return response.data;
+    // }
+    // return [];
   }
 
   static processResult(data) {

@@ -1,4 +1,6 @@
 import regexs from '../util/regexs.js';
+import Location from '../models/locationMdl.js';
+import Cookie from '../cookie.js';
 
 class CreateLoc {
   checkForm() {
@@ -51,8 +53,10 @@ class CreateLoc {
     });
 
     if (correct) {
-      // enviar los VALORES al modelo
-      console.log('Enviando al modelo');
+      let values = this.getValues(this.elements);
+      values = this.deleteEmptyKeys(values);
+      Location.insert(Cookie.getCookie('user'), values);
+
     } else {
       console.log('Corregir los datos marcados');
     }
@@ -64,6 +68,33 @@ class CreateLoc {
 
   markElement(element) {
     element.style.borderColor = "red";
+  }
+
+  getValues(elements) {
+    const values = [];
+
+    Object.keys(elements).forEach((key) => {
+      if (elements.hasOwnProperty(key)) {
+        if (elements[key].selectedIndex !== undefined) {
+          values[key] = elements[key].selectedIndex;
+          return;
+        }
+        values[key] = elements[key].value;
+      }
+    });
+
+    return values;
+  }
+
+  deleteEmptyKeys(elements) {
+    const aux = [];
+    Object.keys(elements).forEach((key) => {
+      if (elements[key] !== undefined &&
+        elements[key] !== '') {
+        aux[key] = elements[key];
+      }
+    });
+    return aux;
   }
 }
 

@@ -55,6 +55,20 @@ class API {
     };
   }
 
+  static async updateFile(route, body, id, token = undefined) {
+    const response = await fetch(`${host}${route}/${id}`, {
+      method: 'PATCH',
+      body,
+    });
+    const status = await response.status;
+    const json = await response.json();
+
+    return {
+      status,
+      data: json,
+    };
+  }
+
   static async delete(route, id, token = undefined) {
     const response = await fetch(`${host}${route}/${id}`, {
       method: 'DELETE',

@@ -1,5 +1,4 @@
 import Cookie from './cookie.js';
-import Validator from "./Svalidator.js"
 window.onload = iniciar;
 
 function iniciar() {
@@ -8,7 +7,7 @@ function iniciar() {
 }
 
 
-function getUser(){
+function getUser() {
   const datos_perfil = document.querySelector('#datos-perfil');
   const username_header = document.querySelector('#username-header');
   const userdate = document.querySelector('#userdate');
@@ -27,6 +26,7 @@ function getUser(){
   .then(data => {
     //console.log('data=',data);
     if(data.active==1){
+      console.log(data.name);
       console.log(data);
       username_header.innerHTML = `<h4>Username: ${data.username}</h4>`;
 
@@ -36,7 +36,7 @@ function getUser(){
 
       userdate.innerHTML = `
       <input id="username" type="text" name="username" value=${data.username} class="input3" readonly>
-      <input id="name" type="text" name="name" value=${data.name}  class="input3" readonly>
+      <input id="name" type="text" name="name" value="${data.name}"  class="input3" readonly>
       <input id="lastname" type="text" name="lastname" value="${data.firstSurname} ${data.secondSurname}" class="input3" readonly>
       <input id="infemail" type="email" name="email" value=${data.mainEmail} class="input3" readonly>
       <input id="regpassword" type="password" name="password" value=${data.password} class="input3" readonly>
