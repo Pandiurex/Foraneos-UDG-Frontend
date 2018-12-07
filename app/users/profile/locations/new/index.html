@@ -8,10 +8,10 @@
   <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="shortcut icon" href="img/logo/logo4.ico">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/createloc.css">
-  <link rel="stylesheet" href="css/galery.css">
+  <link rel="stylesheet" href="../../../../css/normalize.css">
+  <link rel="stylesheet" href="../../../../css/main.css">
+  <link rel="stylesheet" href="../../../../css/createloc.css">
+  <link rel="stylesheet" href="../../../../css/galery.css">
   <title> Publicar Alojamiento </title>
 </head>
 
@@ -22,20 +22,30 @@
       <input type="checkbox" id="menu-bar">
       <label class="icon-menu" for="menu-bar"></label>
       <nav class="menu">
-        <a href="profile.html"> Mi perfil </a>
-        <a href="createloc.html"> Publicar alojamiento </a>
-        <a href="#"> Ver alojamientos </a>
-        <a href="#historial"> Historial </a>
-        <a href="msg.html"> Mensajes </a>
-        <a href="#"> Cerrar sesión </a>
-        <!-- <a href="update.html"> Editar Hab </a> -->
+        <a href="/"> Inicio </a>
+        <a href="/locations/"> Ver alojamientos </a>
+        <admin><owner><tenant>
+          <a href="/users/profile/"> Mi perfil </a>
+        </tenant></owner></admin>
+        <admin><owner>
+          <a href="/users/profile/locations/new/"> Publicar alojamiento </a>
+        </owner></admin>
+        <owner><tenant>
+          <a href="/users/profile/locations/"> Mensajes </a>
+        </tenant></owner>
+        <owner><tenant>
+          <a href="/users/profile/"> Historial </a>
+        </tenant></owner>
+        <admin><owner><tenant>
+          <a id="menu-logout" href="#"> Cerrar sesión </a>
+        </tenant></owner></admin>
       </nav>
     </div>
   </header>
 
   <main>
     <section id="bannerpro">
-      <img src="img/port/port6.jpg" alt="Imagen de estudiantes">
+      <img src="../../../../img/port/port6.jpg" alt="Imagen de estudiantes">
       <div class="contenedor">
         <h2> Foráneos UdeG </h2>
         <p> Alojamiento Estudiantil </p>
@@ -165,7 +175,7 @@
         <h4> Foto 1 </h4>
         <div class="imagen">
           <a href="#img5">&#60;</a>
-          <a href="#img2"><img src="img/slider/slider1.jpg" alt="Foto 1"></a>
+          <a href="#img2"><img src="../../../../img/slider/slider1.jpg" alt="Foto 1"></a>
           <a href="#img2"></a>
         </div>
         <a class="cerrar" href="#"> X </a>
@@ -174,7 +184,7 @@
         <h4> Foto 2 </h4>
         <div class="imagen">
           <a href="#img1">&#60;</a>
-          <a href="#img3"><img src="img/slider/slider1.jpg" alt="Foto 2"></a>
+          <a href="#img3"><img src="../../../../img/slider/slider1.jpg" alt="Foto 2"></a>
           <a href="#img3"></a>
         </div>
         <a class="cerrar" href="#"> X </a>
@@ -183,7 +193,7 @@
         <h4> Foto 3 </h4>
         <div class="imagen">
           <a href="#img2">&#60;</a>
-          <a href="#img4"><img src="img/slider/slider1.jpg" alt="Foto 3"></a>
+          <a href="#img4"><img src="../../../../img/slider/slider1.jpg" alt="Foto 3"></a>
           <a href="#img4"></a>
         </div>
         <a class="cerrar" href="#"> X </a>
@@ -192,7 +202,7 @@
         <h4> Foto 4 </h4>
         <div class="imagen">
           <a href="#img3">&#60;</a>
-          <a href="#img5"><img src="img/slider/slider1.jpg" alt="Foto 4"></a>
+          <a href="#img5"><img src="../../../../img/slider/slider1.jpg" alt="Foto 4"></a>
           <a href="#img5"></a>
         </div>
         <a class="cerrar" href=""> X </a>
@@ -201,7 +211,7 @@
         <h4> Foto 5 </h4>
         <div class="imagen">
           <a href="#img4">&#60;</a>
-          <a href="#img1"><img src="img/slider/slider1.jpg" alt="Foto 5"></a>
+          <a href="#img1"><img src="../../../../img/slider/slider1.jpg" alt="Foto 5"></a>
           <a href="#img1"></a>
         </div>
         <a class="cerrar" href=""> X </a>
@@ -281,6 +291,7 @@
         </div>
       </div>
     </footer>
-    <script type="module" src="js/src/createloc.js"></script>
+    <script type="module" src="src/index.js"></script>
+    <script type="module" src="../../../../js/handlersNavBar/index.js"></script>
   </body>
   </html>

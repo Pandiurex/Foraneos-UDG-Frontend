@@ -9,8 +9,8 @@
   <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="shortcut icon" href="img/logo/logo4.ico">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="../../css/normalize.css">
+  <link rel="stylesheet" href="../../css/main.css">
   <title> Perfil </title>
 </head>
 
@@ -21,19 +21,30 @@
       <input type="checkbox" id="menu-bar">
       <label class="icon-menu" for="menu-bar"></label>
       <nav class="menu">
-        <a href="profile.html"> Mi perfil </a>
-        <a href="createloc.html"> Publicar alojamiento </a>
-        <a href="#"> Ver alojamientos </a>
-        <a href="#historial"> Historial </a>
-        <a href="msg.html"> Mensajes </a>
-        <a href="#" id="logout"> Cerrar sesión </a>
+        <a href="/"> Inicio </a>
+        <a href="/locations/"> Ver alojamientos </a>
+        <admin><owner><tenant>
+          <a href="/users/profile/"> Mi perfil </a>
+        </tenant></owner></admin>
+        <admin><owner>
+          <a href="/users/profile/locations/new/"> Publicar alojamiento </a>
+        </owner></admin>
+        <owner><tenant>
+          <a href="/users/profile/locations/"> Mensajes </a>
+        </tenant></owner>
+        <owner><tenant>
+          <a href="/users/profile/"> Historial </a>
+        </tenant></owner>
+        <admin><owner><tenant>
+          <a id="menu-logout" href="#"> Cerrar sesión </a>
+        </tenant></owner></admin>
       </nav>
     </div>
   </header>
 
   <main>
     <section id="bannerpro">
-      <img src="img/port/port5.jpg" alt="Imagen de estudiantes">
+      <img src="../../img/port/port5.jpg" alt="Imagen de estudiantes">
       <div class="contenedor">
         <h2> Bienvenido </h2>
       </div>
@@ -42,7 +53,7 @@
       <h3> ¡Gusto tenerte de vuelta! </h3>
       <div class="contper">
         <div class="info-perfil">
-          <img id="profile-image" src="img/users/user1.png" alt="Servicios">
+          <img id="profile-image" src="../../img/users/user1.png" alt="Servicios">
           <section>
             <input id="repfoto1" type="file" name="foto1" accept="image/*" class="input2" required>
           </section>
@@ -89,7 +100,7 @@
             <a href="#" class="modal-close">&times;</a>
           </header>
           <div class="modal-body">
-            <section id="list_mail">
+            <section id="list-mail">
               <div class="modal-contenedor">
                 <table class="email-table">
                   <h2 id="correo"> Correos </h2>
@@ -135,7 +146,6 @@
                 <!-- <button type="button" name="button" class="button-form button-modal">Borrar</button> -->
               </div>
             </section>
-            </form>
           </div>
           <footer class="modal-footer modal-text">
             <button type="button" name="button" class="button-form">Guardar</button>
@@ -207,16 +217,16 @@
         <div class="colum3 footer-list">
           <h1> Información </h1>
           <div class="row2">
-            <a href="information.html"><label> ¿Qué es Foráneos UdeG? </label></a>
+            <a href="/info/"><label> ¿Qué es Foráneos UdeG? </label></a>
           </div>
           <div class="row2">
-            <a href="information.html#problema"><label> Reportar un Problema </label></a>
+            <a href="/info/#problema"><label> Reportar un Problema </label></a>
           </div>
           <div class="row2">
-            <a href="information.html#team"><label> Nuestro Team </label></a>
+            <a href="/info/#team"><label> Nuestro Team </label></a>
           </div>
           <div class="row2">
-            <a href="information.html#contacto"><label> Contacto </label></a>
+            <a href="/info/#contacto"><label> Contacto </label></a>
           </div>
         </div>
       </div>
@@ -224,20 +234,18 @@
     <div class="container-footer">
       <div class="footer">
         <div class="copyright">
-          © 2018 Todos los Derechos Reservados | <a href="information.html"> Foráneos UdeG </a>
+          © 2018 Todos los Derechos Reservados | <a href="/info/"> Foráneos UdeG </a>
         </div>
         <div class="information">
-          <a href="information.html"> Información Foráneos UdeG </a> |
-          <a href="information.html#pripo"> Privación y Política </a> |
-          <a href="information.html#termco"> Términos y Condiciones </a>
+          <a href="/info/"> Información Foráneos UdeG </a> |
+          <a href="/info/#pripo"> Privación y Política </a> |
+          <a href="/info/#termco"> Términos y Condiciones </a>
         </div>
       </div>
     </div>
   </footer>
-  <script type="module" src="js/src/profile.js"></script>
-  <script type="module" src="js/profile.js"></script>
-  <script type="module" src="js/src/logout.js"></script>
-  <script type="module" src="js/upload.js"></script>
+  <script type="module" src="src/index.js"></script>
+  <script type="module" src="../../js/handlersNavBar/index.js"></script>
 </body>
 
 </html>

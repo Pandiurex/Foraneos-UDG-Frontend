@@ -7,8 +7,8 @@
   <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="shortcut icon" href="img/logo/logo4.ico">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/main.css">
   <title> Información </title>
 </head>
 
@@ -19,10 +19,29 @@
       <input type="checkbox" id="menu-bar">
       <label class="icon-menu" for="menu-bar"></label>
       <nav class="menu">
-        <a href="index.html"> Inicio </a>
-        <a href="homes.html"> Alojamiento </a>
-        <a href="#login"> Iniciar sesión </a>
-        <a href="registry.html"> Regístrate </a>
+        <a href="/"> Inicio </a>
+        <a href="/locations/"> Ver alojamientos </a>
+        <admin><owner><tenant>
+          <a href="/users/profile/"> Mi perfil </a>
+        </tenant></owner></admin>
+        <admin><owner>
+          <a href="/users/profile/locations/new/"> Publicar alojamiento </a>
+        </owner></admin>
+        <owner><tenant>
+          <a href="/users/profile/locations/"> Mensajes </a>
+        </tenant></owner>
+        <owner><tenant>
+          <a href="/users/profile/"> Historial </a>
+        </tenant></owner>
+        <visitant>
+          <a href="#login"> Iniciar sesión </a>
+        </visitant>
+        <visitant>
+          <a href="/registry/"> Regístrate </a>
+        </visitant>
+        <admin><owner><tenant>
+          <a id="menu-logout" href="#"> Cerrar sesión </a>
+        </tenant></owner></admin>
       </nav>
     </div>
     <div class="modal" id="login">
@@ -33,10 +52,10 @@
             <a href="#" class="modal-close">&times;</a>
           </header>
           <div class="modal-body">
-            <form class="card"> <!-- class=""  action="index.html" method="post"> -->
-              <input id="email" class="input" name="email" placeholder="Correo electrónico" required data-regexp="email"><br>
-              <input id="password" class="input" name="password" type="password" placeholder="Contraseña" required data-regexp="password"><br>
-              <button id="btnsubmit" type="button" name="btncan" class="button"> Enviar </button>
+            <form class="card" > 
+              <input id="login-email" class="input" name="login-email" placeholder="Correo electrónico" required data-regexp="email"><br>
+              <input id="login-password" class="input" name="login-password" type="password" placeholder="Contraseña" required data-regexp="password"><br>
+              <button id="btn-login" type="button" name="btn-login" class="button"> Iniciar sesión </button>
               <p class="modal-p"> O iniciar sesión con </p>
               <button id="btnface" type="button" name="btngua" class="button"> Facebook </button>
             </form>
@@ -52,7 +71,7 @@
 
   <main>
     <section id="banner">
-      <img src="img/port/port4.jpg" alt="Imagen de estudiantes">
+      <img src="../img/port/port4.jpg" alt="Imagen de estudiantes">
       <div class="contenedor">
         <h2> Foráneos UdeG </h2>
         <p> Alojamiento Estudiantil </p>
@@ -231,6 +250,7 @@
         </div>
       </div>
     </footer>
-    <script type="module" src="js/src/login.js"></script>
+    <script type="module" src="src/index.js"></script>
+    <script type="module" src="../js/handlersNavBar/index.js"></script>
   </body>
 </html>

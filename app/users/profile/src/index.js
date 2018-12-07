@@ -1,7 +1,7 @@
-import Cookie from '../cookie.js';
-import regexs from '../util/regexs.js';
+import Cookie from '../../../js/cookie.js';
+import regexs from '../../../js/util/regexs.js';
 
-class Update {
+class Profile {
   checkForm() {
     this.getElements();
     this.clearElements();
@@ -10,12 +10,11 @@ class Update {
 
   getElements() {
     this.elements = [];
-    this.elements.numRooms = document.getElementById('habitaciones');
-    this.elements.costElement = document.getElementById('costo');
-    this.elements.genderElement = document.getElementById('genero');
-    this.elements.postalElement = document.getElementById('cod');
-    this.elements.commentsElement = document.getElementById('comentarios');
-    this.elements.restrictionsElement = document.getElementById('restricciones');
+    this.elements.username = document.getElementById('username');
+    this.elements.name = document.getElementById('name');
+    this.elements.lastname = document.getElementById('lastname');
+    this.elements.infemail = document.getElementById('infemail');
+    this.elements.regpassword = document.getElementById('regpassword');
   }
 
   clearElements() {
@@ -62,7 +61,25 @@ class Update {
   }
 }
 
-document.getElementById('btngua').addEventListener('click', () => {
-  const update = new Update();
-  update.checkForm();
+document.getElementById('btnedit').addEventListener('click', () => {
+  const profile = new Profile();
+  profile.checkForm();
+});
+
+const realFileBtn = document.getElementById('real-file');
+const customBtn = document.getElementById('btnupload');
+const customTxt = document.getElementById('custom-text');
+
+customBtn.addEventListener('click', () => {
+  realFileBtn.click();
+});
+
+realFileBtn.addEventListener('change', () => {
+  if (realFileBtn.value) {
+    customTxt.innerHTML = realFileBtn.value.match(
+      /[\/\\]([\w\d\s\.\-\(\)]+)$/,
+    )[1];
+  } else {
+    customTxt.innerHTML = 'No file chosen, yet.';
+  }
 });

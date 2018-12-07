@@ -33,8 +33,8 @@ gulp.task('browserSync', () => {
 
 gulp.task('watch', ['browserSync'], () => {
   // Reloads the browser whenever HTML or JS files change
-  gulp.watch('app/*.html', browserSync.reload);
-  gulp.watch('app/js/**/*.js', browserSync.reload);
+  gulp.watch('app/**/*.html', browserSync.reload);
+  gulp.watch('app/**/*.js', browserSync.reload);
   gulp.watch('app/css/**/*.css', browserSync.reload);
 });
 

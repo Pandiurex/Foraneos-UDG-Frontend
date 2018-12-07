@@ -1,5 +1,17 @@
-import Cookie from '../cookie.js';
-import regexs from '../util/regexs.js';
+import Cookie from '../../../js/cookie.js';
+import regexs from '../../../js/util/regexs.js';
+import { hideElements } from '../../../js/util/hideElements.js';
+
+window.addEventListener('load', start);
+
+function start() {
+  const type = Cookie.getCookie('type');
+  hideElements(type);
+
+  if (type === '1') {
+    window.location.replace("./index.html");
+  }
+}
 
 const token = window.location.search;
 

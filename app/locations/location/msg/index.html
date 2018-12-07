@@ -4,29 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, user-scalable=no,
   initial-scale=1, maximum-scale=1, minimum-scale=1">
-
-  <!-- En un futuro colocar microdatos y acompletar los OpenGraph -->
-  <meta property="og:site_name" content="Foráneos UdeG">
-  <meta property="og:title" content="Foráneos UdeG">
-  <meta property="og:type" content="website">
-  <meta property="og:description" content="Estas en búsqueda de un lugar donde
-  hospedarse mientras realizan sus estudios en UdeG, Foráneos es para ti">
-  <meta property="og:url" content="https://foraneos-udg.tk/">
-  <!-- si no genera la portada colocar url donde se encuentren las imagenes -->
-  <meta property="og:image" content="/img/port/port1.png">
-
   <link type="text/plain" rel="author" href="http://domain/humans.txt"> <!-- Poner Dominio -->
   <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="shortcut icon" href="img/logo/logo4.ico">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
-  <title> Foráneos UdeG </title>
+  <link rel="stylesheet" href="../../../css/normalize.css">
+  <link rel="stylesheet" href="../../../css/main.css">
+  <title> Mensajes </title>
 </head>
 
 <body>
   <header>
-    <div class="contenedor">
+    <div class="contmenu">
       <h1> Foráneos UdeG </h1>
       <input type="checkbox" id="menu-bar">
       <label class="icon-menu" for="menu-bar"></label>
@@ -45,93 +34,49 @@
         <owner><tenant>
           <a href="/users/profile/"> Historial </a>
         </tenant></owner>
-        <visitant>
-          <a href="#login"> Iniciar sesión </a>
-        </visitant>
-        <visitant>
-          <a href="/registry/"> Regístrate </a>
-        </visitant>
         <admin><owner><tenant>
           <a id="menu-logout" href="#"> Cerrar sesión </a>
         </tenant></owner></admin>
       </nav>
     </div>
-    <div class="modal" id="login">
-      <div class="modal-dialog">
-        <section class="modal-content">
-          <header class="modal-header">
-            <h2 class="modal-title"> Iniciar sesión </h2>
-            <a href="#" class="modal-close">&times;</a>
-          </header>
-          <div class="modal-body">
-            <form class="card" > 
-              <input id="login-email" class="input" name="login-email" placeholder="Correo electrónico" required data-regexp="email"><br>
-              <input id="login-password" class="input" name="login-password" type="password" placeholder="Contraseña" required data-regexp="password"><br>
-              <button id="btn-login" type="button" name="btn-login" class="button"> Iniciar sesión </button>
-              <p class="modal-p"> O iniciar sesión con </p>
-              <button id="btnface" type="button" name="btngua" class="button"> Facebook </button>
-            </form>
-          </div>
-          <footer class="modal-footer modal-text">
-            <p> ¿No tienes cuenta en Foráneos UdeG? <a href="registry.html"> Registrarse </a></p>
-            <a href="passrecovery/"> ¿Olvidaste tu contraseña? </a>
-          </footer>
-        </section>
-      </div>
-    </div>
   </header>
 
   <main>
-    <section id="banner">
-      <img src="img/port/port4.jpg" alt="Imagen de estudiantes">
+    <section id="bannerpro">
+      <img src="../../../img/port/port5.jpg" alt="Imagen de estudiantes">
       <div class="contenedor">
-        <h2> Foráneos UdeG </h2>
-        <p> Alojamiento Estudiantil </p>
-        <a href="/info/"> Leer más </a>
+        <h2> Mensajes </h2>
       </div>
     </section>
-    <section id="bienvenidos">
-      <div class="contenedor">
-        <h2> ¿Eres estudiante? </h2>
-        <p> Este es el mejor sitio por encontrar el mejor alojamiento a tus necesidades. </p>
-      </div>
-    </section>
-    <section id="blog">
-      <h3> Este es el lugar adecuado para alojarte. </h3>
-      <div class="contenedor">
-        <article>
-          <img src="img/info/door.jpg" alt="Una puerta">
-          <h4> Tu nuevo hogar </h4>
-        </article>
-        <article>
-          <img src="img/info/account.jpg" alt="Cuentas bancarias">
-          <h4> A tus necesidades </h4>
-        </article>
-        <article>
-          <img src="img/info/learning.jpg" alt="Estudiante aprendiendo">
-          <h4> Tu estadía universitaria </h4>
-        </article>
-      </div>
-    </section>
-    <section id="info">
-      <h3> Encuentra alojamiento por: </h3>
-      <div class="contenedor">
-        <div class="info-for">
-          <img src="img/info/services.jpg" alt="Servicios">
-          <h4> Servicios </h4>
+    <section id="msg" class="da">
+      <h3> Tus mensajes </h3><br>
+      <p> Tipo: Casa </p>
+      <p> Colonia: 18 de marzo </p>
+      <p> Calle: Pallas #3092 D </p>
+      <p> Exclusivo para: Mujeres </p>
+      <div class="contmsg">
+        <div class="info-msg">
+          <div class="tab-photo"><img src="../../../img/users/user3.jpg" alt="Foto usuario"></div>
+          <div class="tab-photo"><img src="../../../img/users/user2.jpg" alt="Foto usuario"></div>
         </div>
-        <div class="info-for">
-          <img src="img/info/prices.jpg" alt="Precios">
-          <h4> Precios </h4>
-        </div>
-        <div class="info-for">
-          <img src="img/info/locations.jpg" alt="Ubicaciones">
-          <h4> Ubicación </h4>
-        </div>
-        <div class="info-for">
-          <img src="img/info/rates.jpg" alt="Calificar">
-          <h4> Valoración </h4>
-        </div>
+        <section id="chat1">
+          <div class="chatbox">
+            <div class="chatlogs">
+              <div class="chat friend">
+                <div class="user-photo"><img src="../../../img/users/user2.jpg" alt="Foto del usuario"></div>
+                <p class="chat-message"> Hola, me gustaria rentar un cuarto. </p>
+              </div>
+              <div class="chat self">
+                <div class="user-photo"><img src="../../../img/users/user3.jpg" alt="Foto del usuario"></div>
+                <p class="chat-message"> Hola, claro que si, tiene un costo $1200 al mes. </p>
+              </div>
+            </div>
+            <div class="chat-form">
+              <textarea></textarea>
+              <button> Enviar </button>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
   </main>
@@ -185,6 +130,6 @@
       </div>
     </footer>
     <script type="module" src="src/index.js"></script>
-    <script type="module" src="js/handlersNavBar/index.js"></script>
+    <script type="module" src="../../../js/handlersNavBar/index.js"></script>
   </body>
   </html>

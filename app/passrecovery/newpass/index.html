@@ -6,10 +6,10 @@
   <link type="text/plain" rel="author" href="http://domain/humans.txt" /> <!-- Poner Dominio -->
   <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="shortcut icon" href="img/logo/logo4.ico">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
-  <title> Recuperar contraseña </title>
+  <link rel="shortcut icon" href="../../img/logo/logo4.ico">
+  <link rel="stylesheet" href="../../css/normalize.css">
+  <link rel="stylesheet" href="../../css/main.css">
+  <title> Cambiar Contraseña </title>
 </head>
 
 <body>
@@ -19,10 +19,14 @@
       <input type="checkbox" id="menu-bar">
       <label class="icon-menu" for="menu-bar"></label>
       <nav class="menu">
-        <a href="index.html"> Inicio </a>
-        <a href="homes.html"> Alojamiento </a>
-        <a href="#login"> Iniciar sesión </a>
-        <a href="registry.html"> Regístrate </a>
+        <a href="/"> Inicio </a>
+        <a href="/locations/"> Ver alojamientos </a>
+        <visitant>
+          <a href="#login"> Iniciar sesión </a>
+        </visitant>
+        <visitant>
+          <a href="/registry/"> Regístrate </a>
+        </visitant>
       </nav>
     </div>
     <div class="modal" id="login">
@@ -33,10 +37,10 @@
             <a href="#" class="modal-close">&times;</a>
           </header>
           <div class="modal-body">
-            <form class="card"> <!-- class=""  action="index.html" method="post"> -->
-              <input id="email" class="input" name="email" placeholder="Correo electrónico" required data-regexp="email"><br>
-              <input id="password" class="input" name="password" type="password" placeholder="Contraseña" required data-regexp="password"><br>
-              <button id="btnsubmit" type="button" name="btncan" class="button"> Enviar </button>
+            <form class="card" > 
+              <input id="login-email" class="input" name="login-email" placeholder="Correo electrónico" required data-regexp="email"><br>
+              <input id="login-password" class="input" name="login-password" type="password" placeholder="Contraseña" required data-regexp="password"><br>
+              <button id="btn-login" type="button" name="btn-login" class="button"> Iniciar sesión </button>
               <p class="modal-p"> O iniciar sesión con </p>
               <button id="btnface" type="button" name="btngua" class="button"> Facebook </button>
             </form>
@@ -52,24 +56,24 @@
 
   <main>
     <section id="banner">
-      <img src="img/port/port4.jpg" alt="Imagen de estudiantes">
+      <img src="../../img/port/port4.jpg" alt="Imagen de estudiantes">
       <div class="contenedor">
         <h2> Foráneos UdeG </h2>
         <p> Alojamiento Estudiantil </p>
-        <a href="information.html">Leer más </a>
+        <a href="/info/"> Leer más </a>
       </div>
     </section>
     <section class="main">
       <fieldset class="fieldset2">
         <div>
-          <form class="card" id="confirm-email"> <!-- class=""  action="index.html" method="post"> -->
+          <form class="card" id="confirm-pass"> <!-- class=""  action="index.html" method="post"> -->
             <div class="abajo">
-              <h2 class="email-sent" id="email-sent">Ha sido enviado un correo de cambio de contraseña, revisalo porfavor</h2>
-              <h2> Recuperar contraseña </h2>
-              <input id="recoveremail" type="email" name="email" placeholder="Correo electrónico" class="input2" required><br>
-              <button id="btnrecover" type="button" name="btnrecover" class="button-form button-tam"> Recuperar </button>
-              <p> Ingresa la dirección de correo electrónico asociada a tu cuenta y te
-                enviaremos un enlace para restablecer tu Contraseña </p>
+              <h2 class="change" id="change">Se cambio la contraseña correctamente, te invitamos a que inicies sesion</h2>
+              <h2> Cambiar Contraseña </h2>
+              <input id="recover-password" type="password" name="password" placeholder="Contraseña" class="input2" required><br>
+              <input id="confirm-password" type="password" name="password" placeholder="Confirma tu Contraseña" class="input2" required><br>
+              <button id="btnreplace" type="button" name="btnreplace" class="button-form button-tam"> Cambiar Contraseña </button>
+              <p> Ingresa la nueva contraseña que estara asociada a esta cuenta </p>
             </div>
           </form>
         </div>
@@ -98,16 +102,16 @@
           <div class="colum3 footer-list">
             <h1> Información </h1>
             <div class="row2">
-              <a href="information.html"><label> ¿Qué es Foráneos UdeG? </label></a>
+              <a href="/info/"><label> ¿Qué es Foráneos UdeG? </label></a>
             </div>
             <div class="row2">
-              <a href="information.html#problema"><label> Reportar un Problema </label></a>
+              <a href="/info/#problema"><label> Reportar un Problema </label></a>
             </div>
             <div class="row2">
-              <a href="information.html#team"><label> Nuestro Team </label></a>
+              <a href="/info/#team"><label> Nuestro Team </label></a>
             </div>
             <div class="row2">
-              <a href="information.html#contacto"><label> Contacto </label></a>
+              <a href="/info/#contacto"><label> Contacto </label></a>
             </div>
           </div>
         </div>
@@ -115,16 +119,17 @@
       <div class="container-footer">
         <div class="footer">
           <div class="copyright">
-            © 2018 Todos los Derechos Reservados | <a href="information.html">Foráneos UdeG </a>
+            © 2018 Todos los Derechos Reservados | <a href="/info/">Foráneos UdeG </a>
           </div>
           <div class="information">
-            <a href="information.html"> Información Foráneos UdeG </a> |
-            <a href="information.html#pripo"> Privación y Política </a> |
-            <a href="information.html#termco"> Términos y Condiciones </a>
+            <a href="/info/"> Información Foráneos UdeG </a> |
+            <a href="/info/#pripo"> Privación y Política </a> |
+            <a href="/info/#termco"> Términos y Condiciones </a>
           </div>
         </div>
       </div>
     </footer>
-    <script type="module" src="js/src/recovery.js"></script>
+    <script type="module" src="src/index.js"></script>
+    <script type="module" src="../../js/handlersNavBar/index.js"></script>
   </body>
   </html>

@@ -1,4 +1,4 @@
-import regexs from '../util/regexs.js';
+import regexs from '../../../js/util/regexs.js';
 
 class Complaint {
   checkForm() {

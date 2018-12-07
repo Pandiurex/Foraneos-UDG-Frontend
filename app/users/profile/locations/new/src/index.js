@@ -1,8 +1,8 @@
-import Location from '../models/location.js';
-import Cookie from '../cookie.js';
-import regexs from '../util/regexs.js';
-import { checkRequired } from '../util/validator.js'
-import { getKeyValues, clearUndefined } from '../util/list.js';
+import Location from '../../../../../js/models/location.js';
+import Cookie from '../../../../../js/cookie.js';
+import regexs from '../../../../../js/util/regexs.js';
+import { checkRequired } from '../../../../../js/util/validator.js'
+import { getKeyValues, clearUndefined } from '../../../../../js/util/list.js';
 
 document.getElementById('btngua').addEventListener('click', () => {
   checkForm();
