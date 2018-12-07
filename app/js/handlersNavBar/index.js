@@ -16,12 +16,13 @@ if (document.getElementById('menu-logout')) {
   });
 }
 
-function checkForm() {
+async function checkForm() {
   const elements = getElements();
   const correct = checkRequired(elements);
 
   if (correct) {
-    const done = Cookie.login(values);
+    const values = getKeyValues(elements);
+    const done = await Cookie.login(values);
     console.log(done);
     if (!done) {
       Object.values(elements).forEach((element) => {

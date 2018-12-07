@@ -1,25 +1,29 @@
 export function hideElements(type) {
-  const elementsAdmin = document.getElementsByTagName('admin');
-  const elementsOwner = document.getElementsByTagName('owner');
-  const elementsTenant = document.getElementsByTagName('tenant');
-  const elementsVisitant = document.getElementsByTagName('visitant');
+  const admin = document.getElementsByTagName('admin');
+  const owner = document.getElementsByTagName('owner');
+  const tenant = document.getElementsByTagName('tenant');
+  const visitant = document.getElementsByTagName('visitant');
 
   if (type === '0') {
-    hide(elementsOwner);
-    hide(elementsTenant);
-    hide(elementsVisitant);
+    hide(owner);
+    hide(tenant);
+    hide(visitant);
+    showElements(admin);
   } else if (type === '1') {
-    hide(elementsAdmin);
-    hide(elementsTenant);
-    hide(elementsVisitant);
+    hide(admin);
+    hide(tenant);
+    hide(visitant);
+    showElements(owner);
   } else if (type === '2') {
-    hide(elementsAdmin);
-    hide(elementsOwner);
-    hide(elementsVisitant);
+    hide(admin);
+    hide(owner);
+    hide(visitant);
+    showElements(tenant);
   } else {
-    hide(elementsAdmin);
-    hide(elementsOwner);
-    hide(elementsTenant);
+    hide(admin);
+    hide(owner);
+    hide(tenant);
+    showElements(visitant);
   }
 }
 
@@ -27,4 +31,19 @@ export function hide(elements) {
   Object.values(elements).forEach((element) => {
     element.style.display = 'none';
   });
+}
+
+export function showElements(elements) {
+  Object.values(elements).forEach((element) => {
+    show(element);
+  });
+}
+
+export function show(element) {
+  if (element !== null) {
+    if (element.style !== undefined) {
+      element.style.display = 'block';
+    }
+    show(element.firstChild);
+  }
 }

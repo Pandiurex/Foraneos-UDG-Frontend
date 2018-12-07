@@ -38,7 +38,7 @@ class Cookie {
 
     if (response.status >= 200 && response.status < 300) {
       this.saveCookies(response.data);
-      window.location.pathname = './profile.html';
+      window.location.pathname = '/users/profile/';
       return true;
     }
 
@@ -49,16 +49,18 @@ class Cookie {
     const hash = this.getCookie('session');
     console.log(hash);
     if (hash) {
-      await API.logout(hash);
       this.clearCookies();
-      window.location.pathname = './index.html';
+      await API.logout(hash);
+      window.location.pathname = '/';
+    } else {
+      window.location.pathname = '/';
     }
   }
 
   static noSession() {
     const myToken = this.getCookie('session');
     if (myToken === undefined) {
-      window.location.pathname = './index.html';
+      window.location.pathname = '/';
     }
   }
 }
