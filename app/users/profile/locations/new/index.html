@@ -7,7 +7,7 @@
   <link type="text/plain" rel="author" href="http://domain/humans.txt"> <!-- Poner Dominio -->
   <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="shortcut icon" href="img/logo/logo4.ico">
+  <link rel="shortcut icon" href="../../../../img/logo/logo4.ico">
   <link rel="stylesheet" href="../../../../css/normalize.css">
   <link rel="stylesheet" href="../../../../css/main.css">
   <link rel="stylesheet" href="../../../../css/createloc.css">
@@ -140,26 +140,46 @@
       <h3> Fotos del inmueble que ofreces </h3>
       <form class="card">
         <div class="adj">
-          <!-- <button id="btnupload" type="button" name="btnupload" class="button-form button-tam"> Selecciona Foto 1 </button>
-          <input type="file" id="real-file" hidden="hidden" />
-          <span id="custom-text"> Selecciona un archivo </span>
-          <button id="btnupload" type="button" name="btnupload" class="button-form button-tam"> Selecciona Foto 2 </button>
-          <input type="file" id="real-file" hidden="hidden" />
-          <span id="custom-text"> Selecciona un archivo </span>
-          <button id="btnupload" type="button" name="btnupload" class="button-form button-tam"> Selecciona Foto 3 </button>
-          <input type="file" id="real-file" hidden="hidden" />
-          <span id="custom-text"> Selecciona un archivo </span>
-          <button id="btnupload" type="button" name="btnupload" class="button-form button-tam"> Selecciona Foto 4 </button>
-          <input type="file" id="real-file" hidden="hidden" />
-          <span id="custom-text"> Selecciona un archivo </span>
-          <button id="btnupload" type="button" name="btnupload" class="button-form button-tam"> Selecciona Foto 5 </button>
-          <input type="file" id="real-file" hidden="hidden" />
-          <span id="custom-text"> Selecciona un archivo </span> -->
-          <input id="repfoto1" type="file" name="foto1" accept="image/*" class="input2" required>
-          <input id="repfoto2" type="file" name="foto2" accept="image/*" class="input2" required>
-          <input id="repfoto3" type="file" name="foto3" accept="image/*" class="input2" required>
-          <input id="repfoto4" type="file" name="foto4" accept="image/*" class="input2" required>
-          <input id="repfoto5" type="file" name="foto5" accept="image/*" class="input2" required>
+          <section>
+          <div class="cont">
+            <label for="file-upload" class="subir"> Subir archivo </label>
+            <input id="file-upload" onchange='cambiar()' type="file" style='display: none;'/>
+            <button type="button" name="button" class="button-file"> Enviar </button>
+          </div>
+          <div id="infofile"></div>
+        </section>
+        <section>
+          <div class="cont">
+            <label for="file-upload1" class="subir"> Subir archivo </label>
+            <input id="file-upload1" onchange='cambiar1()' type="file" style='display: none;'/>
+            <button type="button" name="button" class="button-file"> Enviar </button>
+          </div>
+          <div id="infofile1"></div>
+        </section>
+        <section>
+          <div class="cont">
+            <label for="file-upload2" class="subir"> Subir archivo </label>
+            <input id="file-upload2" onchange='cambiar2()' type="file" style='display: none;'/>
+            <button type="button" name="button" class="button-file"> Enviar </button>
+          </div>
+          <div id="infofile2"></div>
+        </section>
+        <section>
+          <div class="cont">
+            <label for="file-upload3" class="subir"> Subir archivo </label>
+            <input id="file-upload3" onchange='cambiar3()' type="file" style='display: none;'/>
+            <button type="button" name="button" class="button-file"> Enviar </button>
+          </div>
+          <div id="infofile3"></div>
+        </section>
+        <section>
+          <div class="cont">
+            <label for="file-upload4" class="subir"> Subir archivo </label>
+            <input id="file-upload4" onchange='cambiar4()' type="file" style='display: none;'/>
+            <button type="button" name="button" class="button-file"> Enviar </button>
+          </div>
+          <div id="infofile4"></div>
+        </section>
         </div>
         <div class="card adj"><br>
           <ul class="galeria">
@@ -291,6 +311,7 @@
         </div>
       </div>
     </footer>
+    <script src="../../../../../js/components/inputfile.js"></script>
     <script type="module" src="src/index.js"></script>
     <script type="module" src="../../../../js/handlersNavBar/index.js"></script>
   </body>

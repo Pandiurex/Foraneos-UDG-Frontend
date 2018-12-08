@@ -7,7 +7,7 @@
   <link type="text/plain" rel="author" href="http://domain/humans.txt" /> <!-- Poner Dominio -->
   <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="shortcut icon" href="img/logo/logo4.ico">
+  <link rel="shortcut icon" href="../img/logo/logo4.ico">
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/main.css">
   <title> Registrarse </title>
@@ -38,17 +38,17 @@
             <a href="#" class="modal-close">&times;</a>
           </header>
           <div class="modal-body">
-            <form class="card" > 
-              <input id="login-email" class="input" name="login-email" placeholder="Correo electrónico" required data-regexp="email"><br>
-              <input id="login-password" class="input" name="login-password" type="password" placeholder="Contraseña" required data-regexp="password"><br>
+            <form class="card" >
+              <input id="login-email" type="email" class="input" name="login-email" placeholder="Correo electrónico" required data-regexp="email"><br>
+              <input id="login-password" type="password" class="input" name="login-password" placeholder="Contraseña" required data-regexp="password"><br>
               <button id="btn-login" type="button" name="btn-login" class="button"> Iniciar sesión </button>
               <p class="modal-p"> O iniciar sesión con </p>
               <button id="btnface" type="button" name="btngua" class="button"> Facebook </button>
             </form>
           </div>
           <footer class="modal-footer modal-text">
-            <p> ¿No tienes cuenta en Foráneos UdeG? <a href="registry.html"> Registrarse </a></p>
-            <a href="recovery.html"> ¿Olvidaste tu contraseña? </a>
+            <p> ¿No tienes cuenta en Foráneos UdeG? <a href="/registry/"> Registrarse </a></p>
+            <a href="/passrecovery/"> ¿Olvidaste tu contraseña? </a>
           </footer>
         </section>
       </div>
@@ -68,7 +68,7 @@
       <fieldset class="fieldset2">
         <form id="register-form" class="card">
           <!-- class=""  action="index.html" method="post"> -->
-          <h2 class="confirmation" id="confirmation">Ha sido enviado un correo de confirmacion a tu cuenta, revisalo porfavor</h2>
+          <h2 class="confirmation" id="confirmation"> ¡Te damos la bienvenida! Se te ha enviado a tu correo una confirmación de cuenta, por favor revíselo. </h2>
           <h2> Registrarse </h2>
           <div class="radio2">
             <label class="contrad">
