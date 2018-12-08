@@ -24,6 +24,13 @@
   border: 7px solid #FFF;
 }
 
+.perfilre img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 7px solid #FFF;
+}
+
 .datos {
   margin-top: 5%;
   line-height: 20pt;
