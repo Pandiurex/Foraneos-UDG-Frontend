@@ -1,6 +1,6 @@
 import { reqPassRecovery } from '../../js/models/auth.js';
 import Cookie from '../../js/cookie.js';
-import { checkRequired, markElement } from '../../js/util/validator.js'
+import { checkRequired, markElement } from '../../js/util/validator.js';
 import { getKeyValues, clearUndefined } from '../../js/util/list.js';
 import { hideElements } from '../../js/util/hideElements.js';
 
