@@ -1,99 +1,40 @@
+import User from '../../../js/models/user.js';
 import Cookie from '../../../js/cookie.js';
-import regexs from '../../../js/util/regexs.js';
+import { checkRequired, markElement } from '../../../js/util/validator.js';
+import { getKeyValues, clearUndefined } from '../../../js/util/list.js';
 import { hideElements } from '../../../js/util/hideElements.js';
 
 window.addEventListener('load', start);
 
-function start() {
+async function start() {
   const type = Cookie.getCookie('type');
-  console.log(type);
+  if (type === undefined) {
+    window.location.pathname = '/';
+  }
+
   hideElements(type);
 
-  if (type === '1') {
-    window.location.replace("./index.html");
-  }
+  const userId = Cookie.getCookie('user');
+  const user = await User.get(userId);
+
+  paintUser(user);
 }
 
+function paintUser({
+  username, name, firstSurname, secondSurname,
+  birthdate, gender, emails,
+}) {
+  const { email } = emails[0];
 
-class Profile {
-  checkForm() {
-    this.getElements();
-    this.clearElements();
-    this.checkRequired();
-  }
+  const usernameElement = document.getElementById('username');
+  const nameElement = document.getElementById('name');
+  const lastnameElement = document.getElementById('lastname');
+  const emailElement = document.getElementById('infemail');
+  const birthdateElement = document.getElementById('birthdate');
 
-  getElements() {
-    this.elements = [];
-    this.elements.username = document.getElementById('username');
-    this.elements.name = document.getElementById('name');
-    this.elements.lastname = document.getElementById('lastname');
-    this.elements.infemail = document.getElementById('infemail');
-    this.elements.regpassword = document.getElementById('regpassword');
-  }
-
-  clearElements() {
-    Object.values(this.elements).forEach((element) => {
-      element.style.borderColor = '#C7C7C7';
-    });
-  }
-
-  checkRequired() {
-    let correct = true;
-    Object.values(this.elements).forEach((element) => {
-      if (element.selectedIndex !== undefined) {
-        if (element.selectedIndex === 0 && element.required) {
-          this.markElement(element);
-          correct = false;
-        }
-        return;
-      }
-      if (element.required && element.value.length === 0) {
-        this.markElement(element);
-        correct = false;
-      } else if (element.value.length !== 0) {
-        if (!this.checkText(element)) {
-          this.markElement(element);
-          correct = false;
-        }
-      }
-    });
-
-    if (correct) {
-      // enviar los VALORES al modelo
-      console.log('Enviando al modelo');
-    } else {
-      console.log('Corregir los datos marcados');
-    }
-  }
-
-  checkText(element) {
-    return regexs[`${element.dataset.regexp}`].test(element.value);
-  }
-
-  markElement(element) {
-    element.style.borderColor = 'red';
-  }
+  usernameElement.value = username;
+  nameElement.value = name;
+  lastnameElement.value = `${firstSurname} ${secondSurname}`;
+  emailElement.value = email;
+  birthdateElement.value = birthdate;
 }
-
-document.getElementById('btnedit').addEventListener('click', () => {
-  const profile = new Profile();
-  profile.checkForm();
-});
-
-const realFileBtn = document.getElementById('real-file');
-const customBtn = document.getElementById('btnupload');
-const customTxt = document.getElementById('custom-text');
-
-customBtn.addEventListener('click', () => {
-  realFileBtn.click();
-});
-
-realFileBtn.addEventListener('change', () => {
-  if (realFileBtn.value) {
-    customTxt.innerHTML = realFileBtn.value.match(
-      /[\/\\]([\w\d\s\.\-\(\)]+)$/,
-    )[1];
-  } else {
-    customTxt.innerHTML = 'No file chosen, yet.';
-  }
-});
