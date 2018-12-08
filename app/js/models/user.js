@@ -36,24 +36,30 @@ class User {
     return undefined;
   }
 
-  static async patch(userId, body) {
-    const response = await API.updateFile(`${ROUTE}/${userId}`, body, Cookie.getCookie('session'));
+  static async post({
+    userType, username, password, name, firstSurname,
+    secondSurname, image, birthdate, gender, mainEmail,
+  }) {
+    const formData = new FormData();
+    formData.append('userType', userType);
+    formData.append('username', username);
+    formData.append('password', password);
+    formData.append('name', name);
+    formData.append('firstSurname', firstSurname);
+    formData.append('secondSurname', secondSurname);
+    formData.append('image', image);
+    formData.append('birthdate', birthdate);
+    formData.append('gender', gender);
+    formData.append('mainEmail', mainEmail);
+
+    const response = await API.postFile(`${ROUTE}`, formData);
 
     if (response.status >= 200 && response.status < 300) {
-      return response.data;
+      window.location.pathname = '/registry/emailsent/';
+      return true;
     }
-    return undefined;
-  }
 
-  static async insert(user, userData) {
-    const location = this.processResult(userData)[0];
-    location.ownerUserId = user.id;
-    const response = await API.insert(ROUTE, location, Cookie.getCookie());
-
-    if (response.status >= 200 && response.status < 300) {
-      return response.data;
-    }
-    return undefined;
+    return false;
   }
 
   static processResult(data) {
