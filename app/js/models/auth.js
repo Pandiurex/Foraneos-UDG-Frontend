@@ -31,10 +31,27 @@ export function logout() {
 
 export async function reqPassRecovery({ email }) {
   const response = await API.get(`${ROUTE}reqPasswordRecovery?email=${email}`);
-  console.log(response);
 
   if (response.status >= 200 && response.status < 300) {
     window.location.pathname = '/passrecovery/emailsent/';
+    return true;
+  }
+
+  return false;
+}
+
+export async function passRecovery({ hash, password }) {
+  const response = await API.post(`${ROUTE}passwordRecovery`, JSON.stringify({
+    hash, password,
+  }));
+
+  if (response.status >= 200 && response.status < 300) {
+    const { protocol } = window.location;
+    const { hostname } = window.location;
+    const { port } = window.location;
+    const route = '/passrecovery/newpass/successful/';
+    window.location.href = `${protocol}//${hostname}:${port}${route}`;
+
     return true;
   }
 
