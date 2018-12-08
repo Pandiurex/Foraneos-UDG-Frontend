@@ -70,16 +70,37 @@
           <!-- class=""  action="index.html" method="post"> -->
           <h2 class="confirmation" id="confirmation">Ha sido enviado un correo de confirmacion a tu cuenta, revisalo porfavor</h2>
           <h2> Registrarse </h2>
-          <div class="radio2">
-            <label class="contrad">
-              <input type="radio" name="radio" checked> Hombre
-              <span class="checkmark"></span>
-            </label>
-            <label class="contrad">
-              <input type="radio" name="radio"> Mujer
-              <span class="checkmark"></span>
-            </label>
+          <div class="info-perfil">
+            <img id="profile-image" src="../../img/users/user1.png" alt="Servicios">
+            <section>
+              <input id="image-file" type="file" name="image-file" accept="image/*" class="input2" required>
+            </section>
           </div>
+          <div class="radio2">
+            <form action="">
+            <label class="contrad">
+              <input id="man" type="radio" name="radio" checked> Hombre
+              <span class="checkmark"></span>
+            </label>
+            <label class="contrad">
+              <input id="woman" type="radio" name="radio"> Mujer
+              <span class="checkmark"></span>
+            </label>
+            </form>
+          </div>
+          <div class="radio2">
+            <form action="">
+            <label class="contrad">
+              <input id="tenant" type="radio" name="radio" checked> Inquilino
+              <span class="checkmark"></span>
+            </label>
+            <label class="contrad">
+              <input id="owner" type="radio" name="radio"> Dueño
+              <span class="checkmark"></span>
+            </label>
+            </form>
+          </div>
+          <input id="username" type="text" name="username" placeholder="Nombre de usuario" class="input2" required="true" data-regexp="word"><br>
           <input id="name" type="text" name="name" placeholder="Nombre(s)" class="input2" required="true" data-regexp="word"><br>
           <input id="firstsurname" type="text" name="firstSurname" placeholder="Apellido Paterno" class="input2" required="true" data-regexp="word"><br>
           <input id="secondsurname" type="text" name="secondSurname" placeholder="Apellido Materno" class="input2" required="true" data-regexp="word"><br>
