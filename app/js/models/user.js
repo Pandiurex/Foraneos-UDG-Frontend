@@ -1,5 +1,6 @@
 import API from '../api.js';
 import Cookie from '../cookie.js';
+import goTo from '../util/goTo.js';
 
 const ROUTE = 'users';
 
@@ -30,7 +31,7 @@ class User {
       return response.data;
     }
     if (response.status === 403) {
-      window.location.pathname = '/';
+      goTo('/');
     }
 
     return undefined;
@@ -40,6 +41,7 @@ class User {
     userType, username, password, name, firstSurname,
     secondSurname, image, birthdate, gender, mainEmail,
   }) {
+
     const formData = new FormData();
     formData.append('userType', userType);
     formData.append('username', username);
@@ -55,11 +57,15 @@ class User {
     const response = await API.postFile(`${ROUTE}`, formData);
 
     if (response.status >= 200 && response.status < 300) {
-      window.location.pathname = '/registry/emailsent/';
+      goTo('/registry/emailsent/');
       return true;
     }
 
     return false;
+  }
+
+  static async getProfileImage({ image }) {
+    
   }
 
   static processResult(data) {

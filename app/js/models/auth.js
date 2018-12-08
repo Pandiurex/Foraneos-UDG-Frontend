@@ -1,5 +1,7 @@
 import API from '../api.js';
 import Cookie from '../cookie.js';
+import goTo from '../util/goTo.js';
+
 
 const ROUTE = 'auth/';
 
@@ -11,7 +13,7 @@ export async function login({ email, password }) {
 
   if (response.status >= 200 && response.status < 300) {
     Cookie.saveCookies(response.data);
-    window.location.pathname = '/users/profile/';
+    goTo('/users/profile/');
     return true;
   }
 
@@ -23,17 +25,16 @@ export function logout() {
   if (hash) {
     Cookie.clearCookies();
     API.delete(`${ROUTE}logout`, {}, hash);
-    window.location.pathname = '/';
-  } else {
-    window.location.pathname = '/';
   }
+
+  goTo('/');
 }
 
 export async function reqPassRecovery({ email }) {
   const response = await API.get(`${ROUTE}reqPasswordRecovery?email=${email}`);
 
   if (response.status >= 200 && response.status < 300) {
-    window.location.pathname = '/passrecovery/emailsent/';
+    goTo('/passrecovery/emailsent/');
     return true;
   }
 
@@ -46,12 +47,7 @@ export async function passRecovery({ hash, password }) {
   }));
 
   if (response.status >= 200 && response.status < 300) {
-    const { protocol } = window.location;
-    const { hostname } = window.location;
-    const { port } = window.location;
-    const route = '/passrecovery/newpass/successful/';
-    window.location.href = `${protocol}//${hostname}:${port}${route}`;
-
+    goTo('/passrecovery/newpass/successful/');
     return true;
   }
 

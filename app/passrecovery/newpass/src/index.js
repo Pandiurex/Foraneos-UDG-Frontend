@@ -3,6 +3,7 @@ import Cookie from '../../../js/cookie.js';
 import { checkRequired, markElement } from '../../../js/util/validator.js';
 import { getKeyValues, clearUndefined } from '../../../js/util/list.js';
 import { hideElements } from '../../../js/util/hideElements.js';
+import goTo from '../../../js/util/goTo.js';
 
 window.addEventListener('load', start);
 
@@ -11,14 +12,14 @@ let hash = window.location.search;
 function start() {
   const type = Cookie.getCookie('type');
   if (type !== undefined) {
-    window.location.pathname = '/users/profile/';
+    goTo('/users/profile/');
   }
 
   hideElements(type);
 
   hash = hash.split('?h=');
   if (hash.length === 1) {
-    window.location.pathname = '/';
+    goTo('/');
   }
   hash = hash[1];
 }

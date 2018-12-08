@@ -1,4 +1,5 @@
 import API from './api.js';
+import goTo from './util/goTo.js';
 
 class Cookie {
   static setCookie(name, value) {
@@ -36,7 +37,7 @@ class Cookie {
   static noSession() {
     const myToken = this.getCookie('session');
     if (myToken === undefined) {
-      window.location.pathname = '/';
+      goTo('/');
     }
   }
 }

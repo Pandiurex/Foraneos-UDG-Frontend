@@ -35,10 +35,8 @@ async function checkForm() {
     let values = getKeyValues(elements);
     values = clearUndefined(values);
     if (values.password === values.password2) {
-      const done = await passRecovery({
-        hash,
-        password: values.password,
-      });
+      values.image = image;
+      // const done = await User.post(values);
       if (!done) {
         console.log('Token expirado');
       }
