@@ -2,7 +2,9 @@ import API from './api.js';
 
 class Cookie {
   static setCookie(name, value) {
-    document.cookie = `${name}=${value}`;
+    const date = new Date();
+    date.setTime(date.getTime() + 5 * 60 * 1000);
+    document.cookie = `${name}=${value};path=/;expires=${date.toGMTString()};`;
   }
 
   static getCookie(name) {
@@ -15,7 +17,8 @@ class Cookie {
   }
 
   static deleteCookie(name) {
-    document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+    const date = "Thu, 01 Jan 1970 00:00:00 UTC";
+    document.cookie = `${name}=;path=/;expires=${date};`;
   }
 
   static saveCookies({ hash, user, type }) {
@@ -24,37 +27,10 @@ class Cookie {
     this.setCookie('type', type);
   }
 
-  static clearCookies() {
-    this.deleteCookie('session');
-    this.deleteCookie('user');
-    this.deleteCookie('type');
-  }
-
-  static async login({ email, password }) {
-    const hash = this.getCookie('session');
-    const response = await API.login(JSON.stringify({
-      email, password,
-    }), hash);
-
-    if (response.status >= 200 && response.status < 300) {
-      this.saveCookies(response.data);
-      window.location.pathname = '/users/profile/';
-      return true;
-    }
-
-    return false;
-  }
-
-  static async logout() {
-    const hash = this.getCookie('session');
-    console.log(hash);
-    if (hash) {
-      this.clearCookies();
-      await API.logout(hash);
-      window.location.pathname = '/';
-    } else {
-      window.location.pathname = '/';
-    }
+  static async clearCookies() {
+    await this.deleteCookie('session');
+    await this.deleteCookie('user');
+    await this.deleteCookie('type');
   }
 
   static noSession() {
