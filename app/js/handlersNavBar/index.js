@@ -1,3 +1,4 @@
+import { login, logout } from '../models/auth.js';
 import Cookie from '../cookie.js';
 import regexs from '../util/regexs.js';
 import { checkRequired } from '../util/validator.js'
@@ -12,7 +13,7 @@ if (document.getElementById('btn-login')) {
 
 if (document.getElementById('menu-logout')) {
   document.getElementById('menu-logout').addEventListener('click', () => {
-    Cookie.logout();
+    logout();
   });
 }
 
@@ -22,7 +23,7 @@ async function checkForm() {
 
   if (correct) {
     const values = getKeyValues(elements);
-    const done = await Cookie.login(values);
+    const done = await login(values);
     console.log(done);
     if (!done) {
       Object.values(elements).forEach((element) => {
