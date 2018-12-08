@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
-
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, user-scalable=no,
-  initial-scale=1, maximum-scale=1, minimum-scale=1">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
   <link type="text/plain" rel="author" href="http://domain/humans.txt"> <!-- Poner Dominio -->
   <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -54,16 +52,10 @@
       <div class="contper">
         <div class="info-perfil">
           <img id="profile-image" src="../../img/users/user1.png" alt="Servicios">
-          <section>
-            <input id="repfoto1" type="file" name="foto1" accept="image/*" class="input2" required>
-          </section>
           <h4 id="username-header"> Username </h4>
           <div id="datos-perfil" class="datos">
             <p> Nombre completo </p>
             <p> Correo electrónico </p><br>
-            <button id="btnupload" type="button" name="btnupload" class="button-form button-tam"> Selecciona Foto </button><br>
-            <input type="file" id="real-file" hidden="hidden" />
-            <span id="custom-text"> Selecciona un archivo </span>
           </div>
         </div>
       </div>
@@ -77,82 +69,19 @@
       <div class="contenedor">
         <article>
           <form id="userdate" class="card">
-            <input id="username" type="text" name="username" placeholder="Nombre de usuario" class="input3" required data-regexp="word">
-            <input id="name" type="text" name="name" placeholder="Nombre(s)" class="input3" required data-regexp="word">
-            <input id="lastname" type="text" name="lastname" placeholder="Apellido(s)" class="input3" required data-regexp="word">
-            <input id="infemail" type="email" name="email" placeholder="Correo electrónico" class="input3" required data-regexp="email">
-            <input id="regpassword" type="password" name="password" placeholder="Contraseña" class="input3" required data-regexp="password">
-            <input id="birthdate" type="date" name="birthdate" placeholder="date" class="input3">
+            <input id="username" type="text" name="username" placeholder="Nombre de usuario" class="input3" readonly data-regexp="word">
+            <input id="name" type="text" name="name" placeholder="Nombre(s)" class="input3" readonly data-regexp="word">
+            <input id="lastname" type="text" name="lastname" placeholder="Apellido(s)" class="input3" readonly data-regexp="word">
+            <input id="infemail" type="email" name="email" placeholder="Correo electrónico" class="input3" readonly data-regexp="email">
+            <input id="regpassword" type="password" name="password" placeholder="Contraseña" class="input3" readonly data-regexp="password">
+            <input id="birthdate" type="date" name="birthdate" placeholder="date" class="input3" readonly>
           </form>
           <div class="card">
-            <button id="btnedit" type="button" name="btnedit" class="button-form button-tam"> Editar </button>
+            <button id="btnedit" type="button" name="btnedit" class="button-form button-tam"> Editar perfil </button>
           </div>
         </article>
       </div>
     </section>
-    <div class="card">
-      <a href="#modal_mail"> Correos Alternativos </a> </div>
-    <div class="modal" id="modal_mail">
-      <div class="modal-dialog">
-        <section class="modal-content">
-          <header class="modal-header">
-            <h2 class="modal-title"> Lista de correos </h2>
-            <a href="#" class="modal-close">&times;</a>
-          </header>
-          <div class="modal-body">
-            <section id="list-mail">
-              <div class="modal-contenedor">
-                <table class="email-table">
-                  <h2 id="correo"> Correos </h2>
-                  <thead>
-                    <tr>
-                      <th> Correo </th>
-                      <th> Estado </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td> crissin21_01@hotmail.com</td>
-                      <td> Activado </td>
-                      <td><a href="" target="_blank" class="fa fa-trash"></a></td>
-                    </tr>
-                    <tr>
-                      <td> Correo </td>
-                      <td> Activado </td>
-                      <td><a href="" target="_blank" class="fa fa-trash"></a></td>
-                    </tr>
-                    <tr>
-                      <td> Correo </td>
-                      <td> Activado </td>
-                      <td><a href="" target="_blank" class="fa fa-trash"></a></td>
-                    </tr>
-                    <tr>
-                      <td> Correo </td>
-                      <td> Activado </td>
-                      <td><a href="" target="_blank" class="fa fa-trash"></a></td>
-                    </tr>
-                    <tr>
-                      <td> Correo </td>
-                      <td> Activado </td>
-                      <td><a href="" target="_blank" class="fa fa-trash"></a></td>
-                    </tr>
-                    <tr>
-                      <td> Correo </td>
-                      <td> Activado </td>
-                      <td><a href="" target="_blank" class="fa fa-trash"></a></td>
-                    </tr>
-                  </tbody>
-                </table>
-                <!-- <button type="button" name="button" class="button-form button-modal">Borrar</button> -->
-              </div>
-            </section>
-          </div>
-          <footer class="modal-footer modal-text">
-            <button type="button" name="button" class="button-form">Guardar</button>
-          </footer>
-        </section>
-      </div>
-    </div>
     <section id="historial">
       <div class="contenedor">
         <h2> Historial </h2>
@@ -247,5 +176,4 @@
   <script type="module" src="src/index.js"></script>
   <script type="module" src="../../js/handlersNavBar/index.js"></script>
 </body>
-
 </html>
