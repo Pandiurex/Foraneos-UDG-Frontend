@@ -69,25 +69,7 @@ class API {
     };
   }
 
-  static async delete(route, id, token = undefined) {
-    const response = await fetch(`${host}${route}/${id}`, {
-      method: 'DELETE',
-      headers: {
-        token,
-      },
-    });
-
-    const status = await response.status;
-    const json = await response.json();
-
-
-    return {
-      status,
-      data: json,
-    };
-  }
-
-  static async deleteWithBody(route, body, token = undefined) {
+  static async delete(route, body = {}, token = undefined) {
     const response = await fetch(`${host}${route}`, {
       method: 'DELETE',
       body,
@@ -100,43 +82,6 @@ class API {
     const status = await response.status;
     const json = await response.json();
 
-
-    return {
-      status,
-      data: json,
-    };
-  }
-
-  static async login(body, token = undefined) {
-    const response = await fetch(`${host}auth/login`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        token,
-      },
-      body,
-    });
-
-    const status = await response.status;
-    const json = await response.json();
-
-
-    return {
-      status,
-      data: json,
-    };
-  }
-
-  static async logout(token) {
-    const response = await fetch(`${host}auth/logout`, {
-      method: 'DELETE',
-      headers: {
-        token,
-      },
-    });
-
-    const status = await response.status;
-    const json = await response.json();
 
     return {
       status,
