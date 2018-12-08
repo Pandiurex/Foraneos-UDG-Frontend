@@ -12,6 +12,9 @@ export async function login({ email, password }) {
   }), hash);
 
   if (response.status >= 200 && response.status < 300) {
+    if (response.data.emails[0].verified === 0) {
+      goTo('/verifyemail/');
+    }
     Cookie.saveCookies(response.data);
     goTo('/users/profile/');
     return true;

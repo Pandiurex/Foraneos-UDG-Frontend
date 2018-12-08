@@ -27,6 +27,7 @@ function paintUser({
   username, name, firstSurname, secondSurname,
   birthdate, gender, mainEmail, profileImage,
 }) {
+
   const date = checkDate(birthdate);
 
   const usernameElement = document.getElementById('username');
