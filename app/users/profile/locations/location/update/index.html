@@ -51,7 +51,7 @@
     </section>
     <section id="bienvenidos">
       <div class="contenedor">
-        <h2> Publicar alojamiento </h2>
+        <h2> Actualizar Alojamiento </h2>
         <span class="input-group-addon">
           <i class="fa fa-home"></i>
         </span>
@@ -75,6 +75,12 @@
             <option value="Hombres"> Hombres </option>
             <option value="Ambos"> Ambos </option>
           </select>
+        </div>
+        <div class="ti">
+          <h3> Código postal </h3>
+          <section>
+            <input id="cod" type="text" name="cod" placeholder="Código postal" class="input2" data-regexp="postal">
+          </section>
         </div>
       </form>
       <form class="card dat">
@@ -135,20 +141,50 @@
         </div>
       </form>
     </section>
-    <section>
-      <form class="card contenedor">
-      <input id="cod" type="text" name="cod" placeholder="Código postal" class="input2" data-regexp="postal">
-      </form>
-    </section>
     <section id="info">
       <h3> Fotos del inmueble que ofreces </h3>
       <form class="card">
         <div class="adj">
-          <input id="repfoto1" type="file" name="foto1" accept="image/*" class="input2" required>
-          <input id="repfoto2" type="file" name="foto2" accept="image/*" class="input2" required>
-          <input id="repfoto3" type="file" name="foto3" accept="image/*" class="input2" required>
-          <input id="repfoto4" type="file" name="foto4" accept="image/*" class="input2" required>
-          <input id="repfoto5" type="file" name="foto5" accept="image/*" class="input2" required>
+          <section>
+          <div class="cont">
+            <label for="file-upload" class="subir"> Subir archivo </label>
+            <input id="file-upload" onchange='cambiar()' type="file" style='display: none;'/>
+            <button type="button" name="button" class="button-file"> Enviar </button>
+          </div>
+          <div id="infofile"></div>
+        </section>
+        <section>
+          <div class="cont">
+            <label for="file-upload1" class="subir"> Subir archivo </label>
+            <input id="file-upload1" onchange='cambiar1()' type="file" style='display: none;'/>
+            <button type="button" name="button" class="button-file"> Enviar </button>
+          </div>
+          <div id="infofile1"></div>
+        </section>
+        <section>
+          <div class="cont">
+            <label for="file-upload2" class="subir"> Subir archivo </label>
+            <input id="file-upload2" onchange='cambiar2()' type="file" style='display: none;'/>
+            <button type="button" name="button" class="button-file"> Enviar </button>
+          </div>
+          <div id="infofile2"></div>
+        </section>
+        <section>
+          <div class="cont">
+            <label for="file-upload3" class="subir"> Subir archivo </label>
+            <input id="file-upload3" onchange='cambiar3()' type="file" style='display: none;'/>
+            <button type="button" name="button" class="button-file"> Enviar </button>
+          </div>
+          <div id="infofile3"></div>
+        </section>
+        <section>
+          <div class="cont">
+            <label for="file-upload4" class="subir"> Subir archivo </label>
+            <input id="file-upload4" onchange='cambiar4()' type="file" style='display: none;'/>
+            <button type="button" name="button" class="button-file"> Enviar </button>
+          </div>
+          <div id="infofile4"></div>
+        </section>
         </div>
         <div class="card adj"><br>
           <ul class="galeria">
@@ -270,6 +306,7 @@
         </div>
       </div>
     </footer>
+    <script src="../../../../../js/components/inputfile.js"></script>
     <script type="module" src="src/index.js"></script>
     <script type="module" src="../../../../../js/handlersNavBar/index.js"></script>
   </body>
