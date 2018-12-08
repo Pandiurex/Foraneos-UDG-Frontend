@@ -29,6 +29,10 @@ class User {
     if (response.status >= 200 && response.status < 300) {
       return response.data;
     }
+    if (response.status === 403) {
+      window.location.pathname = '/';
+    }
+
     return undefined;
   }
 

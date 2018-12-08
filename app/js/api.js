@@ -37,8 +37,27 @@ class API {
     };
   }
 
-  static async update(route, body, id, token = undefined) {
-    const response = await fetch(`${host}${route}/${id}`, {
+  static async postFile(route, body, token = undefined) {
+    const response = await fetch(`${host}${route}`, {
+      method: 'POST',
+      body,
+      headers: {
+        'Content-Type': 'application/json',
+        token,
+      },
+    });
+
+    const status = await response.status;
+    const json = await response.json();
+
+    return {
+      status,
+      data: json,
+    };
+  }
+
+  static async update(route, body, token = undefined) {
+    const response = await fetch(`${host}${route}`, {
       method: 'PATCH',
       body,
       headers: {
@@ -55,8 +74,8 @@ class API {
     };
   }
 
-  static async updateFile(route, body, id, token = undefined) {
-    const response = await fetch(`${host}${route}/${id}`, {
+  static async updateFile(route, body, token = undefined) {
+    const response = await fetch(`${host}${route}`, {
       method: 'PATCH',
       body,
     });
