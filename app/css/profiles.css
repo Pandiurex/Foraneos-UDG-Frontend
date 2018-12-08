@@ -26,6 +26,17 @@
 
 .datos {
   margin-top: 5%;
+  line-height: 20pt;
+}
+
+.modale a {
+  color: #0B80A4;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.modale a:hover {
+  font-size: 17px;
 }
 
 /* FORM PROFILE */
@@ -54,20 +65,22 @@
   color: #EC801C;
 }
 
+/* MODAL EMAIL */
+
 .email-table {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   height: 200px;
   width: 90%;
-  margin-left: 7%;
+  margin-left: 5%;
   margin-top: 10px;
-    display: block;
+  display: block;
   overflow: auto;
 }
+
 .email-table td, th {
   border: 1px solid #DDD;
-  padding: 8px;
-  width: 100%;
+  width: 90%;
   text-align: center;
 }
 
@@ -87,13 +100,15 @@
   color: white;
 }
 
+/* TABLE HISTORY */
+
 #table {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 60%;
-  margin-left: 20%;
+  width: 65%;
+  margin-left: 18%;
   margin-top: 10px;
-    display: block;
+  display: block;
   overflow-x: auto;
 }
 

@@ -90,4 +90,7 @@
     margin-top: 150px;
       height: 50%;
   }
+  .cerrar {
+    margin: -95px auto;
+  }
 }
