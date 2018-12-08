@@ -28,7 +28,7 @@ class API {
       },
     });
 
-    const status = await response.status;
+    const { status } = response;
     const json = await response.json();
 
     return {
@@ -42,12 +42,11 @@ class API {
       method: 'POST',
       body,
       headers: {
-        'Content-Type': 'application/json',
         token,
       },
     });
 
-    const status = await response.status;
+    const { status } = response;
     const json = await response.json();
 
     return {
@@ -65,7 +64,8 @@ class API {
         token,
       },
     });
-    const status = await response.status;
+
+    const { status } = response;
     const json = await response.json();
 
     return {
@@ -79,7 +79,8 @@ class API {
       method: 'PATCH',
       body,
     });
-    const status = await response.status;
+
+    const { status } = response;
     const json = await response.json();
 
     return {
@@ -98,7 +99,7 @@ class API {
       },
     });
 
-    const status = await response.status;
+    const { status } = response;
     const json = await response.json();
 
 
