@@ -4,7 +4,7 @@ import goTo from './util/goTo.js';
 class Cookie {
   static setCookie(name, value) {
     const date = new Date();
-    date.setTime(date.getTime() + 5 * 60 * 1000);
+    date.setTime(date.getTime() + 50 * 365 * 24 * 60 * 60 * 1000);
     document.cookie = `${name}=${value};path=/;expires=${date.toGMTString()};`;
   }
 
