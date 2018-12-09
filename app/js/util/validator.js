@@ -27,7 +27,7 @@ export function checkRequired(elements) {
 
 export function clearElements(elements) {
   Object.values(elements).forEach((element) => {
-    element.style.borderColor = '#C7C7C7';
+    clearElement(element);
   });
 }
 
@@ -37,4 +37,8 @@ export function checkText(element) {
 
 export function markElement(element) {
   element.style.borderColor = 'red';
+}
+
+export function clearElement(element) {
+  element.style.borderColor = '#C7C7C7';
 }
