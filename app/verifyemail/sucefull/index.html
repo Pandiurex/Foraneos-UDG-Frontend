@@ -6,10 +6,10 @@
   <link type="text/plain" rel="author" href="http://domain/humans.txt" /> <!-- Poner Dominio -->
   <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="shortcut icon" href="../img/logo/logo4.ico">
-  <link rel="stylesheet" href="../css/normalize.css">
-  <link rel="stylesheet" href="../css/main.css">
-  <title> Confirmar Correo </title>
+  <link rel="shortcut icon" href="../../../img/logo/logo4.ico">
+  <link rel="stylesheet" href="../../../css/normalize.css">
+  <link rel="stylesheet" href="../../../css/main.css">
+  <title> Cambiar Contraseña </title>
 </head>
 
 <body>
@@ -47,6 +47,7 @@
           </div>
           <footer class="modal-footer modal-text">
             <p> ¿No tienes cuenta en Foráneos UdeG? <a href="/registry/"> Registrarse </a></p>
+
             <a href="/passrecovery/"> ¿Olvidaste tu contraseña? </a>
           </footer>
         </section>
@@ -56,25 +57,21 @@
 
   <main>
     <section id="banner">
-      <img src="../img/port/port4.jpg" alt="Imagen de estudiantes">
+      <img src="../../../img/port/port4.jpg" alt="Imagen de estudiantes">
       <div class="contenedor">
         <h2> Foráneos UdeG </h2>
         <p> Alojamiento Estudiantil </p>
-        <a href="/info/">Leer más </a>
+        <a href="/info/"> Leer más </a>
       </div>
     </section>
     <section class="main">
       <fieldset class="fieldset2">
         <div>
-          <form class="card" id="confirm-email"> <!-- class=""  action="index.html" method="post"> -->
+          <form class="card" id="confirm-pass"> <!-- class=""  action="index.html" method="post"> -->
             <div class="abajo">
-              <h2 class="email-sent" id="email-sen">Ha sido enviado un correo de cambio de contraseña, revisalo porfavor</h2>
-              <h2> Confirmar Correo </h2><br>
-              <h2> ¡Upsss.... parece que tu correo aun no ha sido confirmado! </h2>
-              <input id="confirmemail" type="email" name="email" placeholder="Correo electrónico" class="input2" required data-regexp="email"><br>
-              <button id="btnconfirm-email" type="button" name="btnconfirm-email" class="button-form button-tam"> Enviar </button>
-              <p> Ingresa la dirección de correo electrónico a confirmar y te
-                enviaremos un enlace para confirmar tu Correo </p>
+              <h2 class="change" id="change">Se verifico correo exitosamente, te invitamos a que inicies sesion</h2>
+              <h2> Se ha verificado exitosamente tu correo, </h2>
+              <h2> Intenta iniciar sesion </h2>
             </div>
           </form>
         </div>
@@ -131,6 +128,6 @@
       </div>
     </footer>
     <script type="module" src="src/index.js"></script>
-    <script type="module" src="../js/handlersNavBar/index.js"></script>
+    <script type="module" src="../../../js/handlersNavBar/index.js"></script>
   </body>
   </html>
