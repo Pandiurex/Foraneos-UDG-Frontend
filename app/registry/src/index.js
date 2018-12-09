@@ -1,6 +1,6 @@
 import User from '../../js/models/user.js';
 import Cookie from '../../js/cookie.js';
-import { checkRequired, markElement } from '../../js/util/validator.js';
+import { checkRequired, markElement, clearElement } from '../../js/util/validator.js';
 import { getKeyValues, clearUndefined } from '../../js/util/list.js';
 import { hideElements } from '../../js/util/hideElements.js';
 
@@ -49,30 +49,38 @@ document.getElementById('image-file').addEventListener('change', (event) => {
 });
 
 async function checkForm() {
+  clearElement(document.getElementById('image-file'));
   const elements = getElements();
-  const correct = checkRequired(elements);
+  let correct = checkRequired(elements);
 
   if (correct) {
     let values = getKeyValues(elements);
     values = clearUndefined(values);
     if (!correctBirthdate(values.birthdate)) {
       markElement(elements.birthdate);
-      alert('Formato o fecha incorrecta en la fecha de nacimiento');
-      return;
+      console.log('Formato o fecha incorrecta en la fecha de nacimiento');
+      correct = false;
     }
-    if (values.password === values.password2) {
+    if (values.password !== values.password2) {
+      markElement(elements.password);
+      markElement(elements.password2);
+      console.log('Las contraseñas no coinciden');
+      correct = false;
+    }
+    if (image === '') {
+      markElement(document.getElementById('image-file'));
+      console.log('Debe subir una imagen');
+      correct = false;
+    }
+
+    if (correct) {
       values.image = image;
       values.userType = userType;
       values.gender = gender;
-      console.log(values);
       const done = await User.post(values);
       if (!done) {
         console.log('Error');
       }
-    } else {
-      markElement(elements.password);
-      markElement(elements.password2);
-      alert('Las contraseñas no coinciden');
     }
   } else {
     console.log('Corregir los datos marcados');
