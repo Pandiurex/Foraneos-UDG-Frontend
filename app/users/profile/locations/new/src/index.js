@@ -84,7 +84,7 @@ function recreateInputFile() {
 }
 
 function deleteInputFile() {
-  const inputFile = document.getElementById('file-upload');
+  const inputFile = document.getElementById('file-uploader');
   inputFile.parentNode.innerHTML = '';
 }
 
