@@ -6,6 +6,7 @@ import goTo from '../../../js/util/goTo.js';
 window.addEventListener('load', start);
 
 let hash = window.location.search;
+let email = '';
 
 function start() {
   const type = Cookie.getCookie('type');
@@ -20,9 +21,10 @@ function start() {
     goTo('/');
   }
   hash = hash[1];
-  divisor = hash.split('?email=');
+
+  const divisor = hash.split('&email=');
   hash = divisor[0];
-  if(divisor[1].length === 1){
+  if (divisor[1].length === 1){
     goTo('/')
   }
   email = divisor[1];
@@ -30,11 +32,11 @@ function start() {
 }
 
 async function confirm() {
-      const done = await confirmEmail({
-        hash,
-        email
-      });
-      if (!done) {
-        alert('Token expirado');
-      }
+  const done = await confirmEmail({
+    hash,
+    email,
+  });
+  if (!done) {
+    alert('Token expirado');
+  }
 }

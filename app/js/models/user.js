@@ -28,7 +28,6 @@ class User {
     const response = await API.get(`${ROUTE}/${userId}`, Cookie.getCookie('session'));
 
     if (response.status >= 200 && response.status < 300) {
-      console.log(response.data);
       return response.data;
     }
     if (response.status === 403) {
@@ -54,6 +53,7 @@ class User {
     formData.append('gender', gender);
     formData.append('mainEmail', mainEmail);
 
+
     const response = await API.postFile(`${ROUTE}`, formData);
 
     if (response.status >= 200 && response.status < 300) {
@@ -64,8 +64,22 @@ class User {
     return false;
   }
 
-  static async getProfileImage({ image }) {
-    
+  static async getProfileImage(image) {
+
+    const url = `userProfileImage?image=${image}`;
+    const response = await API.getImage(url, Cookie.getCookie('session'));
+
+    console.log(response);
+
+    if (response.status >= 200 && response.status < 300) {
+      console.log(response.data);
+      return response.data;
+    }
+    if (response.status === 403) {
+      goTo('/');
+    }
+
+    return undefined;
   }
 
   static processResult(data) {

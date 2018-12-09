@@ -12,14 +12,13 @@ export async function login({ email, password }) {
   }), hash);
 
   if (response.status >= 200 && response.status < 300) {
-    if (response.data.verified === 0) {
-      goTo('/verifyemail/');
-      return true;
-    } else {
-      Cookie.saveCookies(response.data);
-      goTo('/users/profile/');
-      return true;
-    }
+    // if (response.data.verified === 0) {
+    //   goTo('/verifyemail/');
+    //   return true;
+    // }
+    Cookie.saveCookies(response.data);
+    goTo('/users/profile/');
+    return true;
   }
 
   return false;
@@ -60,7 +59,7 @@ export async function passRecovery({ hash, password }) {
 }
 
 export async function confirmEmail({ hash, email }) {
-  const response = await API.get(`${ROUTE}confirmEmail?hash=${hash}&email=${email}`);
+  const response = await API.get(`${ROUTE}confirmEmail?hash=${hash}&emailId=${email}`);
 
   if (response.status >= 200 && response.status < 300) {
     return true;

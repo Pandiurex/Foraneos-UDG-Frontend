@@ -36,7 +36,22 @@ export function hide(elements) {
 export function showElements(elements) {
   Object.values(elements).forEach((element) => {
     show(element);
+    showParentNode(element);
   });
+}
+
+export function showParentNode(element) {
+  let aux = element.parentNode;
+
+  if (aux.tagName === 'ADMIN'
+    || aux.tagName === 'OWNER'
+    || aux.tagName === 'TENANT'
+    || aux.tagName === 'VISITANT') {
+    show(aux);
+    showParentNode(aux);
+  }
+  
+  return;
 }
 
 export function show(element) {

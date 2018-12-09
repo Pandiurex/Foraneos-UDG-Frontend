@@ -18,6 +18,26 @@ class API {
     };
   }
 
+  static async getImage(route, token = undefined) {
+    const response = await fetch(`${host}${route}`, {
+      method: 'GET',
+      headers: {
+        token,
+      },
+    });
+
+
+    const { status } = response;
+    const json = await response.blob();
+
+    console.log(json);
+
+    return {
+      status,
+      data: json,
+    };
+  }
+
   static async post(route, body, token = undefined) {
     const response = await fetch(`${host}${route}`, {
       method: 'POST',

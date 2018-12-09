@@ -23,7 +23,7 @@ async function start() {
   paintUser(user);
 }
 
-function paintUser({
+async function paintUser({
   username, name, firstSurname, secondSurname,
   birthdate, gender, mainEmail, profileImage,
 }) {
@@ -49,7 +49,8 @@ function paintUser({
     genderElement.value = 'Mujer';
   }
 
-  // const image = await User.getProfileImage(profileImage);
+  const image = await User.getProfileImage(profileImage);
+  document.getElementById('profile-image').src = URL.createObjectURL(image);
 }
 
 function checkDate(date) {
