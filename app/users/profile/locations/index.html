@@ -1,3 +1,177 @@
-Se muestran tablas con los lugares de los que es dueno
-Cada lugar especifica los que estan viviendo ahi
-Tienen un boton para mandar mensaje
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no,
+  initial-scale=1, maximum-scale=1, minimum-scale=1">
+  <link type="text/plain" rel="author" href="http://domain/humans.txt"> <!-- Poner Dominio -->
+  <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="../../../img/logo/logo4.ico">
+  <link rel="stylesheet" href="../../../css/normalize.css">
+  <link rel="stylesheet" href="../../../css/main.css">
+  <title> Anfitrión </title>
+</head>
+
+<body>
+  <header>
+    <div class="contmenu">
+      <h1> Foráneos UdeG </h1>
+      <input type="checkbox" id="menu-bar">
+      <label class="icon-menu" for="menu-bar"></label>
+      <nav class="menu">
+        <a href="/"> Inicio </a>
+        <a href="/locations/"> Ver alojamientos </a>
+        <admin><owner><tenant>
+          <a href="/users/profile/"> Mi perfil </a>
+        </tenant></owner></admin>
+        <admin><owner>
+          <a href="/users/profile/locations/new/"> Publicar alojamiento </a>
+        </owner></admin>
+        <owner><tenant>
+          <a href="/users/profile/locations/"> Mensajes </a>
+        </tenant></owner>
+        <owner><tenant>
+          <a href="/users/profile/"> Historial </a>
+        </tenant></owner>
+        <admin><owner><tenant>
+          <a id="menu-logout" href="#"> Cerrar sesión </a>
+        </tenant></owner></admin>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section id="bannerpro">
+      <img src="../../../img/port/port5.jpg" alt="Imagen de estudiantes">
+      <div class="contenedor">
+        <h2> Bienvenido </h2>
+      </div>
+    </section>
+    <section id="formp">
+      <div class="ri">
+          <button type="button" name="button" class="button-form button-tam"> Nuevo lugar </button>
+      </div>
+    </section>
+    <section id="bienvenidos">
+      <div class="cont">
+        <div class="add">
+          <img src="../../../img/slider/slider1.jpg" alt="alojamiento">
+        </div>
+        <div class="addd">
+          <p> Dirección: 18 de marzo, calle payas #453 "D" </p>
+          <p> Costo: $2400 </p>
+          <p> Calificación: 5 estrellas </p>
+          <ul class="lista">
+            <li> Nombre: Inquilino 1 <button type="button" name="button" class="button-loc"> Ver </button></li><hr>
+            <li> Nombre: Inquilino 2 <button type="button" name="button" class="button-loc"> Ver </button></li><hr>
+            <li> Nombre: Inquilino 3 <button type="button" name="button" class="button-loc"> Ver </button></li><hr>
+          </ul>
+        </div>
+        <div class="add">
+          <div class="btn">
+            <button type="button" name="button" class="button-form button-tam"> Ver mensajes </button>
+            <button type="button" name="button" class="button-form button-tam"> Editar </button>
+            <button type="button" name="button" class="button-form button-tam"> Desactivar </button>
+          </div>
+        </div>
+      </div>
+      <div class="cont">
+        <div class="add">
+          <img src="../../../img/slider/slider3.jpg" alt="alojamiento">
+        </div>
+        <div class="addd">
+          <p> Dirección: 18 de marzo, calle payas #453 "D" </p>
+          <p> Costo: $2400 </p>
+          <p> Calificación: 5 estrellas </p>
+          <ul class="lista">
+            <li> Nombre: Inquilino 1 <button type="button" name="button" class="button-loc"> Ver </button></li><hr>
+            <li> Nombre: Inquilino 2 <button type="button" name="button" class="button-loc"> Ver </button></li><hr>
+            <li> Nombre: Inquilino 3 <button type="button" name="button" class="button-loc"> Ver </button></li><hr>
+          </ul>
+        </div>
+        <div class="add">
+          <div class="btn">
+            <button type="button" name="button" class="button-form button-tam"> Ver mensajes </button>
+            <button type="button" name="button" class="button-form button-tam"> Editar </button>
+            <button type="button" name="button" class="button-form button-tam"> Desactivar </button>
+          </div>
+        </div>
+      </div>
+      <div class="cont">
+        <div class="add">
+          <img src="../../../img/slider/slider1.jpg" alt="alojamiento">
+        </div>
+        <div class="addd">
+          <p> Dirección: 18 de marzo, calle payas #453 "D" </p>
+          <p> Costo: $2400 </p>
+          <p> Calificación: 5 estrellas </p>
+          <ul class="lista">
+            <li> Nombre: Inquilino 1 <button type="button" name="button" class="button-loc"> Ver </button></li><hr>
+            <li> Nombre: Inquilino 2 <button type="button" name="button" class="button-loc"> Ver </button></li><hr>
+            <li> Nombre: Inquilino 3 <button type="button" name="button" class="button-loc"> Ver </button></li><hr>
+          </ul>
+        </div>
+        <div class="add">
+          <div class="btn">
+            <button type="button" name="button" class="button-form button-tam"> Ver mensajes </button>
+            <button type="button" name="button" class="button-form button-tam"> Editar </button>
+            <button type="button" name="button" class="button-form button-tam"> Desactivar </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container-footer-all">
+      <div class="container-body">
+        <div class="colum1">
+          <h1> Hecho por Alumnos para Alumnos </h1>
+          <p> Esta Página fue creada para ayudar a los estudiantes foráneos sin hogar,
+            para que durante su estancia escolar puedan conseguir el lugar
+            adecuado para ellos. </p>
+        </div>
+        <div class="colum2">
+          <h1> Redes Sociales </h1>
+          <a href="https://www.facebook.com/" target="_blank" class="fa fa-facebook"></a>
+          <a href="https://twitter.com/" target="_blank" class="fa fa-twitter"></a>
+          <a href="https://github.com/" target="_blank" class="fa fa-github"></a><br>
+          <a href="https://www.instagram.com/?hl=en" target="_blank" class="fa fa-instagram"></a>
+          <a href="https://plus.google.com/discover" target="_blank" class="fa fa-google-plus"></a>
+          <a href="https://accounts.google.com/signin/v2/identifier?hl=es&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin" target="_blank" class="fa fa-envelope"></a>
+        </div>
+        <div class="colum3 footer-list">
+          <h1> Información </h1>
+          <div class="row2">
+            <a href="/info/"><label> ¿Qué es Foráneos UdeG? </label></a>
+          </div>
+          <div class="row2">
+            <a href="/info/#problema"><label> Reportar un Problema </label></a>
+          </div>
+          <div class="row2">
+            <a href="/info/#team"><label> Nuestro Team </label></a>
+          </div>
+          <div class="row2">
+            <a href="/info/#contacto"><label> Contacto </label></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-footer">
+      <div class="footer">
+        <div class="copyright">
+          © 2018 Todos los Derechos Reservados | <a href="/info/"> Foráneos UdeG </a>
+        </div>
+        <div class="information">
+          <a href="/info/"> Información Foráneos UdeG </a> |
+          <a href="/info/#pripo"> Privación y Política </a> |
+          <a href="/info/#termco"> Términos y Condiciones </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../../../js/components/inputfile.js"></script>
+  <script type="module" src="src/index.js"></script>
+  <script type="module" src="../../../js/handlersNavBar/index.js"></script>
+</body>
+</html>
