@@ -139,102 +139,41 @@
     <section id="info">
       <h3> Fotos del inmueble que ofreces </h3>
       <form class="card">
-        <div class="adj">
-          <section>
-          <div class="cont">
-            <label for="file-upload" class="subir"> Subir archivo </label>
-            <input id="file-upload" onchange='cambiar()' type="file" style='display: none;'/>
-            <button type="button" name="button" class="button-file"> Enviar </button>
-          </div>
-          <div id="infofile"></div>
-        </section>
-        <section>
-          <div class="cont">
-            <label for="file-upload1" class="subir"> Subir archivo </label>
-            <input id="file-upload1" onchange='cambiar1()' type="file" style='display: none;'/>
-            <button type="button" name="button" class="button-file"> Enviar </button>
-          </div>
-          <div id="infofile1"></div>
-        </section>
-        <section>
-          <div class="cont">
-            <label for="file-upload2" class="subir"> Subir archivo </label>
-            <input id="file-upload2" onchange='cambiar2()' type="file" style='display: none;'/>
-            <button type="button" name="button" class="button-file"> Enviar </button>
-          </div>
-          <div id="infofile2"></div>
-        </section>
-        <section>
-          <div class="cont">
-            <label for="file-upload3" class="subir"> Subir archivo </label>
-            <input id="file-upload3" onchange='cambiar3()' type="file" style='display: none;'/>
-            <button type="button" name="button" class="button-file"> Enviar </button>
-          </div>
-          <div id="infofile3"></div>
-        </section>
-        <section>
+        <!-- <section>
           <div class="cont">
             <label for="file-upload4" class="subir"> Subir archivo </label>
             <input id="file-upload4" onchange='cambiar4()' type="file" style='display: none;'/>
             <button type="button" name="button" class="button-file"> Enviar </button>
           </div>
           <div id="infofile4"></div>
-        </section>
-        </div>
-        <div class="card adj"><br>
-          <ul class="galeria">
-            <li><a href="#img1"> Ver foto 1 </a></li>
-            <li><a href="#img2"> Ver foto 2 </a></li>
-            <li><a href="#img3"> Ver foto 3 </a></li>
-            <li><a href="#img4"> Ver foto 4 </a></li>
-            <li><a href="#img5"> Ver foto 5 </a></li>
+        </section> -->
+        <div class="adj">
+          <ul id="all-images" class="galeria">
+            <!-- <li>
+              <a href="#img1"> Ver foto 1 </a>
+              <button type="button" name="button" class="button-file"> Eliminar </button>
+            </li> -->
           </ul>
+          <section>
+          <div class="cont">
+            <label for="file-upload" class="subir"> Subir foto </label>
+            <div id="file-uploader">
+              <input id="file-upload" type="file" style='display: none;'/>
+            </div>
+          </div>
+          </section>
         </div>
       </form>
-      <div class="modalimg" id="img1">
-        <h4> Foto 1 </h4>
-        <div class="imagen">
-          <a href="#img5">&#60;</a>
-          <a href="#img2"><img src="../../../../img/slider/slider1.jpg" alt="Foto 1"></a>
-          <a href="#img2"></a>
-        </div>
-        <a class="cerrar" href="#"> X </a>
-      </div>
-      <div class="modalimg" id="img2">
-        <h4> Foto 2 </h4>
-        <div class="imagen">
-          <a href="#img1">&#60;</a>
-          <a href="#img3"><img src="../../../../img/slider/slider1.jpg" alt="Foto 2"></a>
-          <a href="#img3"></a>
-        </div>
-        <a class="cerrar" href="#"> X </a>
-      </div>
-      <div class="modalimg" id="img3">
-        <h4> Foto 3 </h4>
-        <div class="imagen">
-          <a href="#img2">&#60;</a>
-          <a href="#img4"><img src="../../../../img/slider/slider1.jpg" alt="Foto 3"></a>
-          <a href="#img4"></a>
-        </div>
-        <a class="cerrar" href="#"> X </a>
-      </div>
-      <div class="modalimg" id="img4">
-        <h4> Foto 4 </h4>
-        <div class="imagen">
-          <a href="#img3">&#60;</a>
-          <a href="#img5"><img src="../../../../img/slider/slider1.jpg" alt="Foto 4"></a>
-          <a href="#img5"></a>
-        </div>
-        <a class="cerrar" href=""> X </a>
-      </div>
-      <div class="modalimg" id="img5">
-        <h4> Foto 5 </h4>
-        <div class="imagen">
-          <a href="#img4">&#60;</a>
-          <a href="#img1"><img src="../../../../img/slider/slider1.jpg" alt="Foto 5"></a>
-          <a href="#img1"></a>
-        </div>
-        <a class="cerrar" href=""> X </a>
+      <div id="foto-modals">
+        <!-- <div class="modalimg" id="img1">
+          <h4> Foto 1 </h4>
+          <div class="imagen">
+            <a href="#img5">&#60;</a>
+            <a><img src="../../../../img/slider/slider1.jpg" alt="Foto 1"></a>
+            <a href="#img2">&#62;</a>
+          </div>
+          <a class="cerrar" href="#"> X </a>
+        </div> -->
       </div>
     </section>
     <section>
