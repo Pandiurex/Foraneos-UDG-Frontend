@@ -152,22 +152,24 @@
     <section id="blog">
       <form class="card datos-location">
         <h2> Datos de la Casa </h2>
-        <label for="di"> Dirección </label>
-        <input id="di" type="text" name="dir" placeholder="Dirección" class="input3" readonly>
-        <label for="col"> Colonia </label>
-        <input id="col" type="text" name="col" placeholder="Colonia" class="input3" readonly>
-        <label for="tel"> Teléfono </label>
-        <input id="tel" type="text" name="tel" placeholder="Teléfono" class="input3" readonly>
+        <label for="available-rooms"> Lugares Disponibles </label>
+        <input id="available-rooms" type="text" name="available-rooms" placeholder="Lugares Disponibles" class="input3" readonly>
       </form>
       <form class="card datos-location">
         <h2> Datos del Dueño </h2>
-        <label for="nom"> Nombre </label>
-        <input id="nom" type="text" name="owner-name" placeholder="Nombre Dueño" class="input3" readonly>
+        <label for="owner-fullname"> Nombre </label>
+        <input id="owner-fullname" type="text" name="owner-fullname" placeholder="Nombre Dueño" class="input3" readonly>
         <button id="btncon" type="button" name="btnsubmit" class="button-form button-tam"> Contactame </button>
       </form>
     </section>
+    <form class="card contenedor report">
+        <h2>Comentarios adicionales</h2><br>
+        <textarea id="description" name="description" placeholder="Escribe algo..." data-regexp="paragraph"></textarea><br>
+        <h2>Restricciones</h2><br>
+        <textarea id="restrictions" name="restrictions" placeholder="Escribe algo..." data-regexp="paragraph"></textarea><br>
+      </form>
     <section id="info">
-      <div class="card adjust">
+      <!-- <div class="card adjust">
         <h3> Restricciones </h3>
         <a target="_blank" class="fa fa-suitcase"></a>
         <ul>
@@ -195,6 +197,13 @@
         <ul>
           <li> Cerca de CUCEI </li>
           <li> Cerca de la plaza Forum </li>
+        </ul>
+      </div> -->
+      <div class="card adjust">
+        <h3> Servicios </h3>
+        <a target="_blank" class="fa fa-bed"></a>
+        <ul id="services-list">
+          <!-- <li> Agua  </li> -->
         </ul>
       </div>
     </section>

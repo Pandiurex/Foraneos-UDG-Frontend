@@ -128,7 +128,7 @@ function paintLocations(locations) {
 }
 
 function paintLocation(location) {
-  const divLocationsContainer = document.getElementById('locations-container')
+  const divLocationsContainer = document.getElementById('locations-container');
   const divCards = document.createElement('div');
   divCards.className = 'cards';
   const img = document.createElement('img');
