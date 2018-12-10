@@ -41,6 +41,26 @@ class Location {
     });
   }
 
+  static async get(locationId) {
+    const response = await API.get(`${ROUTE}/${locationId}`, Cookie.getCookie('session'));
+
+    if (response.status >= 200 && response.status < 300) { 
+      const myPromises = response.data.images.map(async (image) => {
+        image = await LocationImage.get(image.image);
+      });
+
+      await Promise.all(myPromises);
+
+      return response.data;
+    }
+    if (response.status === 403) {
+      Cookie.clearCookies();
+      goTo('/');
+    }
+
+    return undefined;
+  }
+
   static async getAll(order = {}, limit = {}) {
     let params = {
       orderBy: order.orderBy,
