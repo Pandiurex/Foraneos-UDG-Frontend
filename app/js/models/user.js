@@ -31,6 +31,7 @@ class User {
       return response.data;
     }
     if (response.status === 403) {
+      Cookie.clearCookies();
       goTo('/');
     }
 
@@ -60,6 +61,10 @@ class User {
       goTo('/registry/emailsent/');
       return true;
     }
+    if (response.status === 403) {
+      Cookie.clearCookies();
+      goTo('/');
+    }
 
     return false;
   }
@@ -76,6 +81,7 @@ class User {
       return response.data;
     }
     if (response.status === 403) {
+      Cookie.clearCookies();
       goTo('/');
     }
 
