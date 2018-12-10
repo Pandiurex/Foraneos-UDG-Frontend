@@ -3,6 +3,7 @@ const uglify = require('gulp-uglify-es').default;
 const concat = require('gulp-concat');
 const cssMin = require('gulp-css');
 const imagemin = require('gulp-imagemin');
+const babel = require('gulp-babel');
 const browserSync = require('browser-sync').create();
 
 gulp.task('images', () => gulp.src('app/img/**/*.+(png|jpg|jpeg|svg)')
@@ -31,8 +32,13 @@ gulp.task('browserSync', () => {
   });
 });
 
+gulp.task('babel', () => gulp.src('app/src/index.js')
+  .pipe(babel({
+    presets: ['@babel/env'],
+  }))
+  .pipe(gulp.dest('dist')));
+
 gulp.task('watch', ['browserSync'], () => {
-  // Reloads the browser whenever HTML or JS files change
   gulp.watch('app/**/*.html', browserSync.reload);
   gulp.watch('app/**/*.js', browserSync.reload);
   gulp.watch('app/css/**/*.css', browserSync.reload);
