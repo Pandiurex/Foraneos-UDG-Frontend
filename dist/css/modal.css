@@ -1,0 +1,129 @@
+/* MODAL */
+
+.modal {
+  display: none;
+  background: rgba(0, 0, 0, .8);
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.modal:target {
+  display: table;
+}
+
+.modal-dialog {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-content {
+  background: rgb(255, 255, 255);
+  width: 60%;
+  min-width: 300px;
+  margin: auto;
+  position: relative;
+  animation: slideUp 0.3s ease-in-out;
+}
+
+.modal-header {
+  background: #2980b9;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
+  position: relative;
+  text-align: center;
+}
+
+.modal-title {
+  margin: 0;
+}
+
+.modal-close {
+  color: #FFF;
+  text-decoration: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.modal-body {
+  align-items: center;
+}
+
+.modal-text a {
+  padding: 0 1rem;
+  line-height: 1.5;
+  text-decoration: none;
+  color: #3E9A87;
+}
+
+.modal-footer {
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid #CCC;
+}
+
+.modal-p {
+  color: #FA8F2A;
+  margin-bottom: 2%;
+  font-weight: bold;
+}
+
+.text {
+  margin-top: 10px;
+  text-align: center;
+  color: #353939;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.radio {
+  margin-right: 30%;
+}
+
+.radio label {
+  text-align: justify;
+  color: #EC801C;
+  font-size: 15px;
+}
+
+.radio2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.radio2 label {
+  text-align: justify;
+  font-size: 15px;
+}
+
+@keyframes slideUp {
+  from{
+    opacity: 0;
+    bottom: -200px;
+  }
+  to{
+    opacity: 1;
+    bottom: 0;
+  }
+}
+
+@media (max-width:500px) {
+  .modal-close {
+    position: absolute;
+  }
+}
+
+@media (max-width:744px) {
+  .radio {
+    margin-right: 10%;
+  }
+}
+
+@media (max-width:579px) {
+  .radio {
+    margin-right: -2%;
+  }
+}

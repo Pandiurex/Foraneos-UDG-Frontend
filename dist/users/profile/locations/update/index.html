@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no,
+  initial-scale=1, maximum-scale=1, minimum-scale=1">
+  <link type="text/plain" rel="author" href="http://domain/humans.txt"> <!-- Poner Dominio -->
+  <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="../../../../../img/logo/logo4.ico">
+  <link rel="stylesheet" href="../../../../../css/normalize.css">
+  <link rel="stylesheet" href="../../../../../css/main.css">
+  <title> Actualizar Alojamiento </title>
+</head>
+
+<body>
+  <header>
+    <div class="contmenu">
+      <h1> Foráneos UdeG </h1>
+      <input type="checkbox" id="menu-bar">
+      <label class="icon-menu" for="menu-bar"></label>
+      <nav class="menu">
+        <a href="/"> Inicio </a>
+        <a href="/locations/"> Ver alojamientos </a>
+        <admin><owner><tenant>
+          <a href="/users/profile/"> Mi perfil </a>
+        </tenant></owner></admin>
+        <admin><owner>
+          <a href="/users/profile/locations/new/"> Publicar alojamiento </a>
+        </owner></admin>
+        <owner><tenant>
+          <a href="/users/profile/locations/"> Mensajes </a>
+        </tenant></owner>
+        <owner><tenant>
+          <a href="/users/profile/"> Historial </a>
+        </tenant></owner>
+        <admin><owner><tenant>
+          <a id="menu-logout" href="#"> Cerrar sesión </a>
+        </tenant></owner></admin>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="bannerpro">
+      <img src="../../../../../img/port/port6.jpg" alt="Imagen de estudiantes">
+      <div class="contenedor">
+        <h2> Foráneos UdeG </h2>
+        <p> Alojamiento Estudiantil </p>
+      </div>
+    </section>
+    <section id="bienvenidos">
+      <div class="contenedor">
+        <h2> Actualizar Alojamiento </h2>
+        <span class="input-group-addon">
+          <i class="fa fa-home"></i>
+        </span>
+      </div>
+    </section>
+    <section id="blog" class="contenedor">
+      <form class="card dat">
+        <div class="ti">
+          <h3> Cantidad de habitaciones </h3>
+          <input id="habitaciones" type="number" name="habitaciones" placeholder="Habitaciones" min="1" class="input2" required data-regexp="number">
+        </div>
+        <div class="ti">
+          <h3> Costo de la renta (por mes) </h3>
+          <input id="costo" type="number" name="costo" placeholder="Costo" min="1" class="input2" required data-regexp="number">
+        </div>
+        <div class="ti">
+          <h3> Exclusivo </h3>
+          <select id="genero" name="genero" class="ordenar square input2" required>
+            <option selected="" value="selected"> Selecciona </option>
+            <option value="Mujeres"> Mujeres </option>
+            <option value="Hombres"> Hombres </option>
+            <option value="Ambos"> Ambos </option>
+          </select>
+        </div>
+        <div class="ti">
+          <h3> Código postal </h3>
+          <section>
+            <input id="cod" type="text" name="cod" placeholder="Código postal" class="input2" data-regexp="postal">
+          </section>
+        </div>
+      </form>
+      <form class="card dat">
+        <div class="ti">
+        <h3> Servicios </h3>
+          <label class="contcheck">
+            <input type="checkbox" name="check"> Limpieza
+            <span class="checkmarktwo"></span>
+          </label>
+          <label class="contcheck">
+            <input type="checkbox" name="check"> Amueblado
+            <span class="checkmarktwo"></span>
+          </label>
+          <label class="contcheck">
+            <input type="checkbox" name="check"> Internet
+            <span class="checkmarktwo"></span>
+          </label>
+          <label class="contcheck">
+            <input type="checkbox" name="check"> Cocina
+            <span class="checkmarktwo"></span>
+          </label>
+          <label class="contcheck">
+            <input type="checkbox" name="check"> Baño propio
+            <span class="checkmarktwo"></span>
+          </label>
+          <label class="contcheck">
+            <input type="checkbox" name="check"> Estacionamiento
+            <span class="checkmarktwo"></span>
+          </label>
+          <label class="contcheck">
+            <input type="checkbox" name="check"> Tv cable
+            <span class="checkmarktwo"></span>
+          </label>
+          <label class="contcheck">
+            <input type="checkbox" name="check"> Gas
+            <span class="checkmarktwo"></span>
+          </label>
+          <label class="contcheck">
+            <input type="checkbox" name="check"> Alimentos
+            <span class="checkmarktwo"></span>
+          </label>
+          <label class="contcheck">
+            <input type="checkbox" name="check"> Luz
+            <span class="checkmarktwo"></span>
+          </label>
+          <label class="contcheck">
+            <input type="checkbox" name="check"> Teléfono
+            <span class="checkmarktwo"></span>
+          </label>
+          <label class="contcheck">
+            <input type="checkbox" name="check"> Entrada independiente
+            <span class="checkmarktwo"></span>
+          </label>
+          <label class="contcheck">
+            <input type="checkbox" name="check"> Lavado servicio
+            <span class="checkmarktwo"></span>
+          </label>
+        </div>
+      </form>
+    </section>
+    <section id="info">
+      <h3> Fotos del inmueble que ofreces </h3>
+      <form class="card">
+        <div class="adj">
+          <section>
+          <div class="cont">
+            <label for="file-upload" class="subir"> Subir archivo </label>
+            <input id="file-upload" onchange='cambiar()' type="file" style='display: none;'/>
+            <button type="button" name="button" class="button-file"> Enviar </button>
+          </div>
+          <div id="infofile"></div>
+        </section>
+        <section>
+          <div class="cont">
+            <label for="file-upload1" class="subir"> Subir archivo </label>
+            <input id="file-upload1" onchange='cambiar1()' type="file" style='display: none;'/>
+            <button type="button" name="button" class="button-file"> Enviar </button>
+          </div>
+          <div id="infofile1"></div>
+        </section>
+        <section>
+          <div class="cont">
+            <label for="file-upload2" class="subir"> Subir archivo </label>
+            <input id="file-upload2" onchange='cambiar2()' type="file" style='display: none;'/>
+            <button type="button" name="button" class="button-file"> Enviar </button>
+          </div>
+          <div id="infofile2"></div>
+        </section>
+        <section>
+          <div class="cont">
+            <label for="file-upload3" class="subir"> Subir archivo </label>
+            <input id="file-upload3" onchange='cambiar3()' type="file" style='display: none;'/>
+            <button type="button" name="button" class="button-file"> Enviar </button>
+          </div>
+          <div id="infofile3"></div>
+        </section>
+        <section>
+          <div class="cont">
+            <label for="file-upload4" class="subir"> Subir archivo </label>
+            <input id="file-upload4" onchange='cambiar4()' type="file" style='display: none;'/>
+            <button type="button" name="button" class="button-file"> Enviar </button>
+          </div>
+          <div id="infofile4"></div>
+        </section>
+        </div>
+        <div class="card adj"><br>
+          <ul class="galeria">
+            <li><a href="#img1"> Ver foto 1 </a></li>
+            <li><a href="#img2"> Ver foto 2 </a></li>
+            <li><a href="#img3"> Ver foto 3 </a></li>
+            <li><a href="#img4"> Ver foto 4 </a></li>
+            <li><a href="#img5"> Ver foto 5 </a></li>
+          </ul>
+        </div>
+      </form>
+      <div class="modalimg" id="img1">
+        <h4> Foto 1 </h4>
+        <div class="imagen">
+          <a href="#img5">&#60;</a>
+          <a href="#img2"><img src="../../../../../img/slider/slider1.jpg" alt="Foto 1"></a>
+          <a href="#img2"> > </a>
+        </div>
+        <a class="cerrar" href=""> X </a>
+      </div>
+      <div class="modalimg" id="img2">
+        <h4> Foto 2 </h4>
+        <div class="imagen">
+          <a href="#img1">&#60;</a>
+          <a href="#img3"><img src="../../../../../img/slider/slider1.jpg" alt="Foto 2"></a>
+          <a href="#img3"> > </a>
+        </div>
+        <a class="cerrar" href=""> X </a>
+      </div>
+      <div class="modalimg" id="img3">
+        <h4> Foto 3 </h4>
+        <div class="imagen">
+          <a href="#img2">&#60;</a>
+          <a href="#img4"><img src="../../../../../img/slider/slider1.jpg" alt="Foto 3"></a>
+          <a href="#img4"> > </a>
+        </div>
+        <a class="cerrar" href=""> X </a>
+      </div>
+      <div class="modalimg" id="img4">
+        <h4> Foto 4 </h4>
+        <div class="imagen">
+          <a href="#img3">&#60;</a>
+          <a href="#img5"><img src="../../../../../img/slider/slider1.jpg" alt="Foto 4"></a>
+          <a href="#img5"> > </a>
+        </div>
+        <a class="cerrar" href=""> X </a>
+      </div>
+      <div class="modalimg" id="img5">
+        <h4> Foto 5 </h4>
+        <div class="imagen">
+          <a href="#img4">&#60;</a>
+          <a href="#img1"><img src="../../../../../img/slider/slider1.jpg" alt="Foto 5"></a>
+          <a href="#img1"> > </a>
+        </div>
+        <a class="cerrar" href=""> X </a>
+      </div>
+    </section>
+    <section>
+      <form class="card contenedor report">
+        <h2>Comentarios adicionales</h2><br>
+        <textarea id="comentarios" placeholder="Escribe algo..." data-regexp="paragraph"></textarea><br>
+        <h2>Restricciones</h2><br>
+        <textarea  id="restricciones" placeholder="Escribe algo..." data-regexp="paragraph"></textarea><br>
+        <input type="hidden" id="hidlat" val="">
+        <input type="hidden" id="hidlong" val="">
+        <input type="hidden" id="hidcamp" val="">
+        <input type="hidden" id="hidpropiedad" val="">
+        <button id="btncan" type="button" name="btncan" class="button-form button-tam"> Cancelar </button>
+        <button id="btngua" type="button" name="btngua" class="button-form button-tam"> Guardar </button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container-footer-all">
+      <div class="container-body">
+        <div class="colum1">
+          <h1> Hecho por Alumnos para Alumnos </h1>
+          <p> Esta Página fue creada para ayudar a los estudiantes foráneos sin hogar,
+            para que durante su estancia escolar puedan conseguir el lugar
+            adecuado para ellos. </p>
+          </div>
+          <div class="colum2">
+            <h1> Redes Sociales </h1>
+            <a href="https://www.facebook.com/" target="_blank" class="fa fa-facebook"></a>
+            <a href="https://twitter.com/" target="_blank" class="fa fa-twitter"></a>
+            <a href="https://github.com/" target="_blank" class="fa fa-github"></a><br>
+            <a href="https://www.instagram.com/?hl=en" target="_blank" class="fa fa-instagram"></a>
+            <a href="https://plus.google.com/discover" target="_blank" class="fa fa-google-plus"></a>
+            <a href="https://accounts.google.com/signin/v2/identifier?hl=es&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin" target="_blank" class="fa fa-envelope"></a>
+          </div>
+          <div class="colum3 footer-list">
+            <h1> Información </h1>
+            <div class="row2">
+              <a href="/info/"><label> ¿Qué es Foráneos UdeG? </label></a>
+            </div>
+            <div class="row2">
+              <a href="/info/#problema"><label> Reportar un Problema </label></a>
+            </div>
+            <div class="row2">
+              <a href="/info/#team"><label> Nuestro Team </label></a>
+            </div>
+            <div class="row2">
+              <a href="/info/#contacto"><label> Contacto </label></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-footer">
+        <div class="footer">
+          <div class="copyright">
+            © 2018 Todos los Derechos Reservados | <a href="/info/"> Foráneos UdeG </a>
+          </div>
+          <div class="information">
+            <a href="/info/"> Información Foráneos UdeG </a> |
+            <a href="/info/#pripo"> Privación y Política </a> |
+            <a href="/info/#termco"> Términos y Condiciones </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="../../../../../js/components/inputfile.js"></script>
+    <script type="module" src="src/index.js"></script>
+    <script type="module" src="../../../../../js/handlersNavBar/index.js"></script>
+  </body>
+  </html>

@@ -1,0 +1,85 @@
+/* BUTTON LOGIN */
+
+.button {
+  align-items: center;
+  background-color: #0BA48C;
+  border-radius: .25rem;
+  border: none;
+  color: #FFF;
+  cursor: pointer;
+  display: inline-block;
+  line-height: inherit;
+  margin-bottom: 1rem;
+  margin-right: 2rem;
+  margin-left: 35px;
+  padding: .5rem 1rem;
+  text-decoration: none;
+  transition: -webkit-transform .05s;
+  transition: transform .05s,-webkit-transform .05s;
+  transition: transform .05s;
+  width: 40%;
+}
+
+.button:hover {
+  background-color: #598FB2;
+  color: white;
+}
+
+.button:active {
+  background-color: #51748A;
+  transform: translateY(4px);
+}
+
+/* BUTTON FORMS  */
+
+.button-form {
+  align-items: center;
+  background-color: #0BA48C;
+  border-radius: .25rem;
+  border: none;
+  color: #FFF;
+  cursor: pointer;
+  display: inline-block;
+  /* line-height: inherit; */
+  margin-bottom: 1rem;
+  /* margin-right: 2rem; */
+  padding: .5rem 1rem;
+  text-decoration: none;
+  transition: -webkit-transform .05s;
+  transition: transform .05s,-webkit-transform .05s;
+  transition: transform .05s;
+  width: 30%;
+}
+
+.button-modal {
+  width: 100px;
+}
+
+.button-form:hover {
+  background-color: #598FB2;
+  color: white;
+}
+
+.button-form:active {
+  background-color: #51748A;
+  transform: translateY(4px);
+}
+
+.button-tam {
+  width: 200px;
+}
+
+@media (max-width: 500px) {
+  .button-form {
+    margin-left: auto;
+  }
+}
+
+@media (min-width:1025px) {
+  .button {
+    margin-right: 40%;
+    margin-left: 25%;
+    width: 50%;
+    justify-content: center;
+  }
+}

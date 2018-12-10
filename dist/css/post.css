@@ -1,0 +1,70 @@
+/* FIELDSET */
+
+.fieldset {
+  background-color: white;
+  border-color: transparent;
+  border-radius: 10px;
+  margin: 50px 115px 10px 50px;
+}
+
+.fieldset2 {
+  background-color: white;
+  border-color: transparent;
+  border-radius: 10px;
+  margin: 1%;
+}
+
+.blogs-inf {
+  background-color: white;
+  border-color: transparent;
+  width: 80%;
+  border-radius: 10px;
+  margin-left: 10%;
+}
+
+.abajo {
+  margin: 4%;
+}
+
+/* POST */
+
+.card {
+  text-align: center;
+}
+
+.card h2 {
+  color: #EC801C;
+  text-align: center;
+}
+
+.parafos {
+  text-align: justify;
+  line-height: 20pt;
+}
+
+.parafos h2 {
+  color: #F09249;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.parafos h3 {
+  color: #11709F;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 590px) {
+  .parafos {
+    margin-left: 20%;
+    width: 65%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .parafos h3 {
+    text-align: center;
+  }
+}

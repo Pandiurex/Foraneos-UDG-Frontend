@@ -1,41 +1,38 @@
 const gulp = require('gulp');
 const uglify = require('gulp-uglify-es').default;
-const concat = require('gulp-concat');
-const cssMin = require('gulp-css');
 const imagemin = require('gulp-imagemin');
 const babel = require('gulp-babel');
+const useref = require('gulp-useref');
 const browserSync = require('browser-sync').create();
 
 gulp.task('images', () => gulp.src('app/img/**/*.+(png|jpg|jpeg|svg)')
   .pipe(imagemin())
-  .pipe(gulp.dest('dist/images')));
+  .pipe(gulp.dest('dist/img')));
 
-gulp.task('css', () => {
-  gulp.src('./app/css/*.css')
-    .pipe(concat('app.css'))
-    .pipe(cssMin())
+gulp.task('copy', () => {
+  gulp.src('./app/css/*')
     .pipe(gulp.dest('./dist/css'));
 });
 
-gulp.task('scripts', () => {
-  gulp.src('./app/js/*.js')
-    .pipe(concat('app.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('./dist/js'));
+gulp.task('copy-font', () => {
+  gulp.src('./app/font/*')
+    .pipe(gulp.dest('./dist/font'));
 });
+
+gulp.task('useref', () => gulp.src('app/**/*.html')
+  .pipe(useref())
+  .pipe(gulp.dest('dist')));
 
 gulp.task('browserSync', () => {
   browserSync.init({
     server: {
-      baseDir: 'app',
+      baseDir: 'dist',
     },
   });
 });
 
-gulp.task('babel', () => gulp.src('app/src/index.js')
-  .pipe(babel({
-    presets: ['@babel/env'],
-  }))
+gulp.task('babel', () => gulp.src('app/**/*.js')
+  .pipe(babel())
   .pipe(gulp.dest('dist')));
 
 gulp.task('watch', ['browserSync'], () => {
@@ -44,4 +41,4 @@ gulp.task('watch', ['browserSync'], () => {
   gulp.watch('app/css/**/*.css', browserSync.reload);
 });
 
-gulp.task('default', ['css', 'scripts', 'images']);
+gulp.task('default', ['copy', 'babel', 'copy-font', 'images', 'useref']);
