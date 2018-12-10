@@ -6,10 +6,6 @@ export function checkRequired(elements) {
   let correct = true;
   Object.values(elements).forEach((element) => {
     if (element.selectedIndex !== undefined) {
-      if (element.selectedIndex === 0 && element.required) {
-        markElement(element);
-        correct = false;
-      }
       return;
     }
     if (element.required && element.value.length === 0) {
