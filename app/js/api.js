@@ -1,11 +1,11 @@
 const host = 'https://api.foraneos-udg.ml/api/';
 
 class API {
-  static async get(route, token = undefined) {
+  static async get(route, hash = undefined) {
     const response = await fetch(`${host}${route}`, {
       method: 'GET',
       headers: {
-        token,
+        hash,
       },
     });
 
@@ -18,11 +18,11 @@ class API {
     };
   }
 
-  static async getImage(route, token = undefined) {
+  static async getImage(route, hash = undefined) {
     const response = await fetch(`${host}${route}`, {
       method: 'GET',
       headers: {
-        token,
+        hash,
       },
     });
 
@@ -38,13 +38,13 @@ class API {
     };
   }
 
-  static async post(route, body, token = undefined) {
+  static async post(route, body, hash = undefined) {
     const response = await fetch(`${host}${route}`, {
       method: 'POST',
       body,
       headers: {
         'Content-Type': 'application/json',
-        token,
+        hash,
       },
     });
 
@@ -57,12 +57,12 @@ class API {
     };
   }
 
-  static async postFile(route, body, token = undefined) {
+  static async postFile(route, body, hash = undefined) {
     const response = await fetch(`${host}${route}`, {
       method: 'POST',
       body,
       headers: {
-        token,
+        hash,
       },
     });
 
@@ -75,13 +75,13 @@ class API {
     };
   }
 
-  static async update(route, body, token = undefined) {
+  static async update(route, body, hash = undefined) {
     const response = await fetch(`${host}${route}`, {
       method: 'PATCH',
       body,
       headers: {
         'Content-Type': 'application/json',
-        token,
+        hash,
       },
     });
 
@@ -94,10 +94,13 @@ class API {
     };
   }
 
-  static async updateFile(route, body, token = undefined) {
+  static async updateFile(route, body, hash = undefined) {
     const response = await fetch(`${host}${route}`, {
       method: 'PATCH',
       body,
+      headers: {
+        hash,
+      },
     });
 
     const { status } = response;
@@ -109,13 +112,13 @@ class API {
     };
   }
 
-  static async delete(route, body = {}, token = undefined) {
+  static async delete(route, body = {}, hash = undefined) {
     const response = await fetch(`${host}${route}`, {
       method: 'DELETE',
       body,
       headers: {
         'Content-Type': 'application/json',
-        token,
+        hash,
       },
     });
 
