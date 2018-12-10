@@ -1,5 +1,8 @@
 import API from '../api.js';
 import Cookie from '../cookie.js';
+import goTo from '../util/goTo.js';
+import LocationImage from './locationImage.js';
+import LocationService from './locationService.js';
 
 const ROUTE = 'locations';
 
@@ -54,20 +57,60 @@ class Location {
     if (response.status >= 200 && response.status < 300) {
       return response.data;
     }
+    if (response.status === 403) {
+      Cookie.clearCookies();
+      goTo('/');
+    }
+
     return [];
   }
 
-  static async insert(userId, locationData) {
-    console.log(locationData);
-    const location = new Location(locationData);
-    location.ownerUserId = userId;
-    // const response = await API.insert(ROUTE, location, Cookie.getCookie());
+  static async post({
+    lattitude = '11.11', longitude = '11.11', street, colony,
+    postalCode, streetAcross1, streetAcross2, extNum, intNum,
+    sexType, numRooms, description, restrictions, cost,
+    images, services,
+  }) {
+    const hash = Cookie.getCookie('session');
+    const response = await API.post(`${ROUTE}`, JSON.stringify({
+      ownerUserId: Cookie.getCookie('user'),
+      lattitude,
+      longitude,
+      street,
+      colony,
+      postalCode,
+      streetAcross1,
+      streetAcross2,
+      extNum,
+      intNum,
+      sexType,
+      numRooms,
+      description,
+      restrictions,
+      cost,
+    }), hash);
 
+    if (response.status >= 200 && response.status < 300) {
+      images.forEach(async (image) => {
+        await LocationImage.post({
+          locationId: response.data.id,
+          image,
+        });
+      });
+      services.forEach(async (serviceId) => {
+        await LocationService.post({
+          locationId: response.data.id,
+          serviceId,
+        });
+      });
+      return true;
+    }
+    if (response.status === 403) {
+      Cookie.clearCookies();
+      goTo('/');
+    }
 
-    // if (response.status >= 200 && response.status < 300) {
-    //   return response.data;
-    // }
-    // return [];
+    return false;
   }
 
   static processResult(data) {
@@ -76,24 +119,6 @@ class Location {
       result.push(new Location(obj));
     });
     return result;
-  }
-
-  static deleteEmptyKeys(obj) {
-    const aux = [];
-    Object.keys(obj).forEach((key) => {
-      if (obj[key] !== undefined) {
-        aux[key] = obj[key];
-      }
-    });
-    return aux;
-  }
-
-  static processParams(params) {
-    let string = '?';
-    for (const [key, value] of params) {
-      string += `${key}=${value}`;
-    }
-    return string;
   }
 }
 
