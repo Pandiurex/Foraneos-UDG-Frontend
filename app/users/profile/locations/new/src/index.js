@@ -1,7 +1,7 @@
 import Location from '../../../../../js/models/location.js';
 import Cookie from '../../../../../js/cookie.js';
 import regexs from '../../../../../js/util/regexs.js';
-import { checkRequired } from '../../../../../js/util/validator.js'
+import { checkRequired, markElement, clearElement } from '../../../../../js/util/validator.js'
 import { getKeyValues, clearUndefined } from '../../../../../js/util/list.js';
 import { hideElements } from '../../../../../js/util/hideElements.js';
 import goTo from '../../../../../js/util/goTo.js';
@@ -28,14 +28,31 @@ document.getElementById('file-upload').addEventListener('change', (event) => {
   pushImage(event);
 });
 
-function checkForm() {
+async function checkForm() {
+  clearElement(document.getElementById('upload-file-container'));
   const elements = getElements();
-  const correct = checkRequired(elements);
+  let correct = checkRequired(elements);
+
+  if (images.length === 0) {
+    markElement(document.getElementById('upload-file-container'));
+    correct = false;
+    console.log('Debe ingresar al menos una imagen');
+  }
 
   if (correct) {
     let values = getKeyValues(elements);
+    values = clearSpecificValues(values);
     values = clearUndefined(values);
-    // Location.insert(Cookie.getCookie('user'), values);
+    values.cost = `${values.cost}.00`;
+    values.images = images;
+    values.services = getServices();
+    console.log(values);
+    // const done = await Location.post(values);
+    // if (done) {
+    //   console.log('Todo chido');
+    // } else {
+    //   console.log('Error');
+    // }
   } else {
     console.log('Corregir los datos marcados');
   }
@@ -44,18 +61,47 @@ function checkForm() {
 function getElements() {
   const elements = [];
   elements.numRooms = document.getElementById('habitaciones');
-  elements.costElement = document.getElementById('costo');
-  elements.genderElement = document.getElementById('genero');
-  elements.streetElement = document.getElementById('calle');
-  elements.extNumElement = document.getElementById('numext');
-  elements.intNumElement = document.getElementById('numint');
-  elements.across1Element = document.getElementById('cruce1');
-  elements.across2Element = document.getElementById('cruce2');
-  elements.colElement = document.getElementById('col');
-  elements.postalElement = document.getElementById('cod');
-  elements.commentsElement = document.getElementById('comentarios');
-  elements.restrictionsElement = document.getElementById('restricciones');
+  elements.cost = document.getElementById('costo');
+  elements.sexType = document.getElementById('genero');
+  elements.street = document.getElementById('calle');
+  elements.extNum = document.getElementById('numext');
+  elements.intNum = document.getElementById('numint');
+  elements.streetAcross1 = document.getElementById('cruce1');
+  elements.streetAcross2 = document.getElementById('cruce2');
+  elements.colony = document.getElementById('col');
+  elements.postalCode = document.getElementById('cod');
+  elements.description = document.getElementById('comentarios');
+  elements.restrictions = document.getElementById('restricciones');
   return elements;
+}
+
+function clearSpecificValues(values) {
+  if (values.streetAcross2 === '') {
+    values.streetAcross2 = undefined;
+  }
+  if (values.intNum === '') {
+    values.intNum = undefined;
+  }
+  if (values.postalCode === '') {
+    values.postalCode = undefined;
+  }
+  if (values.description === '') {
+    values.description = undefined;
+  }
+  if (values.restrictions === '') {
+    values.restrictions = undefined;
+  }
+  return values;
+}
+
+function getServices() {
+  const services = [];
+  for (let i = 1; i <= 13; i += 1) {
+    if (document.getElementById(`service${i}`).checked) {
+      services.push(i);
+    }
+  }
+  return services;
 }
 
 function pushImage(event) {
