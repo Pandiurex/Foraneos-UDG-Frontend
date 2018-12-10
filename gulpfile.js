@@ -1,8 +1,8 @@
 const gulp = require('gulp');
 const uglify = require('gulp-uglify-es').default;
 const imagemin = require('gulp-imagemin');
-const babel = require('gulp-babel');
-const useref = require('gulp-useref');
+// const babel = require('gulp-babel');
+// const useref = require('gulp-useref');
 const browserSync = require('browser-sync').create();
 
 gulp.task('images', () => gulp.src('app/img/**/*.+(png|jpg|jpeg|svg)')
@@ -26,14 +26,14 @@ gulp.task('useref', () => gulp.src('app/**/*.html')
 gulp.task('browserSync', () => {
   browserSync.init({
     server: {
-      baseDir: 'dist',
+      baseDir: 'app',
     },
   });
 });
 
-gulp.task('babel', () => gulp.src('app/**/*.js')
-  .pipe(babel())
-  .pipe(gulp.dest('dist')));
+// gulp.task('babel', () => gulp.src('app/**/*.js')
+//  .pipe(babel())
+//  .pipe(gulp.dest('dist')));
 
 gulp.task('watch', ['browserSync'], () => {
   gulp.watch('app/**/*.html', browserSync.reload);
