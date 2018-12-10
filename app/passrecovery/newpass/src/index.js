@@ -1,58 +1,134 @@
-import { passRecovery } from '../../../js/models/auth.js';
-import Cookie from '../../../js/cookie.js';
-import { checkRequired, markElement } from '../../../js/util/validator.js';
-import { getKeyValues, clearUndefined } from '../../../js/util/list.js';
-import { hideElements } from '../../../js/util/hideElements.js';
-import goTo from '../../../js/util/goTo.js';
+'use strict';
+
+var checkForm = function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+    var elements, correct, values, done;
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            elements = getElements();
+            correct = (0, _validator.checkRequired)(elements);
+
+            if (!correct) {
+              _context.next = 15;
+              break;
+            }
+
+            values = (0, _list.getKeyValues)(elements);
+
+            values = (0, _list.clearUndefined)(values);
+
+            if (!(values.password === values.password2)) {
+              _context.next = 12;
+              break;
+            }
+
+            _context.next = 8;
+            return (0, _auth.passRecovery)({
+              hash: hash,
+              password: values.password
+            });
+
+          case 8:
+            done = _context.sent;
+
+            if (!done) {
+              console.log('Token expirado');
+            }
+            _context.next = 13;
+            break;
+
+          case 12:
+            alert('Las contraseñas no coinciden');
+
+          case 13:
+            _context.next = 16;
+            break;
+
+          case 15:
+            console.log('Corregir los datos marcados');
+
+          case 16:
+          case 'end':
+            return _context.stop();
+        }
+      }
+    }, _callee, this);
+  }));
+
+  return function checkForm() {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+var _auth = require('../../../js/models/auth.js');
+
+var _cookie = require('../../../js/cookie.js');
+
+var _cookie2 = _interopRequireDefault(_cookie);
+
+var _validator = require('../../../js/util/validator.js');
+
+var _list = require('../../../js/util/list.js');
+
+var _hideElements = require('../../../js/util/hideElements.js');
+
+var _goTo = require('../../../js/util/goTo.js');
+
+var _goTo2 = _interopRequireDefault(_goTo);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+function _asyncToGenerator(fn) {
+  return function () {
+    var gen = fn.apply(this, arguments);return new Promise(function (resolve, reject) {
+      function step(key, arg) {
+        try {
+          var info = gen[key](arg);var value = info.value;
+        } catch (error) {
+          reject(error);return;
+        }if (info.done) {
+          resolve(value);
+        } else {
+          return Promise.resolve(value).then(function (value) {
+            step("next", value);
+          }, function (err) {
+            step("throw", err);
+          });
+        }
+      }return step("next");
+    });
+  };
+}
 
 window.addEventListener('load', start);
 
-let hash = window.location.search;
+var hash = window.location.search;
 
 function start() {
-  const type = Cookie.getCookie('type');
+  var type = _cookie2.default.getCookie('type');
   if (type !== undefined) {
-    goTo('/users/profile/');
+    (0, _goTo2.default)('/users/profile/');
   }
 
-  hideElements(type);
+  (0, _hideElements.hideElements)(type);
 
   hash = hash.split('?h=');
   if (hash.length === 1) {
-    goTo('/');
+    (0, _goTo2.default)('/');
   }
   hash = hash[1];
 }
 
-document.getElementById('btnreplace').addEventListener('click', () => {
+document.getElementById('btnreplace').addEventListener('click', function () {
   checkForm();
 });
 
-async function checkForm() {
-  const elements = getElements();
-  const correct = checkRequired(elements);
-
-  if (correct) {
-    let values = getKeyValues(elements);
-    values = clearUndefined(values);
-    if (values.password === values.password2) {
-      const done = await passRecovery({
-        hash,
-        password: values.password,
-      });
-      if (!done) {
-        console.log('Token expirado');
-      }
-    } else {
-      alert('Las contraseñas no coinciden');
-    }
-  } else {
-    console.log('Corregir los datos marcados');
-  }
-}
-
 function getElements() {
-  const elements = [];
+  var elements = [];
   elements.password = document.getElementById('recover-password');
   elements.password2 = document.getElementById('confirm-password');
   return elements;

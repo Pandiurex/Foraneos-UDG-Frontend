@@ -1,10 +1,27 @@
-import regexs from './regexs.js';
+'use strict';
 
-export function checkRequired(elements) {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.checkRequired = checkRequired;
+exports.clearElements = clearElements;
+exports.checkText = checkText;
+exports.markElement = markElement;
+exports.clearElement = clearElement;
+
+var _regexs = require('./regexs.js');
+
+var _regexs2 = _interopRequireDefault(_regexs);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+function checkRequired(elements) {
   clearElements(elements);
 
-  let correct = true;
-  Object.values(elements).forEach((element) => {
+  var correct = true;
+  Object.values(elements).forEach(function (element) {
     if (element.selectedIndex !== undefined) {
       return;
     }
@@ -21,20 +38,20 @@ export function checkRequired(elements) {
   return correct;
 }
 
-export function clearElements(elements) {
-  Object.values(elements).forEach((element) => {
+function clearElements(elements) {
+  Object.values(elements).forEach(function (element) {
     clearElement(element);
   });
 }
 
-export function checkText(element) {
-  return regexs[`${element.dataset.regexp}`].test(element.value);
+function checkText(element) {
+  return _regexs2.default['' + element.dataset.regexp].test(element.value);
 }
 
-export function markElement(element) {
+function markElement(element) {
   element.style.borderColor = 'red';
 }
 
-export function clearElement(element) {
+function clearElement(element) {
   element.style.borderColor = '#C7C7C7';
 }

@@ -10,7 +10,6 @@ function goTo(url) {
       hostname = _window$location.hostname;
   var port = window.location.port;
 
-
   if (port !== '') {
     port = ':' + port;
   }

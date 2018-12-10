@@ -1,38 +1,97 @@
-import Msg from '../../../js/models/msg.js';
-import Cookie from '../../../js/cookie.js';
-import {
-  hideElements,
-} from '../../../js/util/hideElements.js';
-import goTo from '../../../js/util/goTo.js';
+'use strict';
+
+var start = function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+    var type, msgid, msg;
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            type = _cookie2.default.getCookie('type');
+
+            if (type === undefined) {
+              (0, _goTo2.default)('/');
+            }
+
+            (0, _hideElements.hideElements)(type);
+
+            msgid = _cookie2.default.getCookie('msg');
+            _context.next = 6;
+            return _msg2.default.get(msgId);
+
+          case 6:
+            msg = _context.sent;
+
+            paintMsg(msg);
+
+          case 8:
+          case 'end':
+            return _context.stop();
+        }
+      }
+    }, _callee, this);
+  }));
+
+  return function start() {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+var _msg = require('../../../js/models/msg.js');
+
+var _msg2 = _interopRequireDefault(_msg);
+
+var _cookie = require('../../../js/cookie.js');
+
+var _cookie2 = _interopRequireDefault(_cookie);
+
+var _hideElements = require('../../../js/util/hideElements.js');
+
+var _goTo = require('../../../js/util/goTo.js');
+
+var _goTo2 = _interopRequireDefault(_goTo);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+function _asyncToGenerator(fn) {
+  return function () {
+    var gen = fn.apply(this, arguments);return new Promise(function (resolve, reject) {
+      function step(key, arg) {
+        try {
+          var info = gen[key](arg);var value = info.value;
+        } catch (error) {
+          reject(error);return;
+        }if (info.done) {
+          resolve(value);
+        } else {
+          return Promise.resolve(value).then(function (value) {
+            step("next", value);
+          }, function (err) {
+            step("throw", err);
+          });
+        }
+      }return step("next");
+    });
+  };
+}
 
 window.addEventListener('load', start);
 
-document.getElementById('btnsend').addEventListener('click', () => {
-  goTo('/users/profile/locations/tenant/');
+document.getElementById('btnsend').addEventListener('click', function () {
+  (0, _goTo2.default)('/users/profile/locations/tenant/');
 });
 
-async function start() {
-  const type = Cookie.getCookie('type');
-  if (type === undefined) {
-    goTo('/');
-  }
+function paintMsg(_ref2) {
+  var senderUserId = _ref2.senderUserId,
+      locationId = _ref2.locationId,
+      messege = _ref2.messege;
 
-  hideElements(type);
+  var date = checkDate(birthdate);
 
-  const msgid = Cookie.getCookie('msg');
-  const msg = await Msg.get(msgId);
-
-  paintMsg(msg);
-}
-function paintMsg({
-  senderUserId,
-  locationId,
-  messege,
-}) {
-  const date = checkDate(birthdate);
-
-  const msgRecieve = document.getElementById('msg-recieve');
-  const msgSend = document.getElementById('msg-send');
+  var msgRecieve = document.getElementById('msg-recieve');
+  var msgSend = document.getElementById('msg-send');
 
   msgRecieve.value = messege;
   msgSend.value = messege;
@@ -47,24 +106,23 @@ function paintMsg({
 }
 
 function scrollDown() {
-  const objDiv = document.getElementById('chat');
+  var objDiv = document.getElementById('chat');
   objDiv.scrollTop = objDiv.scrollHeight;
 }
 
 function checkDate(date) {
-  const auxDate = date.split('-');
+  var auxDate = date.split('-');
 
-  let day = auxDate[2];
-  let month = auxDate[1];
-  const year = auxDate[0];
-
+  var day = auxDate[2];
+  var month = auxDate[1];
+  var year = auxDate[0];
 
   if (day < 10) {
-    day = `0${day}`;
+    day = '0' + day;
   }
   if (month < 10) {
-    month = `0${month}`;
+    month = '0' + month;
   }
 
-  return `${day}/${month}/${year}`;
+  return day + '/' + month + '/' + year;
 }

@@ -1,12 +1,21 @@
-import Cookie from '../js/cookie.js';
-import { hideElements } from '../js/util/hideElements.js';
+'use strict';
+
+var _cookie = require('../js/cookie.js');
+
+var _cookie2 = _interopRequireDefault(_cookie);
+
+var _hideElements = require('../js/util/hideElements.js');
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
 window.addEventListener('load', start);
 
 function start() {
-  const type = Cookie.getCookie('type');
+  var type = _cookie2.default.getCookie('type');
   console.log(type);
-  hideElements(type);
+  (0, _hideElements.hideElements)(type);
 
   if (type === '1') {
     window.location.replace("./index.html");

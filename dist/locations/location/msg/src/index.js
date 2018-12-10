@@ -6,7 +6,9 @@ var _cookie2 = _interopRequireDefault(_cookie);
 
 var _hideElements = require('../../../../js/util/hideElements.js');
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
 window.addEventListener('load', start);
 

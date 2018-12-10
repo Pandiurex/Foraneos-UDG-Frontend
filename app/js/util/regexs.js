@@ -1,4 +1,9 @@
-const regexs = {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var regexs = {
   username: /^[a-zA-Z_0-9]*$/,
   word: /^[a-zA-Z_áéíóúñÁÉÍÓÚÑ\s]*$/,
   paragraph: /^[a-zA-Z_áéíóúñÁÉÍÓÚÑ0-9\s\\.,;/\-:'"()!¡?¿*]*$/,
@@ -11,7 +16,7 @@ const regexs = {
   postal: /^([0-9]){1,5}$/,
   locationImage: /^locationImages\/file-[a-z0-9]+\.(jpg|jpeg|png)$/,
   serviceImage: /^serviceImages\/file-[a-z0-9]+\.(jpg|jpeg|png)$/,
-  profileImage: /^profileImages\/file-[a-z0-9]+\.(jpg|jpeg|png)$/,
+  profileImage: /^profileImages\/file-[a-z0-9]+\.(jpg|jpeg|png)$/
 };
 
-export default regexs;
+exports.default = regexs;

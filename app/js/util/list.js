@@ -1,7 +1,14 @@
-export function getKeyValues(elements) {
-  const aux = [];
+"use strict";
 
-  Object.keys(elements).forEach((key) => {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getKeyValues = getKeyValues;
+exports.clearUndefined = clearUndefined;
+function getKeyValues(elements) {
+  var aux = [];
+
+  Object.keys(elements).forEach(function (key) {
     if (elements.hasOwnProperty(key)) {
       if (elements[key].selectedIndex !== undefined) {
         aux[key] = elements[key].selectedIndex;
@@ -14,9 +21,9 @@ export function getKeyValues(elements) {
   return aux;
 }
 
-export function clearUndefined(elements) {
-  const aux = [];
-  Object.keys(elements).forEach((key) => {
+function clearUndefined(elements) {
+  var aux = [];
+  Object.keys(elements).forEach(function (key) {
     if (elements[key] !== undefined) {
       aux[key] = elements[key];
     }
