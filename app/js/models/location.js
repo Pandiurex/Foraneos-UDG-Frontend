@@ -1,6 +1,7 @@
 import API from '../api.js';
 import Cookie from '../cookie.js';
 import goTo from '../util/goTo.js';
+import { clearUndefined } from '../util/list.js';
 import LocationImage from './locationImage.js';
 import LocationService from './locationService.js';
 
@@ -48,13 +49,18 @@ class Location {
       limitCount: limit.limitCount,
     };
 
-
-    params = this.deleteEmptyKeys(params);
-    params = this.processParams(params);
+    params = clearUndefined(params);
+    params = Location.processParams(params);
 
     const response = await API.get(`${ROUTE}${params}`, Cookie.getCookie('session'));
 
     if (response.status >= 200 && response.status < 300) {
+      const myPromises = response.data.map(async (data) => {
+        data.image = await LocationImage.get(data.image);
+      });
+
+      await Promise.all(myPromises);
+
       return response.data;
     }
     if (response.status === 403) {
@@ -111,6 +117,16 @@ class Location {
     }
 
     return false;
+  }
+
+  static processParams(params) {
+    let string = '?';
+    Object.keys(params).forEach((key) => {
+      if (params.hasOwnProperty(key)) {
+        string += `${key}=${params[key]}&`;
+      }
+    });
+    return string;
   }
 
   static processResult(data) {

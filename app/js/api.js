@@ -26,11 +26,8 @@ class API {
       },
     });
 
-
     const { status } = response;
     const json = await response.blob();
-
-    console.log(json);
 
     return {
       status,
