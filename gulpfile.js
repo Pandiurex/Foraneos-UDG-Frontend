@@ -33,7 +33,7 @@ gulp.task('browserSync', () => {
 
 gulp.task('babel', () => gulp.src('app/**/*.js')
   .pipe(babel())
-  .pipe(gulp.dest('dist')));
+  .pipe(gulp.dest('app')));
 
 gulp.task('watch', ['browserSync'], () => {
   gulp.watch('app/**/*.html', browserSync.reload);
