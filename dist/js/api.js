@@ -88,16 +88,12 @@ var API = function () {
 
               case 6:
                 json = _context2.sent;
-
-
-                console.log(json);
-
                 return _context2.abrupt('return', {
                   status: status,
                   data: json
                 });
 
-              case 9:
+              case 8:
               case 'end':
                 return _context2.stop();
             }
