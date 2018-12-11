@@ -8,39 +8,6 @@ import LocationService from './locationService.js';
 const ROUTE = 'locations';
 
 class Location {
-  constructor(data) {
-    this.id = data.id;
-    this.ownerUserId = data.ownerUserId;
-    this.active = data.active;
-    this.lattitude = '11.11';
-    this.longitude = '11.11';
-    this.street = data.street;
-    this.colony = data.colony;
-    this.postalCode = data.postalCode;
-    this.streetAcross1 = data.streetAcross1;
-    this.streetAcross2 = data.streetAcross2;
-    this.extNum = data.extNum;
-    this.intNum = data.intNum;
-    this.sexType = data.sexType;
-    this.numRooms = data.numRooms;
-    this.availableRooms = data.availableRooms;
-    this.description = data.description;
-    this.restrictions = data.restrictions;
-    this.cost = data.cost;
-    this.numComplaints = data.numComplaints;
-    this.avgRate = data.avgRate;
-    this.avgServicesRate = data.avgServicesRate;
-    this.avgSecurityRate = data.avgSecurityRate;
-    this.avgLocalizationRate = data.avgLocalizationRate;
-    this.avgCostBenefictRate = data.avgCostBenefictRate;
-
-    Object.keys(this).forEach((key) => {
-      if (this[key] !== undefined) {
-        delete this[key];
-      }
-    });
-  }
-
   static async get(locationId) {
     const response = await API.get(`${ROUTE}/${locationId}`, Cookie.getCookie('session'));
 
@@ -182,14 +149,6 @@ class Location {
       }
     });
     return string;
-  }
-
-  static processResult(data) {
-    const result = [];
-    data.forEach((obj) => {
-      result.push(new Location(obj));
-    });
-    return result;
   }
 }
 

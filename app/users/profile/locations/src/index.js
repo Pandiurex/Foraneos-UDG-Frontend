@@ -43,7 +43,7 @@ function paintLocation(location) {
   const pAddress = document.createElement('p');
   let address = `Dirección: ${location.street} Int. ${location.intNum}`;
   if (location.extNum !== '') {
-    address += `Ext. ${location.extNum}`;
+    address += ` Ext. ${location.extNum}`;
   }
   address += `, Col. ${location.colony}`;
   const addressText = document.createTextNode(address);
