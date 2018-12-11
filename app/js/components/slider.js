@@ -1,6 +1,6 @@
 class Slider {
-  constructor(sliderId) {
-    this.sliderImages = document.querySelectorAll(`#${sliderId} .slide`);
+  constructor(images) {
+    this.sliderImages = images;
     this.arrowLeft = document.querySelector(`#${sliderId} .arrow-left`);
     this.arrowRight = document.querySelector(`#${sliderId} .arrow-right`);
     this.current = 0;
@@ -48,5 +48,6 @@ class Slider {
   }
 }
 
-const sliderPrincipal = new Slider('sliderprincipal');
-sliderPrincipal.startSlide();
+export default Slider;
+// const sliderPrincipal = new Slider('sliderprincipal');
+// sliderPrincipal.startSlide();
