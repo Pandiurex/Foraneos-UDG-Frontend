@@ -22,7 +22,7 @@ function start() {
   }
   hash = hash[1];
 
-  const divisor = hash.split('&email=');
+  const divisor = hash.split('&e=');
   hash = divisor[0];
   if (divisor[1].length === 1){
     goTo('/')
