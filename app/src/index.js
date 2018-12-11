@@ -7,8 +7,4 @@ function start() {
   const type = Cookie.getCookie('type');
   console.log(type);
   hideElements(type);
-
-  if (type === '1') {
-    window.location.replace("./index.html");
-  }
 }

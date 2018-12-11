@@ -91,6 +91,38 @@ class Location {
     return [];
   }
 
+  static async getAllFrom(userId) {
+    const response = await API.get(`${ROUTE}`, Cookie.getCookie('session'));
+
+    if (response.status >= 200 && response.status < 300) {
+      let locations = response.data;
+
+      const aux = locations.filter((location) => {
+        if (location.ownerUserId === Number(userId)) {
+          return true;
+        }
+        return false;
+      });
+
+      locations = aux;
+
+      const myPromises = locations.map(async (location) => {
+        location.image = await LocationImage.get(location.image);
+      });
+
+      await Promise.all(myPromises);
+      console.log(locations);
+
+      return locations;
+    }
+    if (response.status === 403) {
+      Cookie.clearCookies();
+      goTo('/');
+    }
+
+    return [];
+  }
+
   static async post({
     lattitude = '11.11', longitude = '11.11', street, colony,
     postalCode, streetAcross1, streetAcross2, extNum, intNum,

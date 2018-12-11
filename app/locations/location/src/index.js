@@ -50,8 +50,6 @@ function paintLocation(location) {
   description.value = location.description;
   restrictions.value = location.restrictions;
 
-  console.log(location);
-
   location.services.forEach((service) => {
     const li = document.createElement('li');
     const liText = document.createTextNode(`${service.description}`);
