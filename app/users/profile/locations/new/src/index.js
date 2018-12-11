@@ -46,13 +46,12 @@ async function checkForm() {
     values.cost = `${values.cost}.00`;
     values.images = images;
     values.services = getServices();
-    console.log(values);
-    // const done = await Location.post(values);
-    // if (done) {
-    //   console.log('Todo chido');
-    // } else {
-    //   console.log('Error');
-    // }
+    const done = await Location.post(values);
+    if (done) {
+      console.log('Todo chido');
+    } else {
+      console.log('Error');
+    }
   } else {
     console.log('Corregir los datos marcados');
   }
