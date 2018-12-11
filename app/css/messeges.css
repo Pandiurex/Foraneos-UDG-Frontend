@@ -1,0 +1,25 @@
+.cont-msg {
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  width: 40%;
+  margin-left: 35%;
+  margin-top: 20px;
+  border-color: black;
+  /* background-color: red; */
+}
+.add-msg {
+  margin-top: 10px;
+  display: contents;
+  width: 25%;
+  margin-bottom: 10px;
+}
+
+.add-msg img {
+  min-width: 75%;
+  min-height: 70%;
+  align-items: center;
+  border-radius: 10px;
+  max-width: 50%;
+  max-height: 50%;
+}

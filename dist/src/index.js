@@ -14,8 +14,4 @@ function start() {
   var type = _cookie2.default.getCookie('type');
   console.log(type);
   (0, _hideElements.hideElements)(type);
-
-  if (type === '1') {
-    window.location.replace("./index.html");
-  }
 }
