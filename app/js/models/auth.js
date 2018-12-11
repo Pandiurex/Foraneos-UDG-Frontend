@@ -59,7 +59,7 @@ export async function passRecovery({ hash, password }) {
 }
 
 export async function confirmEmail({ hash, email }) {
-  const response = await API.get(`${ROUTE}confirmEmail?hash=${hash}&emailId=${email}`);
+  const response = await API.get(`${ROUTE}confirmEmail?h=${hash}&e=${email}`);
 
   if (response.status >= 200 && response.status < 300) {
     return true;
