@@ -21,6 +21,7 @@ async function start() {
   const user = await User.get(userId);
 
   paintUser(user);
+  mainEmails(user);
 }
 
 async function paintUser({
@@ -69,4 +70,34 @@ function checkDate(date) {
   }
 
   return `${day}/${month}/${year}`;
+}
+
+async function mainEmails({emails}) {
+
+  var tabla   = document.getElementById("table1");
+  var tblBody = document.createElement("tbody");
+
+  for (var i = 0; i < emails.length; i++) {
+    var hilera = document.createElement("tr");
+
+    var celda = document.createElement("td");
+    var textoCelda = document.createTextNode(`${emails[i].email}`);
+    celda.appendChild(textoCelda);
+    hilera.appendChild(celda);
+
+    for (var j = 0; j < emails.length; j++) {
+      var celda = document.createElement("td");
+      if (`${emails[j].verified}`=== "1") {
+        var  valor = "Verificado";
+      }else {
+        var  valor = "No verificado";
+      }
+      var textoCelda = document.createTextNode(valor);
+      celda.appendChild(textoCelda);
+      hilera.appendChild(celda);
+
+    }
+     tblBody.appendChild(hilera);
+  }
+  tabla.appendChild(tblBody);
 }
