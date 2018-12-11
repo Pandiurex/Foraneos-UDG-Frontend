@@ -70,14 +70,13 @@ function paintLocation(location) {
   location.images.forEach((image) => {
     const divSlide = document.createElement('div');
     divSlide.className = 'slide';
+    const urlImage = URL.createObjectURL(image);
+    divSlide.style.backgroundImage = `url('${urlImage}')`;
     const divSlideContent = document.createElement('div');
     divSlideContent.className = 'slide-content resize-img';
-    const img = document.createElement('img');
-    img.src = URL.createObjectURL(image);
 
     sliderElement.appendChild(divSlide);
     divSlide.appendChild(divSlideContent);
-    divSlideContent.appendChild(img);
 
     elements.push(divSlide);
   });
