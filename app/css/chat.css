@@ -1,0 +1,105 @@
+.chat {
+  width: 100%;
+  height: 500px;
+  background-color: #68a2ff;
+  overflow: auto;
+}
+
+.container {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 50%;
+}
+
+.right{
+  margin-left: 50%;
+}
+.left {
+  margin-right: 50%;
+}
+
+.darker {
+    border-color: #ccc;
+    background-color: #ddd;
+}
+
+
+.time-right {
+    float: right;
+    color: #aaa;
+}
+
+.time-left {
+    float: left;
+    color: #999;
+}
+
+.profile {
+  margin-top: 20px;
+  height: 20%;
+  width: 20%;
+  display: inline-block;
+}
+
+.info-lugar-dos {
+  display: block;
+  width: 100%;
+}
+
+.disp {
+  display: inline-block;
+  margin: 0;
+  width: 30%;
+}
+
+.info-lugar {
+  display: block;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.valoracion {
+  width: 30%;
+  margin: 0 auto;
+  height: 50px;
+}
+
+.valoracion p {
+  text-align: center;
+}
+
+#radio1, #radio2, #radio3, #radio4, #radio5 {
+  display: none;
+}
+
+.info-lugar label {
+  color: grey;
+  font-size: 40px;
+}
+
+.fecha label{
+  color: red;
+  font-size: 20px;
+}
+
+.borrar {
+  margin-top: 20px;
+}
+
+.clasificacion {
+  margin-top: 10px;
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+#radio1:hover, #radio2:hover, #radio3:hover, #radio4:hover, #radio5:hover,
+#radio1:hover ~ label, #radio2:hover  ~ label, #radio3:hover ~ label, #radio4:hover ~ label, #radio5:hover ~ label{
+  color: orange;
+}
+
+#radio1:checked ~ label, #radio2:checked  ~ label, #radio3:checked ~ label, #radio4:checked ~ label, #radio5:checked ~ label {
+  color: orange;
+}

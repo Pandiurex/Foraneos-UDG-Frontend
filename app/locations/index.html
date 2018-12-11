@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no,
+  initial-scale=1, maximum-scale=1, minimum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link type="text/plain" rel="author" href="http://domain/humans.txt"> <!-- Poner Dominio -->
+  <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="../img/logo/logo4.ico">
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <title> Ver Alojamientos </title>
+</head>
+
+<body>
+  <header>
+    <div class="contenedor">
+      <h1> Foráneos UdeG </h1>
+      <input type="checkbox" id="menu-bar">
+      <label class="icon-menu" for="menu-bar"></label>
+      <nav class="menu">
+        <a href="/"> Inicio </a>
+        <a href="/locations/"> Ver alojamientos </a>
+        <owner>
+          <a href="/users/profile/locations/"> Mis alojamientos </a>
+        </owner>
+        <owner>
+          <a href="/users/profile/locations/new/"> Publicar alojamiento </a>
+        </owner>
+        <tenant>
+          <a href="/locations/messages/"> Mis mensajes </a>
+        </tenant>
+        <admin><owner><tenant>
+          <a href="/users/profile/"> Mi perfil </a>
+        </tenant></owner></admin>
+        <visitant>
+          <a href="#login"> Iniciar sesión </a>
+        </visitant>
+        <visitant>
+          <a href="/registry/"> Regístrate </a>
+        </visitant>
+        <admin><owner><tenant>
+          <a id="menu-logout" href="#"> Cerrar sesión </a>
+        </tenant></owner></admin>
+      </nav>
+    </div>
+    <div class="modal" id="login">
+      <div class="modal-dialog">
+        <section class="modal-content">
+          <header class="modal-header">
+            <h2 class="modal-title"> Iniciar sesión </h2>
+            <a href="#" class="modal-close">&times;</a>
+          </header>
+          <div class="modal-body">
+            <form class="card" >
+              <input id="login-email" type="email" class="input" name="login-email" placeholder="Correo electrónico" required data-regexp="email"><br>
+              <input id="login-password" type="password" class="input" name="login-password" placeholder="Contraseña" required data-regexp="password"><br>
+              <button id="btn-login" type="button" name="btn-login" class="button"> Iniciar sesión </button>
+              <p class="modal-p"> O iniciar sesión con </p>
+              <button id="btnface" type="button" name="btngua" class="button"> Facebook </button>
+            </form>
+          </div>
+          <footer class="modal-footer modal-text">
+            <p> ¿No tienes cuenta en Foráneos UdeG? <a href="/registry/"> Registrarse </a></p>
+            <a href="/passrecovery/"> ¿Olvidaste tu contraseña? </a>
+          </footer>
+        </section>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="bannerpro">
+      <img src="../img/port/port6.jpg" alt="Imagen de estudiantes">
+      <div class="contenedor">
+        <h2> Foráneos UdeG </h2>
+        <p> Alojamiento Estudiantil </p>
+      </div>
+    </section>
+    <section class="main">
+      <div class="combo-box">
+        <label> Ordenar por: </label>
+        <select id="order-by" class="ordenar square" name="ordenar">
+          <option value="precio"> Precio </option>
+          <option value="calificacion"> Calificación </option>
+        </select>
+      </div>
+      <div class="combo-box">
+        <label> Orden: </label>
+        <select id="order-sense" class="ordenar square" name="ordenar">
+          <option value="ascendente"> Ascendente </option>
+          <option value="descendente"> Descendente </option>
+        </select>
+      </div>
+      <!-- <form class="card">
+        <div class="ti">
+          <h3> Servicios </h3>
+          <div class="hom">
+            <label class="contcheck">
+              <input type="checkbox" name="check"> Limpieza
+              <span class="checkmarktwo"></span>
+            </label>
+            <label class="contcheck">
+              <input type="checkbox" name="check"> Amueblado
+              <span class="checkmarktwo"></span>
+            </label>
+            <label class="contcheck">
+              <input type="checkbox" name="check"> Internet
+              <span class="checkmarktwo"></span>
+            </label>
+            <label class="contcheck">
+              <input type="checkbox" name="check"> Cocina
+              <span class="checkmarktwo"></span>
+            </label>
+            <label class="contcheck">
+              <input type="checkbox" name="check"> Baño propio
+              <span class="checkmarktwo"></span>
+            </label>
+            <label class="contcheck">
+              <input type="checkbox" name="check"> Estacionamiento
+              <span class="checkmarktwo"></span>
+            </label>
+            <label class="contcheck">
+              <input type="checkbox" name="check"> Tv cable
+              <span class="checkmarktwo"></span>
+            </label>
+          </div>
+          <div class="hom">
+            <label class="contcheck">
+              <input type="checkbox" name="check"> Gas
+              <span class="checkmarktwo"></span>
+            </label>
+            <label class="contcheck">
+              <input type="checkbox" name="check"> Alimentos
+              <span class="checkmarktwo"></span>
+            </label>
+            <label class="contcheck">
+              <input type="checkbox" name="check"> Luz
+              <span class="checkmarktwo"></span>
+            </label>
+            <label class="contcheck">
+              <input type="checkbox" name="check"> Teléfono
+              <span class="checkmarktwo"></span>
+            </label>
+            <label class="contcheck">
+              <input type="checkbox" name="check"> Entrada independiente
+              <span class="checkmarktwo"></span>
+            </label>
+            <label class="contcheck">
+              <input type="checkbox" name="check"> Lavado servicio
+              <span class="checkmarktwo"></span>
+            </label>
+          </div>
+        </div>
+      </form> -->
+    </section>
+    <section id="blog">
+      <div class="contenedor lugar">
+        <h3> Elige el Lugar que más te Agrade </h3>
+      </div>
+      <div id="locations-container" class="contenedor lugar">
+        <!-- <div class="cards">
+          <img src="../img/slider/slider1.jpg" alt="Imagen de lugares">
+          <p> Precio/mes: $2000.00 </p>
+          <p> Exclusivo para: Mujeres </p>
+          <div class="card">
+            <button id="btndeta1" type="button" name="btndeta1" class="button-form button-tam"> Detalles </button>
+          </div>
+        </div> -->
+      </div>
+      <div class="contenedor">
+        <div class="page">
+          <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a href="#" class="active"> 1 </a>
+            <a href="#"> 2 </a>
+            <a href="#"> 3 </a>
+            <a href="#"> 4 </a>
+            <a href="#"> 5 </a>
+            <a href="#"> 6 </a>
+            <a href="#">&raquo;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container-footer-all">
+      <div class="container-body">
+        <div class="colum1">
+          <h1> Hecho por Alumnos para Alumnos </h1>
+          <p> Esta Página fue creada para ayudar a los estudiantes foráneos sin hogar,
+            para que durante su estancia escolar puedan conseguir el lugar
+            adecuado para ellos. </p>
+        </div>
+        <div class="colum2">
+          <h1>Redes Sociales</h1>
+          <a href="https://www.facebook.com/" target="_blank" class="fa fa-facebook"></a>
+          <a href="https://twitter.com/" target="_blank" class="fa fa-twitter"></a>
+          <a href="https://github.com/" target="_blank" class="fa fa-github"></a><br>
+          <a href="https://www.instagram.com/?hl=en" target="_blank" class="fa fa-instagram"></a>
+          <a href="https://plus.google.com/discover" target="_blank" class="fa fa-google-plus"></a>
+          <a href="https://accounts.google.com/signin/v2/identifier?hl=es&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin" target="_blank" class="fa fa-envelope"></a>
+        </div>
+        <div class="colum3 footer-list">
+          <h1> Información </h1>
+          <div class="row2">
+            <a href="/info/"><label> ¿Qué es Foráneos UdeG? </label></a>
+          </div>
+          <div class="row2">
+            <a href="/info/#problema"><label> Reportar un Problema </label></a>
+          </div>
+          <div class="row2">
+            <a href="/info/#team"> <label> Nuestro Team </label></a>
+          </div>
+          <div class="row2">
+            <a href="/info/#contacto"><label> Contacto </label></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-footer">
+      <div class="footer">
+        <div class="copyright">
+          © 2018 Todos los Derechos Reservados | <a href="/info/"> Foráneos UdeG </a>
+        </div>
+        <div class="information">
+          <a href="/info/"> Información Foráneos UdeG </a> |
+          <a href="/info/#pripo"> Privación y Política </a> |
+          <a href="/info/#termco"> Términos y Condiciones </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="src/index.js"></script>
+    <script type="module" src="../js/handlersNavBar/index.js"></script>
+</body>
+</html>
