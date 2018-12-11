@@ -1,8 +1,8 @@
 class Slider {
-  constructor(images) {
-    this.sliderImages = images;
-    this.arrowLeft = document.querySelector(`#${sliderId} .arrow-left`);
-    this.arrowRight = document.querySelector(`#${sliderId} .arrow-right`);
+  constructor(elements) {
+    this.sliderImages = elements;
+    this.arrowLeft = document.getElementById('arrow-left');
+    this.arrowRight = document.getElementById('arrow-right');
     this.current = 0;
   }
 

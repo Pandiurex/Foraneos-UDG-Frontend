@@ -45,11 +45,14 @@ class Location {
     const response = await API.get(`${ROUTE}/${locationId}`, Cookie.getCookie('session'));
 
     if (response.status >= 200 && response.status < 300) { 
+      let images = [];
       const myPromises = response.data.images.map(async (image) => {
-        image = await LocationImage.get(image.image);
+        images.push(await LocationImage.get(image.image));
       });
 
       await Promise.all(myPromises);
+
+      response.data.images = images;
 
       return response.data;
     }
