@@ -22,12 +22,21 @@
       <nav class="menu">
         <a href="/"> Inicio </a>
         <a href="/locations/"> Ver alojamientos </a>
-        <visitant>
-          <a href="#login"> Iniciar sesión </a>
-        </visitant>
-        <visitant>
-          <a href="/registry/"> Regístrate </a>
-        </visitant>
+        <owner>
+          <a href="/users/profile/locations/"> Mis alojamientos </a>
+        </owner>
+        <owner>
+          <a href="/users/profile/locations/new/"> Publicar alojamiento </a>
+        </owner>
+        <tenant>
+          <a href="/locations/messages/"> Mis mensajes </a>
+        </tenant>
+        <admin><owner><tenant>
+          <a href="/users/profile/"> Mi perfil </a>
+        </tenant></owner></admin>
+        <admin><owner><tenant>
+          <a id="menu-logout" href="#"> Cerrar sesión </a>
+        </tenant></owner></admin>
       </nav>
     </div>
     <div class="modal" id="login">

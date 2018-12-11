@@ -24,18 +24,18 @@
       <nav class="menu">
         <a href="/"> Inicio </a>
         <a href="/locations/"> Ver alojamientos </a>
+        <owner>
+          <a href="/users/profile/locations/"> Mis alojamientos </a>
+        </owner>
+        <owner>
+          <a href="/users/profile/locations/new/"> Publicar alojamiento </a>
+        </owner>
+        <tenant>
+          <a href="/locations/messages/"> Mis mensajes </a>
+        </tenant>
         <admin><owner><tenant>
           <a href="/users/profile/"> Mi perfil </a>
         </tenant></owner></admin>
-        <admin><owner>
-          <a href="/users/profile/locations/new/"> Publicar alojamiento </a>
-        </owner></admin>
-        <owner><tenant>
-          <a href="/users/profile/locations/"> Mensajes </a>
-        </tenant></owner>
-        <owner><tenant>
-          <a href="/users/profile/"> Historial </a>
-        </tenant></owner>
         <visitant>
           <a href="#login"> Iniciar sesión </a>
         </visitant>
@@ -129,18 +129,12 @@
     </section>
     <section id="sliderprincipal">
       <div class="slider contenedor">
-        <div class="arrow arrow-left"><i class="fa fa-angle-left"></i></div>
-        <div class="arrow arrow-right"><i class="fa fa-angle-right"></i></div>
+        <div id="arrow-left" class="arrow arrow-left"><i class="fa fa-angle-left"></i></div>
+        <div id="arrow-right" class="arrow arrow-right"><i class="fa fa-angle-right"></i></div>
         <div id="slider">
-          <div class="slide slide1">
-            <div class="slide-content"></div>
-          </div>
-          <div class="slide slide2">
+          <!-- <div style="background-image: url('../../img/port/port2.jpg')" class="slide">
             <div class="slide-content resize-img"></div>
-          </div>
-          <div class="slide slide3">
-            <div class="slide-content"></div>
-          </div>
+          </div> -->
         </div>
       </div><br>
     </section>
@@ -266,6 +260,5 @@
     <script type="module" src="src/index.js"></script>
     <script type="module" src="../../js/handlersNavBar/index.js"></script>
     <script type="module" src="src/complaints.js"></script>
-    <script src="../../js/components/slider.js"></script>
   </body>
   </html>

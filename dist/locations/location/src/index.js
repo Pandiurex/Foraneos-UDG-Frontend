@@ -2,7 +2,7 @@
 
 var start = function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-    var type, locationId, location;
+    var type, location;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -12,7 +12,6 @@ var start = function () {
             (0, _hideElements.hideElements)(type);
 
             locationId = getParameter('l');
-
             if (locationId === undefined) {
               (0, _goTo2.default)('/locations/');
             }
@@ -22,6 +21,7 @@ var start = function () {
 
           case 6:
             location = _context.sent;
+
 
             paintLocation(location);
 
@@ -52,16 +52,25 @@ var _location = require('../../../js/models/location.js');
 
 var _location2 = _interopRequireDefault(_location);
 
+var _slider = require('../../../js/components/slider.js');
+
+var _slider2 = _interopRequireDefault(_slider);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 window.addEventListener('load', start);
 
+var slider = '';
+var locationId = '';
+
 document.getElementById('btncon').addEventListener('click', function () {
   var type = _cookie2.default.getCookie('type');
   if (type === undefined || type === 0) {
     (0, _goTo2.default)('' + window.location.pathname + window.location.search + '#login');
+  } else {
+    (0, _goTo2.default)('/locations/location/msg/?l=' + locationId);
   }
 });
 
@@ -96,4 +105,24 @@ function paintLocation(location) {
     servicesList.appendChild(li);
     li.appendChild(liText);
   });
+
+  var sliderElement = document.getElementById('slider');
+  var elements = [];
+
+  location.images.forEach(function (image) {
+    var divSlide = document.createElement('div');
+    divSlide.className = 'slide';
+    var urlImage = URL.createObjectURL(image);
+    divSlide.style.backgroundImage = 'url(\'' + urlImage + '\')';
+    var divSlideContent = document.createElement('div');
+    divSlideContent.className = 'slide-content resize-img';
+
+    sliderElement.appendChild(divSlide);
+    divSlide.appendChild(divSlideContent);
+
+    elements.push(divSlide);
+  });
+
+  slider = new _slider2.default(elements);
+  slider.startSlide();
 }

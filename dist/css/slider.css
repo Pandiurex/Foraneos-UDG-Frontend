@@ -118,7 +118,9 @@
 /* CARDS */
 
 .lugar img {
-  width: 150px;
+  width: 180px;
+  height: 180px;
+  border: 1px solid transparent;
 }
 
 .lugar p {

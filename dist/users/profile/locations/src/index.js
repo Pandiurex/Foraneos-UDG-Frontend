@@ -82,7 +82,7 @@ function paintLocation(location) {
   var pAddress = document.createElement('p');
   var address = 'Direcci\xF3n: ' + location.street + ' Int. ' + location.intNum;
   if (location.extNum !== '') {
-    address += 'Ext. ' + location.extNum;
+    address += ' Ext. ' + location.extNum;
   }
   address += ', Col. ' + location.colony;
   var addressText = document.createTextNode(address);

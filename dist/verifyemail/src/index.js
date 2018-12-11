@@ -1,10 +1,10 @@
 'use strict';
 
-var _cookie = require('../../../../../js/cookie.js');
+var _cookie = require('../../js/cookie.js');
 
 var _cookie2 = _interopRequireDefault(_cookie);
 
-var _hideElements = require('../../../../../js/util/hideElements.js');
+var _hideElements = require('../../js/util/hideElements.js');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 

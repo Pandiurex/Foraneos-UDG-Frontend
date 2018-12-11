@@ -37,17 +37,50 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var ROUTE = 'locations';
 
 var Location = function () {
-  function Location() {
+  function Location(data) {
+    var _this = this;
+
     _classCallCheck(this, Location);
+
+    this.id = data.id;
+    this.ownerUserId = data.ownerUserId;
+    this.active = data.active;
+    this.lattitude = '11.11';
+    this.longitude = '11.11';
+    this.street = data.street;
+    this.colony = data.colony;
+    this.postalCode = data.postalCode;
+    this.streetAcross1 = data.streetAcross1;
+    this.streetAcross2 = data.streetAcross2;
+    this.extNum = data.extNum;
+    this.intNum = data.intNum;
+    this.sexType = data.sexType;
+    this.numRooms = data.numRooms;
+    this.availableRooms = data.availableRooms;
+    this.description = data.description;
+    this.restrictions = data.restrictions;
+    this.cost = data.cost;
+    this.numComplaints = data.numComplaints;
+    this.avgRate = data.avgRate;
+    this.avgServicesRate = data.avgServicesRate;
+    this.avgSecurityRate = data.avgSecurityRate;
+    this.avgLocalizationRate = data.avgLocalizationRate;
+    this.avgCostBenefictRate = data.avgCostBenefictRate;
+
+    Object.keys(this).forEach(function (key) {
+      if (_this[key] !== undefined) {
+        delete _this[key];
+      }
+    });
   }
 
   _createClass(Location, null, [{
     key: 'get',
     value: function () {
       var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(locationId) {
-        var _this = this;
+        var _this2 = this;
 
-        var response, images, myPromises;
+        var response, myPromises;
         return regeneratorRuntime.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
@@ -59,48 +92,41 @@ var Location = function () {
                 response = _context2.sent;
 
                 if (!(response.status >= 200 && response.status < 300)) {
-                  _context2.next = 10;
+                  _context2.next = 8;
                   break;
                 }
 
-                images = [];
                 myPromises = response.data.images.map(function () {
                   var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(image) {
                     return regeneratorRuntime.wrap(function _callee$(_context) {
                       while (1) {
                         switch (_context.prev = _context.next) {
                           case 0:
-                            _context.t0 = images;
-                            _context.next = 3;
+                            _context.next = 2;
                             return _locationImage2.default.get(image.image);
 
+                          case 2:
+                            image = _context.sent;
+
                           case 3:
-                            _context.t1 = _context.sent;
-
-                            _context.t0.push.call(_context.t0, _context.t1);
-
-                          case 5:
                           case 'end':
                             return _context.stop();
                         }
                       }
-                    }, _callee, _this);
+                    }, _callee, _this2);
                   }));
 
                   return function (_x2) {
                     return _ref2.apply(this, arguments);
                   };
                 }());
-                _context2.next = 8;
+                _context2.next = 7;
                 return Promise.all(myPromises);
 
-              case 8:
-
-                response.data.images = images;
-
+              case 7:
                 return _context2.abrupt('return', response.data);
 
-              case 10:
+              case 8:
                 if (response.status === 403) {
                   _cookie2.default.clearCookies();
                   (0, _goTo2.default)('/');
@@ -108,7 +134,7 @@ var Location = function () {
 
                 return _context2.abrupt('return', undefined);
 
-              case 12:
+              case 10:
               case 'end':
                 return _context2.stop();
             }
@@ -126,7 +152,7 @@ var Location = function () {
     key: 'getAll',
     value: function () {
       var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
-        var _this2 = this;
+        var _this3 = this;
 
         var order = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
         var limit = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
@@ -174,7 +200,7 @@ var Location = function () {
                             return _context3.stop();
                         }
                       }
-                    }, _callee3, _this2);
+                    }, _callee3, _this3);
                   }));
 
                   return function (_x5) {
@@ -213,7 +239,7 @@ var Location = function () {
     key: 'getAllFrom',
     value: function () {
       var _ref5 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee6(userId) {
-        var _this3 = this;
+        var _this4 = this;
 
         var response, locations, aux, myPromises;
         return regeneratorRuntime.wrap(function _callee6$(_context6) {
@@ -259,7 +285,7 @@ var Location = function () {
                             return _context5.stop();
                         }
                       }
-                    }, _callee5, _this3);
+                    }, _callee5, _this4);
                   }));
 
                   return function (_x7) {
@@ -300,7 +326,7 @@ var Location = function () {
     key: 'post',
     value: function () {
       var _ref8 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee9(_ref7) {
-        var _this4 = this;
+        var _this5 = this;
 
         var _ref7$lattitude = _ref7.lattitude,
             lattitude = _ref7$lattitude === undefined ? '11.11' : _ref7$lattitude,
@@ -370,7 +396,7 @@ var Location = function () {
                             return _context7.stop();
                         }
                       }
-                    }, _callee7, _this4);
+                    }, _callee7, _this5);
                   }));
 
                   return function (_x9) {
@@ -394,7 +420,7 @@ var Location = function () {
                             return _context8.stop();
                         }
                       }
-                    }, _callee8, _this4);
+                    }, _callee8, _this5);
                   }));
 
                   return function (_x10) {
@@ -435,6 +461,15 @@ var Location = function () {
         }
       });
       return string;
+    }
+  }, {
+    key: 'processResult',
+    value: function processResult(data) {
+      var result = [];
+      data.forEach(function (obj) {
+        result.push(new Location(obj));
+      });
+      return result;
     }
   }]);
 

@@ -26,7 +26,7 @@ gulp.task('useref', () => gulp.src('app/**/*.html')
 gulp.task('browserSync', () => {
   browserSync.init({
     server: {
-      baseDir: 'app',
+      baseDir: 'dist',
     },
   });
 });
